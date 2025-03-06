@@ -1,0 +1,199 @@
+{
+  "main": {
+    "id": "116b2153ebf498a7",
+    "type": "split",
+    "children": [
+      {
+        "id": "0cb5d3b3db4f2f8b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c2fcfe330fabd0c6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Math 104/Practice 1.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Practice 1"
+            }
+          },
+          {
+            "id": "0f7a950847842ff4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Math 128A/Lecture 6.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lecture 6"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "05f6517ae7b9a182",
+    "type": "split",
+    "children": [
+      {
+        "id": "b1fd783d517b243d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8dd6a8bcce27e5bd",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "689d9025b4d9f476",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "\\(",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "7c82c92993a49841",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "right": {
+    "id": "707048cafdbf033b",
+    "type": "split",
+    "children": [
+      {
+        "id": "a3ac5f72aa7eb2bc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "bd44574480680ae2",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Practice 1.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Practice 1 的反向链接列表"
+            }
+          },
+          {
+            "id": "8d20c73e3cfdf4ed",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Practice 1.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Practice 1 的出链列表"
+            }
+          },
+          {
+            "id": "a2a37f5292e05716",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "0e141defb7b02e92",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Math 128A/Lecture 6.md",
+                "followCursor": false,
+                "showSearch": true,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Lecture 6 的大纲"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "markdown-importer:打开 Markdown 格式转换器": false,
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "8dd6a8bcce27e5bd",
+  "lastOpenFiles": [
+    "Math 128A/Lecture 5.md",
+    "Math 104/Midterm Review.md",
+    "Math 128A/Lecture 6.md",
+    "Math 128A",
+    "欢迎.md",
+    "2025-03-05.md",
+    "Math 104",
+    "Math 104/Practice 1.md",
+    "未命名.canvas"
+  ]
+}
