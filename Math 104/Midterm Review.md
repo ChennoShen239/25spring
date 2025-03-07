@@ -18,6 +18,21 @@ $$
 **Corollary 7.2** Archimedean Property
 if $a,b>0$, then for some positive integer $n$, we have $na>b$
 
+> this is a problem I need to mention
+
+*Problem #7: Using the completeness axiom theorem to prove the theorem for strong induction:*
+
+***Theorem 1.** Assume $A$ is a subset of $\mathbb{N}$, if $A$ satisfies the following two properties:*
+*(1). $1 \in A$.*
+*(2). If $\{1, 2, 3, \cdots, n\} = \{x | x \leq n, x \in \mathbb{N}\} \subset A$, then $n + 1 \in A$.*
+*Then $A = \mathbb{N}$.*
+
+*Hint: Using proof by contradiction.*
+
+> Proof. Assume $A \neq \mathbb{N}$. Then the set $A^c = \{x | x \in \mathbb{N}, x \notin A\} \subset \mathbb{N}$ is not empty. We note that $A^c$ is also a subset of $\mathbb{R}$. Using the completeness axiom theorem, we have $m = \inf A^c \in \mathbb{R}$.
+> We first show that $m \in \mathbb{N}$, define $[m]$ be the smallest integer that is equal or larger than $m$ . By definition, for all $a \in A^{c}$, $a \geq m$ . It's easy to verify that $a \geq [m]$ holds for all $a$. By definition, we have $m = [m] \in \mathbb{N}$.
+> Now we show $m \in A^{c}$. since $m = \inf{A^{c}}$, $m+1$ is not a lower bound, then there exists $a \in A^{c}$ s.t. $a<m+1$. Since $A^{c}\subseteq \mathbb{N}$, we have $m=a \in A^{c}$.
+> Finally, since $1 \not\in A^{c}$ , we have $m >1$ Also, since $m = \inf{ A^{c}}$, we have $k<m,k\in \mathbb{N}$ such that $k \in A$, then we can imply the property 2 by $n = m-1$ and we will have $m \in A$, which is contradicted to the fact that $m \in A^{c}$.
 # Lecture 2
 **Proposition 1.1** for all $x,y\in \mathbf{R}$:
 1. $|x|\ge 0, |x|=0 \iff x=0$
