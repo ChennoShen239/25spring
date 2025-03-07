@@ -12,7 +12,7 @@ $$
 **Theorem 7.1** Completeness Axiom
 Every nonempty set $\mathbf{S}$ of real numbers that is bounded from above has a supremum, i.e.
 $$
-\\\exists \sup \mathbf{S} , \text{ and } \sup \mathbf{S} \in \mathbf{R}
+\\\exists \sup \mathbf{S} , \text{ and } \sup \mathbf{S} \in \mathbb{R}
 $$
 
 **Corollary 7.2** Archimedean Property
@@ -41,14 +41,14 @@ if $a,b>0$, then for some positive integer $n$, we have $na>b$
 4. $|xy| = |x|\cdot|y|$
 5. $|x-y| \geq  ||x|-|y||$
 
-**Proposition 1.2** A set $A\subseteq \mathbf{R}$ is bounded iff there exists a real number $M\ge 0$ such that $$
+**Proposition 1.2** A set $A\subseteq \mathbf{R}$ is bounded $\iff$ there exists a real number $M\ge 0$ such that $$
 |x| \leq M,\forall x \in A
 $$
 **Proposition 3.1** If a sequence converges, then its limit is unique.
 
 **Theorem 4.1** A sequence $(x_{n})$ is bounded if it has a limit when $n\to \infty$
 
-**Theorem 5.1** A monotone sequence of real numbers converges iff it's bounded
+**Theorem 5.1** A monotone sequence of real numbers converges $\iff$ it's bounded
 
 **Definition 6.1** Suppose that $(x_{n})$ is a sequence of real numbers. Then $$
 y_{n } =\sup \{ x_{k} :k\geq n \},\lim_{ n \to \infty } \sup x_{n} = \lim_{ n \to \infty } y_{n}
@@ -57,7 +57,7 @@ y_{n } =\sup \{ x_{k} :k\geq n \},\lim_{ n \to \infty } \sup x_{n} = \lim_{ n \t
 \lim_{ n \to \infty } \sup x_{n}  = \inf_{n\in \mathbf{N}} \left(\sup_{k\geq n}x_{n}\right)
 $$
 
-**Theorem 6.1** Let $(x_{n})$ be a real sequence, then $y = \lim_{ n \to \infty }\sup x_{n}$ iff $y\in \mathbf{R}$ statisfies one of the following conditions.
+**Theorem 6.1** Let $(x_{n})$ be a real sequence, then $y = \lim_{ n \to \infty }\sup x_{n}$ iff $y\in \mathbb{R}$ statisfies one of the following conditions.
 1. $y\ne \infty \text{ and } y \ne -\infty$, for every $\epsilon >0$:
 	1. there exists $N\in \mathbf{N}$ such that $x_{n}<y+\epsilon$ for all $n>N$
 	2. for every $N\in \mathbf{N}$, there exists $n>N$ such that $x_{n}>y-\epsilon$
@@ -66,16 +66,16 @@ $$
 
 **Oscillation** If $\lim_{ n \to \infty }\sup x_{n }\ne \lim_{ n \to \infty } \inf x_{n}$, then we say the sequence $(x_{n})$ oscillates
 
-**Corollary 8.1** If a sequence has subsequences that converge to differenct limits, then the sequence diverges.
+**Corollary 8.1** If a sequence has subsequences that converge to different limits, then the sequence diverges.
 
-**Theorem 9.1** Bolzano-Weierstrass
+**Theorem 9.1** Bolzano - Weierstrass
 Every bounded sequence of real numbers has a **convergent subsequence.**
 
-**Theorem 9.2** if $(x_{n})$ is bouned sequence of real numbers such that every convergent subsequence has the same limit $L$, then $(x_{n})$ converges to $L$.
+**Theorem 9.2** if $(x_{n})$ is bounded sequence of real numbers such that every convergent subsequence has the same limit $L$, then $(x_{n})$ converges to $L$.
 
 # Lecture 3
 
-**Proposition 1.1** a series $\sum a_{n}$ with positive terms $a_{n}\ge_{0}$ converges iif its partial sums $$
+**Proposition 1.1** a series $\sum a_{n}$ with positive terms $a_{n}\ge {0}$ converges if and only if its partial sums $$
 \sum_{k=1}^n a_{k} \le M
 $$ are bounded from above.
 
@@ -130,7 +130,7 @@ $$
 **Theorem 4.3** Root test
 suppose that $(a_{n})$ is a sequence of real numbers and let $$
 r= \lim_{ n \to \infty } \sup{|a_{n}|^{1/n}}
-$$then the series $\sum a_n$ converges absolutely if $0 \leq r<1$ and diverges if $1<r\leq \infty$
+$$then the series $\sum a_n$ converges absolutely if $0 \leq r<1$ and diverges if $1<r\leq \infty$ 
 
 **Theorem 4.4** Integral test
 suppose that $(a_{n})$ is a sequence of positive real numbers, then suppose there is a **decreasing** function $f:\left[ 1,\infty \right] \to \mathbb{R}$ such that $f(n) = a_n$ . Then $\sum a_{n}$ converges iff $\int_{1}^\infty f(x)dx$ converges.

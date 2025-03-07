@@ -1,7 +1,7 @@
 {
   "interfaceFontFamily": "Cambria",
-  "textFontFamily": "Book Antiqua",
+  "textFontFamily": "Canela Text",
   "cssTheme": "Things",
-  "theme": "system",
+  "theme": "moonstone",
   "baseFontSize": 20
 }

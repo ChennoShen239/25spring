@@ -26,7 +26,6 @@ a_0 &= P(x_0) = f(x_0), \\
 \frac{P(x) - f(x_0)}{x - x_0} &= a_1 + a_2 (x - x_1) + \dots + a_n (x - x_1) \dots (x - x_{n-1}).
 \end{aligned}
 $$
-
 ### Definition of Divided Differences
 
 Divided Differences:
@@ -47,14 +46,15 @@ $$
 Further derivations:
 $$
 \begin{aligned}
-\frac{P(x) - P(x_0)}{x - x_0} &= f[x_0, x_1] + a_2 (x - x_1) + \dots + a_n (x - x_2) \dots (x - x_{n-1}), \\
+P[x_{0},x] = \frac{P(x) - P(x_0)}{x - x_0} &= f[x_0, x_1] + a_2 (x - x_1) + \dots + a_n (x - x_2) \dots (x - x_{n-1}), \\
 \frac{P[x_0, x] - P[x_0, x_1]}{x - x_1} &= a_2 + \dots + a_n (x - x_2) \dots (x - x_{n-1}),
 \end{aligned}
 $$
+> just notice that $P[x_{0},x_{1}]= f[x_{0},x_{1}]$
 
 leading to:
 $$
-a_2 = \frac{P[x_0, x_1, x_2] - P[x_0, x_1]}{x_2 - x_1} = f[x_0, x_1, x_2].
+a_2 = \frac{P[x_0, x_{2}] - P[x_0, x_1]}{x_2 - x_1} = f[x_0, x_1, x_2].
 $$
 
 
@@ -136,7 +136,7 @@ Coefficients are numbers on top of all $f[\dots]$ columns:
 |       |            | -0.5715210        |                             |                          |                          |
 | $x_4$ | 2.2 0.1103623 |                   |                             |                          |                          |
 
-The polynomial (corrected from PAGE10):
+The polynomial :
 $$
 \begin{aligned}
 P(x) &= a_0 + a_1 (x - x_0) + a_2 (x - x_0)(x - x_1) + a_3 (x - x_0)(x - x_1)(x - x_2) \\
@@ -172,7 +172,6 @@ f[x_n] &\uparrow f[x_{n-1}, x_n] \uparrow f[x_{n-2}, x_{n-1}, x_n] \uparrow \dot
 \end{aligned}
 $$
 
-(Note: PAGE13 contains a typo in the first line, corrected here as $f[x_{n-2}]$.)
 
 #### Storage with Memory Reuse
 
@@ -196,7 +195,6 @@ f[x_0, x_1, x_2] &= f[x_0, x_0 + h, x_0 + 2h] = \frac{f[x_1, x_2] - f[x_0, x_1]}
 &= \frac{f(x_2) + f(x_0) - 2 f(x_1)}{2 h^2} \quad \text{(second order FD, at } x_0\text{)}.
 \end{aligned}
 $$
-
 #### Example
 
 ```matlab
@@ -209,8 +207,6 @@ $$
      0.5530    0.5000    0.0530
 ```
 
-(Note: PAGE15 corrects the syntax for the MATLAB code, e.g., `h^2` instead of `h\wedge 2`.)
-
 ### Variation: Central Differences
 
 Let $x_1 = x_0 + h$, $x_2 = x_1 + h$, $\bar{x}_0 = x_0 + h/2$:
@@ -222,8 +218,6 @@ f[x_0, x_1, x_2] &= f[x_0, x_0 + h, x_0 + 2h] = \frac{f[x_1, x_2] - f[x_0, x_1]}
 &= \frac{f(x_2) + f(x_0) - 2 f(x_1)}{2 h^2} \quad \text{(second order CD, at } x_1\text{)}.
 \end{aligned}
 $$
-
-(Note: PAGE17 contains a repeated and incorrect line `x_1 = (x_1, x_2) + f(x_0) = 2 f(x_1)` which is ignored as it appears to be a formatting error.)
 
 ### Variation: Backward Differences
 
@@ -250,7 +244,6 @@ $$
      0.5530    0.6107    -0.0577
 ```
 
-(Note: PAGE19 contains repeated output lines `0.6107 -0.0577` which are summarized in the `disp` output above.)
 
 ## Section 3.4: Double Nodes in Interpolation
 
@@ -286,7 +279,7 @@ The interpolating polynomial now satisfies:
 $$
 P(x_0) = f(x_0), \quad P'(x_0) = f'(x_0).
 $$
-
+> The key is to push $x_{1}$ as close as $x_{0}$ to get the slope as the derivative.
 ### Double Nodes: Quadratic Interpolation
 
 - **Given 3 distinct points**:
@@ -316,6 +309,8 @@ The interpolating polynomial now satisfies:
 $$
 P(x_0) = f(x_0), \quad P(x_1) = f(x_1), \quad P'(x_1) = f'(x_1).
 $$
+> the double node here means that we preserve the $f(x_{1})$ and $f'(x_{1})$ at the node $x_{1}$, which requires $x_{2} \to x_{1}$.
+
 
 ### Double Nodes Twice: Cubic Interpolation (I)
 
@@ -358,13 +353,14 @@ f[x_0, x_2, x_2] &= \frac{f[x_2, x_2] - f[x_2, x_0]}{x_2 - x_0} = \frac{f'(x_2) 
 a_3 &= f[x_0, x_0, x_2, x_2] = \frac{f[x_0, x_2, x_2] - f[x_0, x_0, x_2]}{x_2 - x_0}.
 \end{aligned}
 $$
+to be more precise, we get $a_{3} = 2\frac{f'(x_{2})-f[x_{0},x_{2}]}{(x_{2}-x_{0})^{2}}$ 
 
 This is a Hermite interpolation:
 $$
 P(x) = a_0 + a_1 (x - x_0) + a_2 (x - x_0)^2 + a_3 (x - x_0)^2 (x - x_2),
 $$
 
-satisfying (corrected from PAGE25 where $P'(x_2)$ is repeated):
+satisfying:
 $$
 P(x_0) = f(x_0), \quad P'(x_0) = f'(x_0), \quad P(x_2) = f(x_2), \quad P'(x_2) = f'(x_2).
 $$
@@ -387,6 +383,8 @@ $$
   $$
 
 - $2n + 2$ conditions, $2n + 2$ coefficients in $H(x)$.
+> the interpolating poly passes $n+1$ points and has the precisely $n+1$ derivative requirement.
+
 
 ### Divided Differences: Double Node Version
 
@@ -417,39 +415,7 @@ $$
   $$
   z_j \to x_{\lfloor j/2 \rfloor}, \quad \text{for } j = 0, 1, \dots, 2n + 1.
   $$
-
-### Review: Newton Divided Difference Table
-
-| $i$ | $f[z_i]$ | $f[z_{i-1}, z_i]$ | $f[z_{i-2}, z_{i-1}, z_i]$ | $\dots$ | $f[z_0, z_1, \dots, z_i]$ |
-|-----|----------|-------------------|-----------------------------|---------|---------------------------|
-| 0   | $f[z_0] \stackrel{\text{def}}{=} a_0$ |                   |                             |         |                           |
-| 1   | $f[z_1]$ | $f[z_0, z_1] \stackrel{\text{def}}{=} a_1$ |                             |         |                           |
-| 2   | $f[z_2]$ | $f[z_1, z_2]$     | $f[z_0, z_1, z_2] \stackrel{\text{def}}{=} a_2$ |         |                           |
-| 3   | $f[z_3]$ | $f[z_2, z_3]$     |                             |         |                           |
-| 4   | $f[z_4]$ | $f[z_3, z_4]$     |                             |         |                           |
-| 5   | $f[z_5]$ | $f[z_4, z_5]$     |                             |         |                           |
-
-(Note: PAGE29 seems incomplete and contains repeated entries; only the meaningful part is included.)
-
-### Double Nodes with $m = 2n + 1$
-
-For $x_j = z_{\lfloor j/2 \rfloor}$, $f[x_j, x_j] = f'(x_j)$:
-$$
-\begin{aligned}
-f[x_0] &\stackrel{\text{def}}{=} a_0, \\
-f[x_0, x_0] &\stackrel{\text{def}}{=} f'(x_0) \stackrel{\text{def}}{=} a_1, \\
-f[x_0, x_0, x_1] &\stackrel{\text{def}}{=} a_2, \\
-f[x_1, x_1] &\stackrel{\text{def}}{=} f'(x_1).
-\end{aligned}
-$$
-
-
-### Hermite Interpolation Examples
-
-- **Hermite Interpolation on $e^x$ on $[-1, 1]$** (PAGE31, PAGE32)
-- **Hermite Interpolation on $\frac{1}{0.2 + x^2}$ on $[-1, 1]$** (PAGE33, PAGE34)
-
-(Note: These pages mention "Coefficient's $a_j$ for Hermite Interpolation" but do not provide specific calculations.)
+  > if you don't get it now, just know that actually we repeat all $x_{0}\dots x_{n-1}$ 2 times, make them like $x_{k} \to z_{j},z_{j+1}$. 
 
 ### Hermite Interpolation, Alternative Form
 
@@ -457,7 +423,7 @@ $$
   $$
   (x_0, f(x_0), f'(x_0)), (x_1, f(x_1), f'(x_1)), \dots, (x_n, f(x_n), f'(x_n)),
   $$
-
+> note that we take the first order derivative information into considerartion.
 - **Interpolating polynomial $H(x)$ of degree $\leq 2n + 1$ with**:
   $$
   \begin{aligned}
@@ -467,7 +433,7 @@ $$
   H(x_n) &= f(x_n), & H'(x_n) &= f'(x_n).
   \end{aligned}
   $$
-
+> always keep in mind that if you get $m$ conditions, then you should find a $m-1$ polynomial. 
 - **Alternative $H(x)$ form**:
   $$
   H(x) = \sum_{j=0}^n f(x_j) H_j(x) + \sum_{j=0}^n f'(x_j) \hat{H}_j(x),
@@ -477,6 +443,12 @@ where:
 $$
 H_j(x) = (1 - 2 (x - x_j) L_j'(x_j)) L_j^2(x), \quad \hat{H}_j(x) = (x - x_j) L_j^2(x),
 $$
+> just to better memorize it :$$
+\begin{cases}
+H_{j}(x)  & =(1-2(x-x_{j})L'_{j}(x_{j}))L^{2}_{j}(x) \\
+\hat{H}_{j}(x) & =(x-x_{j})L_{j}^{2} (x)
+\end{cases}
+$$
 
 with:
 $$
@@ -485,7 +457,7 @@ $$
 
 ### Hermite Interpolation Error
 
-**Theorem**: *Suppose $x_0, x_1, \dots, x_n$ are distinct numbers in the interval $[a, b]$ and $f \in C^{2n+2}[a, b]$. Then, for each $x \in [a, b]$, a number $\xi(x)$ between $x_0, x_1, \dots, x_n$ (hence $\in (a, b]$) exists with:*
+**Theorem**: *Suppose $x_0, x_1, \dots, x_n$ are distinct numbers in the interval $[a, b]$ and $f \in C^{2n+2}[a, b]$. Then, for each $x \in [a, b]$, a number $\xi(x)$ between $x_0, x_1, \dots, x_n$ (hence $\in (a, b)$) exists with:*
 $$
 f(x) = H(x) + \frac{f^{(2n+2)}(\xi(x))}{(2n+2)!} (x - x_0)^2 (x - x_1)^2 \dots (x - x_n)^2,
 $$
@@ -501,6 +473,7 @@ g(t) \stackrel{\text{def}}{=} (f(t) - H(t)) - (f(x) - H(x)) \frac{(t - x_0)^2 (t
 = (f(t) - H(t)) - (f(x) - H(x)) \prod_{j=0}^n \frac{(t - x_j)^2}{(x - x_j)^2} \in C^{2n+2}[a, b].
 \end{aligned}
 $$
+> Remember the construction!
 
 Then $g(t)$ vanishes at $n+2$ distinct points:
 $$
@@ -551,7 +524,6 @@ $$
   $$
   \text{for } x \in [x_j, x_{j+1}], \quad j = 0, 1, \dots, n-1,
   $$
-
   $$
   S(x) = S_j(x) \stackrel{\text{def}}{=} a_j + b_j (x - x_j) + c_j (x - x_j)^2 + d_j (x - x_j)^3,
   $$
@@ -562,11 +534,10 @@ $$
   $$
   S(x_j) = f(x_j), \quad j = 0, 1, \dots, n \quad (S(x) = f(x) \text{ at all nodes: } n+1 \text{ conditions}),
   $$
-
   $$
   S(x) \in C^2[x_0, x_n] \quad (\text{smooth enough: } 3(n-1) \text{ conditions}).
   $$
-
+> There are $3(n-1)$ conditions for $S(x) \in C^2[x_0, x_n]$ because, at each of the $n-1$ interior points, the cubic spline must satisfy three continuity requirements: the function itself, its first derivative, and its second derivative must be continuous, resulting in $3\times (n-1)$ conditions. 
 - $4n$ unknowns vs. $4n - 2$ conditions so far.
 
 ### The Splines Equations (I)
@@ -575,8 +546,6 @@ For $x \in [x_j, x_{j+1}]$, $j = 0, 1, \dots, n-1$:
 $$
 S(x) = S_j(x) \stackrel{\text{def}}{=} a_j + b_j (x - x_j) + c_j (x - x_j)^2 + d_j (x - x_j)^3,
 $$
-
-(Note: PAGE50 contains a typo where $\frac{1}{2} a_j$ should be $a_j$, corrected above.)
 
 Introducing for $x \geq x_n$ (three artificial unknowns):
 $$
@@ -595,7 +564,6 @@ a_{j+1} &= S_{j+1}(x_{j+1}) = S_j(x_{j+1}) = a_j + b_j h_j + c_j h_j^2 + d_j h_j
 b_j + c_j h_j + d_j h_j^2 &= \frac{a_{j+1} - a_j}{h_j} \quad (\ell_0),
 \end{aligned}
 $$
-
 $$
 S(x) \in C^0[x_0, x_n] \quad (3n + 2 \text{ unknowns, } n \text{ equations}),
 $$
@@ -755,6 +723,7 @@ function Splines = clampedSplines(x, f, df)
 
     % Compute the coefficients. This is a simple but very slow way to do it.
     c = A \ rhs;
+end 
 ```
 
 #### Natural Splines Example: $f(x) = e^x$
@@ -797,11 +766,8 @@ Goal: To approximate the top profile of a duck in flight.
 |-------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|------|-----|-----|------|------|------|------|------|------|------|
 | $f(x)$| 1.3 | 1.5 | 1.8 | 2.1 | 2.6 | 2.7 | 2.4 | 2.1 | 2.8 | 2.1 | 2.5 | 2.3  | 2.3 | 2.3 | 1.4  | 0.9  | 0.7  | 0.6  | 0.5  | 0.4  | 0.2  |
 
-(Note: PAGE75 and PAGE76 contain inconsistencies in the $x$ values (e.g., repeated 13.3); the table is presented as-is.)
-
 #### Duck Top Profile in 20-Degree Polynomial Interpolation
 
-(Note: No specific polynomial is provided in the document.)
 
 ## Section 3.6: Parametric Curve Approximation
 
@@ -838,7 +804,6 @@ Goal: To approximate the top profile of a duck in flight.
 
 #### Bezier Curves with Guide Points
 
-(Note: No further details provided in PAGE79.)
 
 ## Additional Notes
 
