@@ -7,13 +7,13 @@ date updated: 2025-03-05 21:32
 
 ## Lemma: Generalized Rolle's Theorem
 
-Let $f(x) \in C^n[a, b]$ satisfy:
+*Let $f(x) \in C^n[a, b]$ satisfy:*
 
 $$
 f(x_i) = 0, \quad i = 1, 2, 3, \dots, n,
 $$
 
-where $a \leq x_1 < x_2 < \cdots < x_n \leq b$ are mutually distinct. Then there exists a $\xi \in [a, b]$ such that:
+*where $a \leq x_1 < x_2 < \cdots < x_n \leq b$ are mutually distinct. Then there exists a $\xi \in [a, b]$ such that:*
 
 $$
 f^{(n-1)}(\xi) = 0.

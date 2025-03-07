@@ -22,17 +22,17 @@
             }
           },
           {
-            "id": "0f7a950847842ff4",
+            "id": "2fe7c9f585029dbc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math 128A/Lecture 6.md",
+                "file": "Part II.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lecture 6"
+              "title": "Part II"
             }
           }
         ],
@@ -156,10 +156,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Math 128A/Lecture 6.md"
+                "file": "Part II.md"
               },
               "icon": "lucide-list",
-              "title": "Lecture 6 的大纲"
+              "title": "Part II 的大纲"
             }
           },
           {
@@ -194,9 +194,11 @@
   "active": "4d0abe5cc400e4a2",
   "lastOpenFiles": [
     "Math 104/Practice 1.md",
-    "Math 104/Midterm Review.md",
+    "Part II.md",
+    "Math 128B",
     "Math 128A/Lecture 6.md",
     "Math 128A/Lecture 5.md",
+    "Math 104/Midterm Review.md",
     "Math 128A",
     "欢迎.md",
     "2025-03-05.md",
