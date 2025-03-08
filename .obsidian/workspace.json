@@ -92,7 +92,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 201.50271224975586
+    "width": 201.50271224975586,
+    "collapsed": true
   },
   "right": {
     "id": "707048cafdbf033b",
@@ -191,7 +192,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4d0abe5cc400e4a2",
+  "active": "2fe7c9f585029dbc",
   "lastOpenFiles": [
     "Math 104/Practice 1.md",
     "Part II.md",

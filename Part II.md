@@ -111,7 +111,7 @@ As $m \to \infty$:
 Define the Gram matrix $A_{ij} = \langle g_i, g_j \rangle_{L^2([a,b])}$ and vector $b_i = \langle g_i, f \rangle_{L^2([a,b])}$. Solve:
 $$ A \vec{a} = \vec{b}, $$
 then recover $f_a(x) = \sum_{j=0}^{p-1} a_j g_j(x)$.
-
+> Indeed here we have $A = hG'G$ and $\vec{b} = hG'\vec{y}$.
 ### Weighted Least Squares
 For a weight $w(x)$, minimize:
 $$ \| f_a - f \|_{L^2([a,b]; w)}^2. $$
@@ -132,13 +132,17 @@ $$ p_{k+1} = M_{k+1} - \sum_{i=0}^k \frac{\langle M_{k+1}, p_i \rangle_w}{\langl
 This ensures $p_{k+1}$ is monic, orthogonal to $p_0, \ldots, p_k$, and $\text{span}(p_0, \ldots, p_k) = \mathbb{P}_k$.
 
 ### Theorem
-The sequence $p_0, p_1, \ldots$ is monic, orthogonal w.r.t. $\langle \cdot, \cdot \rangle_w$, and $p_0, \ldots, p_n$ is a basis for $\mathbb{P}_n$. For $k > l$, $p_k$ is orthogonal to all polynomials in $\mathbb{P}_l$.
+*The sequence $p_0, p_1, \ldots$ is monic, orthogonal w.r.t. $\langle \cdot, \cdot \rangle_w$, and $p_0, \ldots, p_n$ is a basis for $\mathbb{P}_n$. For $k > l$, $p_k$ is orthogonal to all polynomials in $\mathbb{P}_l$.*
 
 ### Least Squares with Orthogonal Polynomials
 For $f_a = \sum_{i=0}^n a_i p_i$, the Gram matrix is diagonal:
 $$ A_{ij} = \begin{cases} \langle p_i, p_i \rangle_w & \text{if } i = j, \\ 0 & \text{otherwise}, \end{cases} $$
 so:
+> diagonal by construction using Gram-Schmit
+
 $$ a_i = \frac{\langle f, p_i \rangle_w}{\langle p_i, p_i \rangle_w}, $$
+> here $\left< f,p_{i} \right>_{w}$ comes from the vector $\vec{b} = hG'\vec{y}$ 
+ 
 and the optimal approximator is:
 $$ f_a = \sum_{i=0}^n \frac{\langle f, p_i \rangle_w}{\langle p_i, p_i \rangle_w} p_i, $$
 which solves:
@@ -159,22 +163,147 @@ with $P_0(x) = 1$, $P_1(x) = x$. Examples:
 - $P_4(x) = x^4 - \frac{6}{7} x^2 + \frac{3}{35}$.
 
 #### Chebyshev Polynomials
+The **Chebyshev polynomials** are an extremely useful tool in numerical analysis due to their **equioscillation property** on the interval $[-1,1]$. 
+
 Defined as $T_n(x) = \cos(n \cos^{-1}(x))$ on $[-1, 1]$, they satisfy:
 $$ T_{n+1}(x) = 2x T_n(x) - T_{n-1}(x), $$
 with $T_0(x) = 1$, $T_1(x) = x$. They are orthogonal w.r.t. $w(x) = \frac{1}{\sqrt{1 - x^2}}$. Leading term: $2^{n-1} x^n$. Monic version:
 $$ \tilde{T}_n(x) = \frac{1}{2^{n-1}} T_n(x), \quad n \geq 1. $$
+**Let's verify this**
+using the property of $\cos x$, we have $$
+\cos(a+b) + \cos(a-b) = 2\cos a \cos b
+$$ so for $$
+\begin{align}
+T_{n+1}(x)  & = \cos((n+1)\cos ^{-1}x) \\
+ & =2\cos(n\cos ^{-1}x)\cos(\cos ^{-1}x) - \cos ((n-1)\cos ^{-1}x) \\
+ & = \underbrace{ 2x\cos (n\cos ^{-1}x) }_{ 2xT_{n}(x) }-\underbrace{ \cos ((n-1)\cos ^{-1}x) }_{ T_{n-1}(x) }
+\end{align}
+
+$$Just so simple!
+
+**Chebyshev nodes** the zeros of $T_{n}$ is called chebyshev nodes, i.e.$$
+n\cos ^{-1}x=\left( k+\frac{1}{2} \right)\pi \implies \cos ^{-1}x = \left( \frac{2k+1}{2n} \right)\pi \implies x= \cos\left( \frac{2k+1}{2n}\pi \right)
+	$$ where $k=0,1,\dots n-1$ since $\cos ^{-1}x \le 1$ 
+ 
+**Extrema** the extrema of $T_{n}$ are attained at $$
+n \cos ^{-1}x =k\pi \implies \cos ^{-1}x = \frac{k}{n}\pi \implies x= \cos\left( \frac{k\pi}{n} \right)
+$$
+where $k = 1,2,\dots ,n-1$ 
+
+**Orthogonality** to prove this, we first prove $f_{n}(y) =\cos (ny)$ are orthogonal w.r.t. unweighted $L^2$ inner product on $[0,\pi]$.
+$$
+\begin{align}
+\int_{0}^{\pi}\cos(my) \cos(ny) dy &  =\int_{0}^{\pi} \frac{1}{2}(\cos((m+n)y) - \cos((m-n )y))dy \\
+ & = \frac{1}{2} \int_{0}^{\pi}\cos((m+n)y)dy -\frac{1}{2}\int_{0}^{\pi} \cos((m-n)y)dy \\
+ &  = 0-0 = 0
+\end{align}
+$$
+then we use this property, and substitute $y =\cos ^{-1}x$, we have $$
+\begin{align}
+0 &  =\int_{0}^{\pi} f_{m}(\cos ^{-1}x) f_{n}(\cos ^{-1}x) d\cos ^{-1}x \\
+ & =\underbrace{ \int_{-1}^{1} T_{m}(x) T_{n}(x) \frac{1}{\sqrt{ 1-x^{2} }}dx }_{ \left< T_{m},T_{n} \right> _{L^2\left( [-1,1];w=\frac{1}{\sqrt{ 1-x^{2} }} \right)} }
+\end{align}
+$$
+**A greater interval** if you need to map $[-1,1]$ to $[a,b]$, then use $$
+\tilde{x} = \frac{1}{2}((b-a)x+a+b)
+	$$ where $x \in[-1,1]$ and $\tilde{x}\in[a,b]$.
 
 ---
 
 ## Economization of Power Series
 
 ### Minimax Property
-For monic polynomials $\tilde{p}_n \in \tilde{\mathbb{P}}_n$:
+**Theorem**
+For **all monic** polynomials $\tilde{p}_n \in \tilde{\mathbb{P}}_n$:
 $$ \frac{1}{2^{n-1}} = \max_{x \in [-1, 1]} |\tilde{T}_n(x)| \leq \max_{x \in [-1, 1]} |\tilde{p}_n(x)|. $$
-Chebyshev polynomials minimize the maximum deviation.
+Chebyshev polynomials minimize the extreme values.
 
 ### Degree Reduction
-Given $p_n(x) = \sum_{k=0}^n a_k x^k$, reduce to $p_m \in \mathbb{P}_m$, $m < n$. Stepwise:
-- Minimize $\max_{x \in [-1, 1]} |p_n(x) - p_{n-1}(x)|$:
-$$ p_{n-1}(x) = p_n(x) - a_n \tilde{T}_n(x). $$
-Iterate to reach $p_m$.
+Given $p_n(x) = \sum_{k=0}^n a_k x^k$, reduce to $p_m \in \mathbb{P}_m$, $m < n$. 
+> This may be needed since $n$ is too large.
+
+Stepwise: we use $p_{n-1} \in \mathbb{P}_{n-1}$ to approximate $p_{n}$, then use $p_{n-2}\in \mathbb{P}_{n-2}$ to do the same for $p_{n-1}$ ...
+**Criterion**
+- Minimize $$\max_{x \in [-1, 1]} |p_n(x) - p_{n-1}(x)|$$
+- this is called the **Minimax** problem
+	- assume $a_{n} \neq 0$, so we know $\frac{p_{n}-p_{n-1}}{a_{n}}\in \tilde{\mathbb{P}}_{n}$ (monic)
+	- so we equally minimize $$
+\left| a_{n} \right| \max_{x \in[-1,1]}\left| \frac{p_{n}-p_{n-1}}{a_{n}} \right| 
+$$
+	- then use the **theorem** we know the minimum is obtained when $$
+\tilde{T}_{n}(x) = \frac{p_{n}-p_{n-1}}{a_{n}}
+$$
+	- so the stepwise relation is $$
+p_{n-1}(x) = p_{n}(x)-a_{n}\tilde{T}_{n}(x)
+$$
+> this even works when $a_{n}=0$.
+
+## Lagrange interpolation meets Chebyshev polynomials
+
+**Basic review** we have $(x_{i},y_{i}),i=0,1,\dots m$ distinct nodal points and we want the unique polynomial $p_{m} \in \mathbb{P}_{m}$ such that $$
+p_{m}(x_{i}) = y_{i},\forall i=0,1,\dots m
+$$
+- Question: does $p$ approximate $f$ on some interval, as we take $m \to \infty$
+- Answer: depends dramatically on how we choose the interpolation points $x_{i}$.
+
+**Lagrange Basis Poly**
+given interpolation points $\mathbf{x} = \left( x_{0,\dots,x_{m}} \right)$, we have $$
+L_{j}(x;\mathbf{x}):= \prod_{i=1,i \neq j}^{m}  \frac{x-x_{i}}{x_{j}-x_{i}}
+$$
+for simplicity of notation, let $L_{j}(x) = L_{j}(x;\mathbf{x})$ 
+**Key properties**
+1. $L_{j}(x) \in \mathbb{P}_{m}$
+2. $L_{j}(x_{i}) = \delta_{ij}$ 
+
+we define $p \in \mathbb{P}_{m}$ via:
+$$
+p = \sum_{j=0}^{m} y_{j}L_{j}
+$$
+Then we define the **norm** as:
+$$
+\left| \left| g \right|  \right| _{L^\infty([a,b])} = \max_{x \in [a,b]}\left| g(x) \right|
+$$
+**Theorem**: Suppose $f \in C^{m+1}([a,b])$, and let $x_0, \ldots, x_m \in [a,b]$ be distinct interpolation points. Let $y_i = f(x_i)$ for $i=0, \ldots, m$, and let $p$ denote the Lagrange interpolating polynomial for the data $(x_i, y_i), i=0, \ldots, m$. Then for every $x \in [a,b]$ there exists $\xi = \xi(x) \in [a,b]$ such that
+$$f(x) - p(x) = \frac{f^{(m+1)}(\xi)}{(m+1)!} \prod_{i=0}^m (x - x_i).$$
+**Hence**, $$
+\left| \left| f-p \right|  \right| _{L^\infty([a,b])}\leq \frac{\left| \left| f^{(m+1)} \right|  \right| _{L^\infty}}{(m+1)!}\left| \left| q_{\mathbf{x}} \right|  \right| _{L^{\infty}}
+$$
+where $q_{\mathbf{x}}:= \prod_{i=0}^{m}(x-x_{i})$ , since $\left| \left| q_{\mathbf{x}} \right| \right|_{l^{\infty}}\leq \left| b-a \right|^{m+1}$, we have $\left| \left| f-p \right| \right|_{L^{\infty}} = O(\left| b-a \right|^{m+1})$ 
+
+**We choose Chebyshev nodes as interpolation nodes**
+- we have $m+1$ nodal points, we need chebyshev nodes of $T_{m+1}$ 
+- the zeros of $T_{n}$ are $$
+\cos\left( \frac{2j-1}{2n}\pi \right),j=1,\dots,n
+
+$$
+- then we have $n=m+1$ i.e. the chebyshev nodes are $$
+x_{j}= \cos\left( \frac{2j-1}{2(m+1)}\pi \right),j=1,2,\dots,m+1
+$$
+- with this choice, $$
+\begin{align}
+q_{\mathbf{x}}(x)  &  = \prod_{i=0}^{m} (x-x_{i}) \\
+ & = C \tilde{T}_{m+1} (x) \tag{same zeros}\\
+ &  = \underbrace{ \tilde{T}_{m+1}(x) }_{ \text{monic} }
+\end{align}
+
+
+$$
+- then we know $\left| \left| q_{\mathbf{x}} \right| \right|_{L^{\infty}}=\max_{x \in[-1,1]} \left| \tilde{T}_{m+1}(x) \right| \leq \frac{1}{2^m}$ 
+**Theorem**
+suppose $f \in C^{m+1}([-1,1])$ and let $\mathbf{x}=(x_{0},\dots ,x_{m})$ such that $$
+x_{j} = \cos\left( \frac{2j+1}{2(m+1)}\pi \right),j=0,\dots m
+$$
+then let $y_{j} =f(x_{j})$, let $p$ denote the Lagrange interpolating polynomial for the data, then $$
+\left| \left| f-p \right|  \right| _{L^{\infty}}\leq \frac{\left| \left| f^{(m+1)} \right|  \right| _{L^{\infty}}}{2^{m}(m+1)!}
+$$
+and if we transform to $[a,b,]$, then we have $$
+\left| \left| f-p \right|  \right| _{L^{\infty}([a,b])}\leq \left( \frac{b-a}{2} \right)^{m+1}\frac{\left| \left| f^{(m+1)} \right|  \right| _{L^{\infty}([a,b])}}{2^{m}(m+1)!}
+$$
+## Gauss quadrature for approximation theory
+**Gauss quadrature** concerns the estimation of integrals of the form $$
+		\int_{a}^{b}g(x)w(x)  \, dx 
+$$
+with quadrature rules of the form $$
+\sum_{i=0}^{M} w_{i}g(x_{i})
+$$
+here we have the weight function $w:[a,b]\to\left[ 0,\infty \right)$ 
