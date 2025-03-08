@@ -27,7 +27,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Part II.md",
+                "file": "Math 128B/Part II.md",
                 "mode": "source",
                 "source": false
               },
@@ -55,7 +55,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "文件列表"
@@ -92,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 201.50271224975586,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "707048cafdbf033b",
@@ -157,7 +157,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Part II.md"
+                "file": "Math 128B/Part II.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
               "title": "Part II 的大纲"
@@ -178,7 +181,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 243.5
+    "width": 297.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -192,10 +195,11 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2fe7c9f585029dbc",
+  "active": "4d0abe5cc400e4a2",
   "lastOpenFiles": [
+    "Math 128B",
     "Math 104/Practice 1.md",
-    "Part II.md",
+    "Math 128B/Part II.md",
     "Math 128B",
     "Math 128A/Lecture 6.md",
     "Math 128A/Lecture 5.md",

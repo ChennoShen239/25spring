@@ -320,3 +320,99 @@ for all $g \in \mathbb{P}_{2m+1}$.
 **Theorem**: The optimization problem $$\min_{p \in \mathbb{P}_n} \| p - f \|_w^2$$ is solved by $$p = \sum_{k=0}^{n} \frac{\langle f, p_k \rangle_w}{\langle p_k, p_k \rangle_w} p_k,$$ where $\{p_k\}_{k=0}^\infty$ is an orthogonal polynomial sequence with respect to the weight function $w$ on $[a, b]$. 
 - To implement this theorem, we need to compute integrals of the form $$\langle h_1, h_2 \rangle_w = \int_a^b h_1(x) h_2(x) w(x) dx,$$ **which can be approximated using Gaussian quadrature:** $$\langle h_1, h_2 \rangle_w \approx \sum_{i=0}^m w_i h_1(x_i) h_2(x_i).$$
 > this is why this quadrature matters.
+
+## Connecting  interpolation and least-square projection
+
+**Approximate inner product** $\left< \phi,\psi \right>_{w}^{(m)}$ is defined by $$
+\left< \phi,\psi \right> _{w}^{(m)}:= \sum_{i=0}^{m} \phi(x_{i})\psi(x_{i})w_{i}
+$$
+where $w_{i}$ and $\mathbf{x}$ are the Gauss quadrature weights and nodes for $w$. 
+Then we are actually approximating $f$ by $$
+			p = \sum_{k=0}^{n} \frac{\langle f, p_k \rangle_w^{(m)}}{\langle p_k, p_k \rangle_w^{(m)}} p_k,
+
+$$
+where we take the $m$ to be sufficiently large.
+BUT if we pick $m=n$, then the $q$ is **exactly** the Lagrange interpolation polynomial
+
+**Theorem**: With notation as in the preceding discussion, let $$q = \sum_{k=0}^{n} \frac{\langle f, p_k\rangle^{(n)}}{\langle p_k, p_k\rangle^{(n)}} p_k \in \mathbb{P}_n$$. Then $q$ coincides exactly with the Lagrange interpolating polynomial for $f$ using interpolation points $x_i$, $i = 0, \ldots, n$. That is, $q(x_i) = f(x_i)$ for all $i = 0, \ldots, n$.
+
+> Proof.
+> Let $\ell$ be the lagrange interpolating polynomial
+> WTS: $q=\ell$ 
+> Claim 1: $$
+\left< p_{k},p_{k} \right> _{w}^{(n)} = \left< p_{k},p_{k} \right> _{w}
+$$
+	for all $k=0,\dots n$ 
+	- to see this, note that $\left< p_{k},p_{k} \right>_{w} = \int _{a}^{b} p_{k}^{2}(x)w(x) \, dx$
+	- since $p_{k}^{2}\in \mathbb{P}_{2n}$, the Gauss quadrature rule is exact, i.e. $$
+\int _{a}^{b}p_{k}^{2}(x)w(x) \, dx = \sum_{i=0}^{n} p_{k}^{2}(x)w_{i}=\left< p_{k},p_{k} \right> _{w}^{(n)}$$
+	which proves the claim
+	Claim 2:$$
+\left< f,p_{k} \right> _{w}^{(n)} = \left< \ell,p_{k} \right> _{w}^{(n)}$$
+	- we verify this by $$
+\left< f,p_{k} \right>_{w}^{(n)} = \sum_{i=0}^{n}  f(x_{i})p_{k}(x_{i})w_{i} = \sum_{i=0}^{n} \ell(x_{i})p_{k}(x_{i})w_{i} = \left< \ell,p_{k} \right> _{w}^{(n)}
+$$
+	Claim 3:$$
+\left< \ell,p_{k} \right> _{w}^{(n)} = \left< \ell,p_{k} \right> _{w}
+$$
+	- we prove this  as in claim 1.
+	Given all 3 claims, we now rewrite $q$ as $$
+q =\sum_{k=0}^{n} \frac{\left< \ell,p_{k} \right> _{w}}{\left< p_{k},p_{k} \right> _{w}}p_{k}
+$$
+	so $q$ is the solution to the problem $$
+\min_{\tilde{q}\in \mathbb{P}_{n}}\left| \left| \tilde{q}-\ell \right|  \right|_{w}^{2}
+$$
+	and the solution is trivially $\tilde{q} = \ell$. Q.E.D
+
+## Pade approximation 
+**Definition** a rational function $r$ of degree $N$ a a function of the form $$
+r(x) = \frac{p(x)}{q(x)}
+$$
+where $p$ and $q$ are polynomials whose degrees **sum to $N$ 
+
+**Pade approximation about $x =0$**
+let's expand $p(x) = \sum_{k=0}^{n}p_{k}x^{k}$ and $q(x) = \sum_{k=0}^{m} q_{k}x^{k}$,
+- for simplicity we let $p_{k} \equiv 0$ for all $k>n$ and $q_{k} \equiv 0$ for all $k>m$ .
+- then we rewrite the 2 as $$
+\begin{cases}
+p(x) & =\sum_{k =0}^{\infty } p_{k}x^{k} \\
+q(x) & =\sum_{k=0}^{\infty} q_{k}x^{k} \\ 
+\end{cases}
+$$
+- wlog, we set $q_{0}=1$, then we have $n+m+1$ free parameters.
+- the $\left[ \frac{n}{m} \right]$ **Pade approximant** of $f$ is defined by choosing parameters such that $$
+r^{(k)}(0) = f^{(k)}(0)
+$$ for $k=0,1,\dots,N$. 
+**How to construct it**
+1. let $f(x) = \sum_{k=0}^{\infty}a_{k}x^{k}$ be the Maclaurin series expansion of $f$,
+2. then $$
+f(x)-r(x) = f(x) -\frac{p(x)}{q(x)} = \frac{f(x)q(x)-p(x)}{q(x)}
+$$
+3. we want the $[f-r]^{(k)} = 0$, then we just need the $k$ **derivatives of the numerator to all be zero**
+4.  we have $$
+\begin{align}
+f(x)q(x)-p(x) & =\left( \sum_{i=0}^{\infty} a_{k}x^{k} \right)\left( \sum_{j=0}^{\infty} q_{j}x^{j} \right) - \sum_{k=0}^{\infty} p_{k}x^{k}  \\
+ & = \sum_{i,j=0}^{\infty}a_{i} q_{j}x^{i+j} -\sum_{k=1}^{\infty} p_{k}x^{k} \\
+ &  = \sum_{k=0}^{\infty} \sum_{i=0}^{k} a_{i}q_{k-i} x^{k}-\sum_{k=0}^{\infty} p_{k}x^{k}  \\
+ & =\sum_{k=0}^{\infty} \left( \underbrace{ \sum_{i=0}^{k} a_{i}q_{k-i}-p_{k}  }_{ \equiv 0 \text{ for all }k\leq N }\right)x^{k}
+\end{align}
+$$
+5. so we require $$
+p_{k} = \sum_{i=0}^{k} a_{i}q_{k-i}\text{ for all }k\leq N
+
+$$
+this are $N+1$ equations and $N+1$ unknowns.
+
+From $q_{0} = 1$, we know that $p_{k} = \sum_{i=1}^{k}a_{i}q_{k-i}+a_{k}$ , then we write it as $$
+p_{k} - \sum_{i=1}^{k} a_{i}q_{k-i} = a_{k}
+$$
+Then we define an $(N+1)\times m$ matrix $C =(C_{ki})$ where the row index starts from 0 and column index starts from 1, and $$
+C_{ki} = \begin{cases}
+a_{k-i} & i\leq k \\
+0 & o.w.
+\end{cases}
+$$
+so we have $$
+p_{k} - \underbrace{ \sum_{i=1}^{m} C_{ki}q_{i} }_{ \text{since }q_{i }\equiv 0 ~\forall ~i>m } = a_{k}
+$$
+ 
