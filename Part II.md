@@ -307,3 +307,16 @@ with quadrature rules of the form $$
 \sum_{i=0}^{M} w_{i}g(x_{i})
 $$
 here we have the weight function $w:[a,b]\to\left[ 0,\infty \right)$ 
+
+**Theorem**: Let $a < x_0 < \ldots < x_m < b$ be the zeros of $p_m$, the $(m+1)$-th orthogonal polynomial with respect to the weight function $w$ on the interval $[a, b]$, and let $\mathbf{x} = (x_0, \ldots, x_m)$. Define weights
+$$w_i := \int_a^b L_i(x; \mathbf{x}) w(x) dx$$ 
+> which is in fact $w_{i} : =\left< L_{i},w \right>$, i.e. the weight is determined by the interpolating poly $L_{i}$.
+
+for $i = 0, \ldots, m$. Then
+$$\int_a^b g(x) w(t) dt = \sum_{i=0}^{m} w_i g(x_i)$$ 
+for all $g \in \mathbb{P}_{2m+1}$.
+> given arbitrary nodes, any $g \in \mathbb{P}_{m}$ is equal to its own interpolating poly on the interpolation points $\mathbf{x}$  
+
+**Theorem**: The optimization problem $$\min_{p \in \mathbb{P}_n} \| p - f \|_w^2$$ is solved by $$p = \sum_{k=0}^{n} \frac{\langle f, p_k \rangle_w}{\langle p_k, p_k \rangle_w} p_k,$$ where $\{p_k\}_{k=0}^\infty$ is an orthogonal polynomial sequence with respect to the weight function $w$ on $[a, b]$. 
+- To implement this theorem, we need to compute integrals of the form $$\langle h_1, h_2 \rangle_w = \int_a^b h_1(x) h_2(x) w(x) dx,$$ **which can be approximated using Gaussian quadrature:** $$\langle h_1, h_2 \rangle_w \approx \sum_{i=0}^m w_i h_1(x_i) h_2(x_i).$$
+> this is why this quadrature matters.
