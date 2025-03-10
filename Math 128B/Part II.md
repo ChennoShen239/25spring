@@ -415,4 +415,541 @@ $$
 so we have $$
 p_{k} - \underbrace{ \sum_{i=1}^{m} C_{ki}q_{i} }_{ \text{since }q_{i }\equiv 0 ~\forall ~i>m } = a_{k}
 $$
- 
+- Meanwhile, let $E =(E_{ki})$ be a $(N+1)\times(n+1)$ matrix where both indices are zero-indexed and $$
+E_{ki}= \begin{cases}
+1 & i=k\leq n \\
+0, & o.w. \\  
+\end{cases}
+
+$$
+so we have $p_{k} = \sum_{ki}E_{ki}p_{i}$ and $$
+\sum_{i=0}^{n} E_{ki}p_{i} - \sum_{i=1}^{n}C_{ki}q_{i} = q_{k},\quad k=0,\dots N
+$$
+for example, we have $(m,n,N)= (3,3,6)$, then we have the 2 matirces $$
+C=\begin{pmatrix}
+0 & 0 & 0 \\
+a_{0} & 0 & 0 \\
+a_{1} & a_{0} & 0 \\
+a_{2} & a_{1} & a_{0}  \\
+a_{3} & a_{2} & a_{1} \\
+a_{4} & a_{3} & a_{2}  \\
+a_{5} & a_{4} & a_{3}
+ \end{pmatrix} ,\quad E= \begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+0  & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix}
+$$ in general we can write $$
+E = \begin{pmatrix}
+I_{n+1} \\
+0_{(N-n)\times(n+1)} 
+\end{pmatrix}
+
+
+$$
+then if we let $\mathbf{a} = (a_{0},\dots,a_{N})'$  and let $\mathbf{p}$ and $\mathbf{q}$ be the vectors we can rewrite the problem as $$
+E\mathbf{p} - C\mathbf{q} = \mathbf{a}
+$$ 
+or $$
+\underbrace{ (E-C) }_{ :=A }\begin{pmatrix}
+\mathbf{p} \\
+\mathbf{q} 
+\end{pmatrix} = \mathbf{a}
+$$ Then it turns to a problem of solving $A\mathbf{x} = \mathbf{a}$.
+
+## 28 Chebyshev Rational Approximation (8.4)
+
+- The Padé approximant, like Taylor polynomials, is based on an expansion around a base point (which we took to be $x=0$), leading to approximations that are of nonuniform quality over an interval such as $[-1, 1]$.
+- Assume we want to construct a rational approximation for $f$ of roughly uniform quality over $[-1, 1]$ (and we can reduce to this case from the general case $[a, b]$ by an appropriate linear transformation, as before).
+
+> - 垫近似（Padé approximant），类似于泰勒多项式，是基于某个基点（此处我们取为 $x=0$）的展开，导致在区间（如 $[-1, 1]$）上的近似质量不均匀。
+
+> - 假设我们希望构造一个关于函数$f$的有理近似，在区间$[-1, 1]$上具有大致均匀的质量（并且我们可以通过适当的线性变换将一般情况$[a, b]$简化为这种情形，如前所述）。
+### First Step: Replace Taylor Series with Chebyshev Expansions
+
+$$
+r(x) = \frac{\sum_{k=0}^n p_k T_k(x)}{\sum_{k=0}^m q_k T_k(x)},
+$$
+
+where, without loss of generality (WLOG), we can assume $q_0 = 1$.
+
+Again, we can extend $p_k$ and $q_k$ by zeros for $k > n$ and $k > m$, respectively, to obtain:
+
+$$
+r(x) = \frac{\sum_{k=0}^\infty p_k T_k(x)}{\sum_{k=0}^\infty q_k T_k(x)}.
+$$
+
+In fact, we will also extend $q_k$ by zeros for $k < 0$.
+
+Suppose that:
+
+$$
+f(x) = \sum_{k=0}^\infty a_k T_k(x),
+$$
+
+where the coefficients are defined as:
+
+$$
+a_k = \frac{\langle f, T_k \rangle_w}{\langle T_k, T_k \rangle_w},
+$$
+
+and $w$ is the Chebyshev weight function $w(x) = \frac{1}{\sqrt{1 - x^2}}$.
+
+- We shall only need to compute $a_0, \ldots, a_{N+m}$.
+- The numerators $\langle f, T_k \rangle_w$ can generally be obtained by Gauss-Chebyshev quadrature.
+- The denominators are problem-independent and can be computed directly as:
+> - 我们仅需计算$a_0, \ldots, a_{N+m}$。
+> - 分子$\langle f, T_k \rangle_w$通常可以通过高斯-切比雪夫求积法获得。
+> - 分母与问题无关，可直接计算为：
+$$
+\langle T_k, T_k \rangle_w = \begin{cases}
+\pi, & k = 0 \\
+\pi/2, & \text{otherwise}.
+\end{cases}
+$$
+
+### Idea: Expand in Chebyshev Polynomials
+
+Expand $f(x) q(x) - p(x)$ in the Chebyshev polynomials $T_0, T_1, \ldots$, and insist that all terms up to order $N$ vanish.
+
+Compute:
+
+$$
+\begin{aligned}
+f(x) q(x) - p(x) &= \left( \sum_{i=0}^\infty a_i T_i(x) \right) \left( \sum_{j=0}^\infty q_j T_j(x) \right) - \sum_{k=0}^\infty p_k T_k(x) \\
+&= \sum_{i,j=0}^\infty a_i q_j T_i(x) T_j(x) - \sum_{k=0}^\infty p_k T_k(x).
+\end{aligned}
+$$
+
+- We encounter an obstacle: unlike monomials where $x^i x^j = x^{i+j}$, $T_i T_j$ is not itself a Chebyshev polynomial.
+- However, we have the **important identity** (from homework):
+
+$$
+T_i T_j = \frac{1}{2} \left[ T_{i+j} + T_{|i-j|} \right],
+$$
+
+which is sufficient.
+
+### Continue Computing
+
+$$
+\begin{aligned}
+f q - p &= \frac{1}{2} \sum_{i,j=0}^\infty a_i q_j T_{i+j} + \frac{1}{2} \sum_{i,j=0}^\infty a_i q_j T_{|i-j|} - \sum_{k=0}^\infty p_k T_k \\
+&= \frac{1}{2} \underbrace{ \sum_{k=0}^\infty \left( \sum_{i=0}^k a_i q_{k-i} \right) }_{ k=i+j } T_k + \frac{1}{2} \underbrace{ \left( \sum_{i=0}^m a_i q_i \right) }_{ |i-j|=0 } T_0 + \frac{1}{2} \underbrace{ \sum_{k=1}^\infty \left( \sum_{i=0}^{m-k} a_i q_{i+k} \right) }_{ j-i=k } T_k \\
+&\quad + \frac{1}{2} \underbrace{ \sum_{k=1}^\infty \sum_{i=k}^{m+k} a_i q_{i-k} }_{ i-j=k } T_k - \sum_{k=0}^\infty p_k T_k.
+\end{aligned}
+$$
+
+This yields the equations: 
+
+- For $k = 0$:
+  $$
+  \sum_{i=0}^k a_i q_{k-i} + \sum_{i=0}^{m-k} a_i q_{i+k} - 2 p_k = 0,
+  $$
+- For $k \geq 1$:
+  $$
+  \sum_{i=0}^k a_i q_{k-i} + \sum_{i=0}^{m-k} a_i q_{i+k} + \sum_{i=k}^{m+k} a_i q_{i-k} - 2 p_k = 0.
+$$
+
+These are equivalent to:
+
+- For $k = 0$:
+  $$
+  \sum_{i=0}^k a_{k-i} q_i + \sum_{i=k}^m a_{i-k} q_i - 2 p_k = 0,
+  $$
+- For $k \geq 1$:
+  $$
+  \sum_{i=0}^k a_{k-i} q_i + \sum_{i=k}^m a_{i-k} q_i + \sum_{i=0}^m a_{i+k} q_i - 2 p_k = 0.
+$$
+
+This time, we ignore the constraint $q_0 = 1$ for now and treat $q_0$ as a variable temporarily.
+
+### Define Matrices
+
+Form the $(N+1) \times (m+1)$ matrices $B^{(1)} = (B_{ki}^{(1)})$, $B^{(2)} = (B_{ki}^{(2)})$, and $B^{(3)} = (B_{ki}^{(3)})$ with zero-indexed rows and columns, defined by:
+
+$$
+B_{ki}^{(1)} = \begin{cases}
+a_{k-i}, & i \leq k, \\
+0, & \text{otherwise},
+\end{cases} \quad
+B_{ki}^{(2)} = \begin{cases}
+a_{i-k}, & i \geq k, \\
+0, & \text{otherwise},
+\end{cases} \quad
+B_{ki}^{(3)} = \begin{cases}
+a_{i+k}, & k \geq 1, \\
+0, & \text{otherwise},
+\end{cases}
+$$
+
+and let:
+
+$$
+\tilde{C} = \frac{1}{2} \left( B^{(1)} + B^{(2)} + B^{(3)} \right).
+$$
+
+Then, letting $\tilde{\mathbf{q}} = (q_0, \ldots, q_m)^\top \in \mathbb{R}^{m+1}$ (now including $q_0$), we recover the equations:
+
+$$
+E \mathbf{p} - \tilde{C} \tilde{\mathbf{q}} = 0.
+$$
+
+Now, we reintroduce the constraint $q_0 = 1$ and let $\mathbf{c} \in \mathbb{R}^{N+1}$ and $C \in \mathbb{R}^{(N+1) \times m}$ be defined by the block equation:
+
+$$
+\tilde{C} = \begin{pmatrix} \mathbf{c} & C \end{pmatrix}, \quad \tilde{\mathbf{q}} = \begin{pmatrix} 1 \\ \mathbf{q} \end{pmatrix},
+$$
+
+to obtain:
+
+$$
+E \mathbf{p} - C \mathbf{q} = \mathbf{c}.
+$$
+
+### Vectorize the Equations
+
+We may vectorize again as:
+
+$$
+\underbrace{\begin{pmatrix} E & -C \end{pmatrix}}_{=: A} \begin{pmatrix} \mathbf{p} \\ \mathbf{q} \end{pmatrix} = \mathbf{c},
+$$
+
+to obtain the $A \mathbf{x} = \mathbf{c}$ format that can be solved for $\mathbf{x} = \begin{pmatrix} \mathbf{p} \\ \mathbf{q} \end{pmatrix}$.
+
+---
+
+# 29 Fourier Series (8.5)
+
+**Caution:** Notation here differs slightly from the book.
+
+- **Caution:** For the discussion of Fourier topics, we reserve the letter $i$ for the complex number ($i^2 = -1$).
+- We now consider functions $f: [-\pi, \pi] \to \mathbb{R}$ (by shifting and scaling, we can reduce to this domain from an arbitrary interval).
+
+It is useful to view the domain of $f$ as extending to the entire real line $\mathbb{R}$ by stipulating that it is $2\pi$-periodic, i.e., $f(x + 2\pi k) = f(x)$ for all $k \in \mathbb{Z}$.
+> 将函数$f$的定义域视为通过规定其为$2\pi$-周期的而扩展到整个实数轴$\mathbb{R}$是有用的，即对于所有$k \in \mathbb{Z}$，有$f(x + 2\pi k) = f(x)$。
+### Basis Functions
+
+Consider the functions:
+
+$$
+\phi_k(x) = \cos(kx), \quad k = 0, \ldots, n,
+$$
+
+so in particular $\phi_0 \equiv 1$, and:
+
+$$
+\psi_k(x) = \sin(kx), \quad k = 1, \ldots, n.
+$$
+
+- In fact, the collection $\{\phi_0, \ldots, \phi_n, \psi_1, \ldots, \psi_n\}$ is orthogonal with respect to the $L^2([-\pi, \pi])$ inner product. (In this section, we fix the notation $\langle \cdot, \cdot \rangle$ for this inner product.)
+  - This means $\langle \phi_k, \phi_l \rangle = 0$ whenever $k \neq l$, $\langle \psi_k, \psi_l \rangle = 0$ whenever $k \neq l$, and $\langle \phi_k, \psi_l \rangle = 0$ for all $k, l$.
+  - Additionally, $\langle \phi_0, \phi_0 \rangle = 2\pi$, $\langle \phi_k, \phi_k \rangle = \langle \psi_k, \psi_k \rangle = \pi$ for $k = 1, \ldots, n$.
+- The verification is similar to our verification of orthogonality for Chebyshev polynomials, so we’ll skip it.
+
+**Definition:** Set $\mathcal{T}_n := \text{span}(\phi_0, \ldots, \phi_n, \psi_1, \ldots, \psi_n)$ is called the set of trigonometric polynomials of degree $\leq n$. (We say a trigonometric polynomial in $\mathcal{T}_n$ has degree $n$ if the coefficient of either $\phi_n$ or $\psi_n$ is nonzero.)
+> **定义：** 集合$\mathcal{T}_n := \text{span}(\phi_0, \ldots, \phi_n, \psi_1, \ldots, \psi_n)$被称为次数$\leq n$的三角多项式集合。（我们说一个在$\mathcal{T}_n$中的三角多项式有次数$n$，如果$\phi_n$或$\psi_n$的系数非零。）
+
+
+- **Caution:** For some reason, the book excludes $\psi_n$ from $\mathcal{T}_n$, but this is unconventional and would complicate clarifying discussions below.
+
+### Orthogonal Projection
+
+Orthogonality ensures that the problem:
+
+$$
+\underset{\phi \in \mathcal{T}_n}{\operatorname*{min}} \|\phi - f\|^2
+$$
+
+is solved by:
+
+$$
+\phi = \frac{\langle f, \phi_0 \rangle}{\langle \phi_0, \phi_0 \rangle} \phi_0 + \sum_{k=1}^n \left[ \frac{\langle f, \phi_k \rangle}{\langle \phi_k, \phi_k \rangle} \phi_k + \frac{\langle f, \psi_k \rangle}{\langle \psi_k, \psi_k \rangle} \psi_k \right],
+$$
+
+or concretely:
+
+$$
+\phi(x) = \frac{a_0}{2} + \sum_{k=1}^n \left[ a_k \cos(kx) + b_k \sin(kx) \right],
+$$
+
+where:
+
+$$
+a_k = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos(kx) \, dx, \quad k = 0, \ldots, n,
+$$
+
+$$
+b_k = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin(kx) \, dx, \quad k = 1, \ldots, n.
+$$
+> notice that $a_{k} = \frac{\left< f,\phi_{k} \right>}{\left< \phi_{k},\phi_{k} \right>}$ 
+### Complex Perspective
+
+A clarifying perspective is gained by extending the range of our functions to complex numbers.
+
+We can extend the $L^2$ inner product to functions $g, h: [-\pi, \pi] \to \mathbb{C}$ via:
+
+$$
+\langle g, h \rangle = \int_{-\pi}^{\pi} g(x) \overline{h(x)} \, dx.
+$$
+
+**Note:** In general, an inner product over a complex vector space is linear in the first slot, with conjugate symmetry:
+
+$$
+\langle g, h \rangle = \overline{\langle h, g \rangle},
+$$
+
+implying conjugate linearity in the second slot:
+
+$$
+\langle g, h_1 + \lambda h_2 \rangle = \langle g, h_1 \rangle + \overline{\lambda} \langle g, h_2 \rangle.
+$$
+> **注意：** 一般来说，复向量空间上的内积在**第一个位置**是线性的，并具有共轭对称性：这意味着在**第二个位置**具有共轭线性：
+
+
+Define $e_k: [-\pi, \pi] \to \mathbb{C}$ by:
+
+$$
+e_k(x) = e^{ikx},
+$$
+
+for every $k \in \mathbb{Z}$.
+
+- In fact, $\langle e_k, e_l \rangle = 2\pi \delta_{kl}$, so the functions $\{e_{-n}, \ldots, e_n\}$ are orthogonal.
+- Verify this:
+
+$$
+\begin{aligned}
+\langle e_k, e_l \rangle &= \int_{-\pi}^{\pi} e_k(x) \overline{e_l(x)} \, dx \\
+&= \int_{-\pi}^{\pi} e^{ikx} e^{-ilx} \, dx \\
+&= \int_{-\pi}^{\pi} e^{i(k-l)x} \, dx.
+\end{aligned}
+$$
+
+  - If $k = l$, $e^{i(k-l)x} = 1$, and the integral is $2\pi$.
+  - Otherwise, $\langle e_k, e_l \rangle = \frac{1}{i(k-l)} \left[ e^{i(k-l)x} \right]_{x=-\pi}^{\pi} = 0$.
+> we can use Euler's Formula $e^{i\theta} = \cos\theta + i\sin\theta$
+
+**Theorem:** $\mathcal{T}_n \subset \mathcal{T}_n^\mathbb{C} := \text{span}^\mathbb{C}(\phi_0, \ldots, \phi_n, \psi_1, \ldots, \psi_n) = \text{span}^\mathbb{C}(e_{-n}, \ldots, e_n)$, where $\text{span}^\mathbb{C}$ indicates linear combinations with complex coefficients.
+
+> **定理：** $\mathcal{T}_n \subset \mathcal{T}_n^\mathbb{C} := \text{span}^\mathbb{C}(\phi_0, \ldots, \phi_n, \psi_1, \ldots, \psi_n) = \text{span}^\mathbb{C}(e_{-n}, \ldots, e_n)$，其中$\text{span}^\mathbb{C}$表示具有复数系数的线性组合。
+#### Proof
+
+- Note that $\phi_0 = e_0$.
+- It suffices to show that for $k \geq 1$, $\text{span}(\phi_k, \psi_k) = \text{span}(e_k, e_{-k})$.
+- Euler’s formula gives:
+
+$$
+e^{ikx} = \cos(kx) + i \sin(kx), \quad e^{-ikx} = \cos(kx) - i \sin(kx),
+$$
+
+implying $e_k, e_{-k} \in \text{span}(\phi_k, \psi_k)$, hence $\text{span}(\phi_k, \psi_k) \subset \text{span}(e_k, e_{-k})$.
+
+- Conversely, adding and subtracting yields:
+
+$$
+\cos(kx) = \frac{e^{ikx} + e^{-ikx}}{2}, \quad \sin(kx) = \frac{e^{ikx} - e^{-ikx}}{2i},
+$$
+
+proving $\phi_k, \psi_k \in \text{span}(e_k, e_{-k})$.
+
+ > #### 证明
+> 
+> - 注意到$\phi_0 = e_0$。
+> - 只需证明对于$k \geq 1$，有$\text{span}(\phi_k, \psi_k) = \text{span}(e_k, e_{-k})$。
+> - 欧拉公式给出：
+> 
+> $$
+ e^{ikx} = \cos(kx) + i \sin(kx), \quad e^{-ikx} = \cos(kx) - i \sin(kx),
+ $$
+> 
+> 这意味着$e_k, e_{-k} \in \text{span}(\phi_k, \psi_k)$，因此$\text{span}(\phi_k, \psi_k) \subset \text{span}(e_k, e_{-k})$。
+> 
+> - 反之，通过加减可得：
+> 
+>$$
+ \cos(kx) = \frac{e^{ikx} + e^{-ikx}}{2}, \quad \sin(kx) = \frac{e^{ikx} - e^{-ikx}}{2i},
+ $$
+> 
+> 这证明了$\phi_k, \psi_k \in \text{span}(e_k, e_{-k})$。
+
+It follows that:
+
+$$
+\underset{\phi \in \mathcal{T}_n^\mathbb{C}}{\operatorname*{min}} \|\phi - f\|^2
+$$
+
+is solved by:
+
+$$
+\phi = \sum_{k=-n}^n \frac{\langle f, e_k \rangle}{2\pi} e_k,
+$$
+
+or:
+
+$$
+\phi(x) = \sum_{k=-n}^n c_k e^{ikx},
+$$
+
+where:
+
+$$
+c_k = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) e^{-ikx} \, dx.
+$$
+
+#### Real-Valued Functions
+
+If $f$ is real-valued, the minimizer over $\mathcal{T}_n^\mathbb{C}$ coincides with that over $\mathcal{T}_n$, and we relate $c_k$ to $a_k, b_k$:
+
+- For $k = 0$:
+
+$$
+c_0 = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) \, dx = \frac{a_0}{2}.
+$$
+
+- For $k \geq 1$, using $e^{-ikx} = \cos(kx) - i \sin(kx)$:
+
+$$
+\begin{aligned}
+c_k &= \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) \cos(kx) \, dx - \frac{i}{2\pi} \int_{-\pi}^{\pi} f(x) \sin(kx) \, dx \\
+&= \frac{a_k - i b_k}{2},
+\end{aligned}
+$$
+
+and similarly, $c_{-k} = \frac{a_k + i b_k}{2}$.
+
+- Then:
+
+$$
+a_k = c_k + c_{-k}, \quad b_k = \frac{c_{-k} - c_k}{i}.
+$$
+
+#### Summary
+
+$$
+c_0 = \frac{a_0}{2}, \quad c_k = \frac{a_k - i b_k}{2}, \quad c_{-k} = \frac{a_k + i b_k}{2}, \quad k = 1, \ldots, n,
+$$
+
+and:
+
+$$
+a_0 = 2 c_0, \quad a_k = c_k + c_{-k}, \quad b_k = i (c_k - c_{-k}), \quad k = 1, \ldots, n.
+$$
+
+- In general, coefficients $c_k$ (or $a_k, b_k$) must be computed by numerical quadrature.
+- The best choice here is the **trapezoidal** rule on an equispaced grid:
+$$
+x_k = -\pi + k h, \quad k = 0, \ldots, M+1,
+$$
+> - 通常，系数$c_k$（或$a_k, b_k$）需要通过数值积分来计算。
+> - 这里最佳的选择是在等距网格上使用梯形法则：
+
+where $h = \frac{2\pi}{M+1}$ is the grid spacing.
+
+Concretely:
+
+$$
+\int_{-\pi}^{\pi} g(x) \, dx \approx h \sum_{k=0}^{M+1} \frac{g(x_k) + g(x_{k+1})}{2} = \frac{h}{2} \left[ g(x_0) + g(x_{M+1}) \right] + h \sum_{k=1}^M g(x_k).
+$$
+
+- This is exact for any trigonometric polynomial in $\mathcal{T}_M$, analogous to Gauss quadrature with $M+1$ points on $\mathbb{P}_{2M+1}$.
+- Since $f$ generally does not lie in $\mathcal{T}_M$ for finite $M$, we choose a large $M$ (possibly $M \gg n$) for an excellent approximation.
+> - 对于$\mathcal{T}_M$中的任何三角多项式，这都是精确的，类似于在$\mathbb{P}_{2M+1}$上使用$M+1$个点的高斯求积。
+> - 由于对于有限的$M$，函数$f$通常不属于$\mathcal{T}_M$，因此我们选择一个较大的$M$（可能$M \gg n$）以获得极好的近似。
+- If $f(-\pi) = f(\pi)$ (as in $2\pi$-periodicity), then $g(x_0) = g(x_{M+1})$, and the rule simplifies to:
+
+$$
+\int_{-\pi}^{\pi} g(x) \, dx \approx h \sum_{k=0}^M g(x_k),
+$$
+
+which is the left-endpoint Riemann sum!
+
+---
+
+# 30 Discrete Least Squares with Trigonometric Polynomials (8.5)
+
+Sometimes, we are given only a subsampling of a periodic function on an equispaced grid:
+> 有时，我们仅获得周期函数在等距网格上的子采样：
+$$
+x_j = -\pi + j h, \quad j = 0, \ldots, 2m-1,
+$$
+
+where $h = \frac{\pi}{m}$.
+
+- Note that $x_{2m} = \pi$, which is redundant assuming periodicity.
+- Suppose $y_j = f(x_j)$ for $j = 0, \ldots, 2m-1$.
+
+We want to perform discrete least squares using the data $(x_j, y_j)$, $j = 0, \ldots, 2m-1$, and basis functions $e_k(x) = e^{ikx}$.
+>我们希望使用数据点$(x_j, y_j)$，其中$j = 0, \ldots, 2m-1$，以及基函数$e_k(x) = e^{ikx}$，来执行离散最小二乘法。
+### Range of Index $k$
+
+Observe that for all $j = 0, \ldots, 2m-1$:
+
+$$
+\begin{aligned}
+e_{k+2m}(x_j) &= e^{ik x_j} e^{i 2m x_j} \\
+&= e^{ik x_j} e^{i 2m (-\pi + j \pi / m)} \\
+&= e^{ik x_j} e^{-i 2\pi m} e^{i 2\pi j} \\
+&= e^{ik x_j},
+\end{aligned}
+$$
+
+i.e., $e_{k+2m} = e_k$ on the grid.
+
+- It doesn’t make sense to choose a range for $k$ with more than $2m$ consecutive integers, as extras are **redundant**.
+- Choose $k = -m, \ldots, m-1$, giving $2m$ parameters to fit $2m$ points exactly.
+- After fitting, we can expand in $\{e_{-m}, \ldots, e_{m-1}\}$ to extrapolate to $[-\pi, \pi]$, zeroing out coefficients for a least squares fit in a smaller basis.
+> - 选择超过$2m$个连续整数的$k$范围是没有意义的，因为多余的范围是冗余的。
+> - 选择$k = -m, \ldots, m-1$，这样可以提供$2m$个参数来精确拟合$2m$个点。
+> - 拟合后，我们可以在$\{e_{-m}, \ldots, e_{m-1}\}$中展开，以将结果外推到$[-\pi, \pi]$区间，并将系数置零，以便在更小的基中进行最小二乘拟合。
+### Normal Equations
+
+The normal equations are $A \mathbf{c} = \mathbf{b}$, where:
+
+$$
+A_{kl} = \sum_{j=0}^{2m-1} \overline{e_k(x_j)} e_l(x_j), \quad b_k = \sum_{j=0}^{2m-1} \overline{e_k(x_j)} y_j,
+$$
+
+with $k, l$ from $-m, \ldots, m-1$. The least squares fit is:
+
+$$
+\phi(x) = \sum_{k=-m}^{m-1} c_k e_k(x) = \sum_{k=-m}^{m-1} c_k e^{ikx}.
+$$
+
+Concretely:
+
+$$
+\begin{aligned}
+b_k &= \sum_{j=0}^{2m-1} e^{-ik x_j} y_j \\
+&= \sum_{j=0}^{2m-1} e^{-ik (-\pi + j h)} y_j \\
+&= e^{ik \pi} \sum_{j=0}^{2m-1} e^{-i \frac{2\pi k j}{2m}} y_j,
+\end{aligned}
+$$
+
+and:
+
+$$
+\begin{aligned}
+A_{kl} &= \sum_{j=0}^{2m-1} e^{i (l-k) x_j} \\
+&= \sum_{j=0}^{2m-1} e^{i (l-k) (-\pi + j \pi / m)} \\
+&= e^{i (k-l) \pi} \sum_{j=0}^{2m-1} e^{i \frac{2\pi (l-k) j}{2m}}.
+\end{aligned}
+$$
+
+The sum $\sum_{j=0}^{2m-1} e^{i \frac{2\pi (l-k) j}{2m}}$ is geometric with $r = e^{i \frac{2\pi (l-k)}{2m}}$:
+
+- If $r \neq 1$ (i.e., $l-k$ not a multiple of $2m$), it equals $\frac{1 - r^{2m}}{1 - r} = 0$.
+- Since $k, l \in \{-m, \ldots, m-1\}$, $k - l$ is a multiple of $2m$ only if $k = l$.
+- When $k = l$, the sum is $2m$.
+
+Thus, $A_{kl} = 2m \delta_{kl}$, and $A = 2m I$.
+
+It follows that $\mathbf{c} = \frac{1}{2m} \mathbf{b}$, or:
+
+$$
+c_k = \frac{e^{ik \pi}}{2m} \sum_{j=0}^{2m-1} e^{-i \frac{2\pi k j}{2m}} y_j, \quad k = -m, \ldots, m-1.
+$$
