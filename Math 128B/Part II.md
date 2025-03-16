@@ -800,7 +800,7 @@ where:
 $$
 c_k = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) e^{-ikx} \, dx.
 $$
-
+> It's still the conclusion from the Gram-Schmit like process.
 #### Real-Valued Functions
 
 If $f$ is real-valued, the minimizer over $\mathcal{T}_n^\mathbb{C}$ coincides with that over $\mathcal{T}_n$, and we relate $c_k$ to $a_k, b_k$:

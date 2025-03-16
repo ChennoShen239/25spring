@@ -89,7 +89,31 @@ $$
 
 >这个定义通常被称为**有限覆盖性质**。然而，它非常抽象。在度量空间中，我们更倾向于使用以下等价但更实用的定义：
 
-**Definition 3.5.** A subset $K \subset X$ of a metric space $X$ is sequentially compact if every sequence in $K$ has a convergent subsequence whose limit belongs to $K$.
+**Theorem** (Compact set in $\mathbb{R}^{n}$) The following are equivalent:
+1. $K$ is closed and bounded
+2. $K$ is compact
+3. $K$ is sequentially compact
+> we can show this by $1 \implies 2\implies 3 \implies 1$
+
+> Proof.
+> 1. $1 \implies 2$:
+> 	2.  if $K$ is bounded, then we can find $a_{n}$ an $n$ cell in $\mathbb{R}^{n}$ s.t. $K \subset I$
+> 	3.  $K$ is then compact
+> 4. $2\implies 3$
+> 5. $3 \implies 1$:
+> 	6.  Assume $K$ is not bounded
+> 		7. . $\forall n>0$, there exists $x_{n} \in K$ s.t.$$ 		||x_{n}||_{2}>n
+	$$
+> 		8. so $(x_{n})$ does not have a limit point
+> 		9. so $(x_{n})$ makes $K$ not sequentially compact.
+> 		10. then $K$ must be bounded
+> 	11. sume $K$ is not closed ($K$ is closed $\iff$ $K' \subset K$)
+> 		12. there exists $x \in K'$ and $x \not\in K$ 
+> 		13. $\forall r_{n} =\frac{1}{n}$, $(B_{r_{n}}(x)  \}\setminus \{ x \})\cap K \ne \emptyset$, there exists $x_{n} \in B_{r_{n}}(x) \setminus \{ x \})$
+> 		14. Consider $(x_{n})$ infinite with $\lim_{ n \to \infty }x_{n}=x \not\in K$
+> 		15. then $K$ is not sequentially compact.
+		
+**Definition 3.5.** A subset $K \subset X$ of a metric space $X$ is **sequentially compact** if every sequence in $K$ has a convergent subsequence whose limit belongs to $K$.
 >**定义3.5.** 度量空间 $X$ 的子集 $K \subset X$ 是**序列紧致**的，如果 $K$ 中的每一个序列都存在一个收敛的子序列，且该子序列的极限属于 $K$。
 
 Compare this definition with the Bolzano-Weierstrass theorem in $\mathbb{R}$. This definition generalizes the Bolzano-Weierstrass theorem.
@@ -138,6 +162,17 @@ $$
 The proof of the following result is then completely analogous to the proof of the Bolzano-Weierstrass theorem for $\mathbb{R}$.
 
 **Theorem 3.3.** A subset $K \subset X$ of a metric space $X$ is sequentially compact if and only if it is **complete** and **totally bounded.**
+
+
+**Theorem** (Weierstrass)
+Every bounded infinite subset of $\mathbb{R}^n$ has a limit point.
+
+> Proof. $E$ bounded, infinite $E \subset I$ as an $n$ cell
+
+**Defintion** ($n$ cell)
+根据 Walter Rudin 的经典教材《数学分析原理》（Principles of Mathematical Analysis，1976年，第3版，第31页），n cell 被定义为 n 维超矩形。具体来说，如果对于 $i = 1, 2, ..., n$，有$a_i < b_i$，则满足 $a_i ≤ x_i ≤ b_i$ 的所有点 $x = (x_1, x_2, ..., x_n)$ 在$\mathbb{R}^{n}$ 中的集合被称为 n cell。这本质上是 n 个闭区间的笛卡尔积。
+
+
 
 ---
 
