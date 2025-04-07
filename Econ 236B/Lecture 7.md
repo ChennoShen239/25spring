@@ -35,3 +35,8 @@ Noisy information models and rational inattention: Foundation
 > 
 > The key ideas for the entropy approach 
 
+> [!PDF|yellow] [[Lecture_7.pdf#page=53&selection=80,1,81,1&color=yellow|Lecture_7, p.53]]
+> > elative difference 
+> 
+> Not the absolute difference
+

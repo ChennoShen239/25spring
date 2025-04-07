@@ -1,7 +1,11 @@
 {
-  "interfaceFontFamily": "Canela Text",
-  "textFontFamily": "Canela Text",
+  "interfaceFontFamily": "Palatino",
+  "textFontFamily": "Palatino",
   "cssTheme": "Things",
   "theme": "moonstone",
-  "baseFontSize": 20
+  "baseFontSize": 20,
+  "monospaceFontFamily": "Hack Nerd Font Mono",
+  "translucency": false,
+  "nativeMenus": true,
+  "enabledCssSnippets": []
 }

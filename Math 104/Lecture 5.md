@@ -112,3 +112,8 @@ $$
 		3. since $a$ is a limit point, there exists such sequence $(x_{n})  \subseteq A,x_{n} \to a$
 		4. by sequential compactness, $(x_{n})$ must have a convergent subsequence $(x_{n_{k}})$ such that $x_{n_{k}}\to b \in A$.
 		5. then we must have $a=b$, which contradicts $a \not\in A$.
+> [!PDF|yellow] [[Ch5.pdf#page=9&selection=284,0,284,11&color=yellow|Ch5, p.9]]
+> > Theorem 4.2
+> 
+> For proof of this, just use the definition and verify **Sequential Compactness**
+
