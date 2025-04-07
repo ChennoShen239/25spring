@@ -224,7 +224,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 730.5
+    "width": 451.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -242,7 +242,7 @@
       "translate:Open translation view": false
     }
   },
-  "active": "abf89fc8e2876c1e",
+  "active": "4d0abe5cc400e4a2",
   "lastOpenFiles": [
     "Lecture 9.md",
     "Econ 236B/Lecture_9.pdf",
