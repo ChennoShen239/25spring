@@ -107,7 +107,13 @@ $$
 \end{align}
 $$
 - So this is quite rapid convergence for smooth functions
-**Gaussian Quadrature good for given n, Simpson good for given tolerance.**
+> it's easier to understand that $$
+\frac{(n!)^{3}(n-1)!}{(2n+1)!(2n-1)!}
+$$quickly converge to 0 since basically they have the same numbers but decays in geometric rate. The rest of the $\mathbf{R}$ will not decay and therefore remains in the $O$ part
+
+**Gaussian Quadrature good for given $n$, Simpson good for given tolerance.**
+
+
 ### Double Integral = Integral of Integral function
 
 $$\int\int_R f(x,y) dA = \int_a^b \left( \int_c^d f(x,y) dy \right) dx$$
@@ -141,12 +147,21 @@ Let $R = \left[ a,b \right]\times \left[ c,d \right]$, by Simpson's Rule we'll h
 (y_{1},y_{2},y_{3})  & = \left( c, \frac{c+d}{2},d \right)
 \end{align}
 $$
+> here let's review about the Simpson's rule: 
+> - for the simple Simpson's rule, we just take 3 points and assign them weights as $\left( \frac{1}{6}h, \frac{2}{3}h, \frac{1}{6}h \right)$
+> - for the *composite Simpson's rule*, we basically divide the $[a,b]$ into $n$ equal-spaced intervals and apply the simple Simpson's rule to each. In the end the approximation will look like this $$
+	\int _{a}^{b} f(x)\, dx =\frac{h}{3} \left[ f(x_{0}) + 4\sum_{i=1,odd}^{n-1} f(x_{i}) + 2 \sum_{i=1,even}^{n-2}f (x_{i}) + f(x_{n})  \right]
+$$where we have $h = \frac{b-a}{n},x_{i} = a+i h$
+
+
 $$m=n=3, g(x) \overset{\text{def}}{=} \int_c^d f(x,y) dy$$
 
 Simpson's Rule on $[a,b]$:
 $$(x_1, x_2, x_3) = (a, \frac{a+b}{2}, b).$$
 $$\int_a^b g(x) dx = c_1 g(x_1) + c_2 g(x_2) + c_3 g(x_3) - \frac{h^5}{90} g^{(4)}(\xi),$$
 $$h = \frac{b-a}{2}, \quad (c_1, c_2, c_3) = \frac{h}{3}(1, 4, 1).$$
+> just keep in mind there's a $-\frac{h^{5}}{90}g^{(4)}(\xi)$ !
+
 
 Simpson's Rule on $[c,d]$:
 $$(y_1, y_2, y_3) = (c, \frac{c+d}{2}, d).$$
@@ -155,10 +170,11 @@ $$k = \frac{d-c}{2}, \quad (\widehat{c}_1, \widehat{c}_2, \widehat{c}_3) = \frac
 $$
 \begin{aligned}
  \iint_Rf(x,y)dA&=\left(\sum_{i=1}^n\sum_{j=1}^mc_i\hat{c}_jf(x_i,y_j)\right) -\frac{k^4(d-c)}{180}\left(\sum_{i=1}^mc_i\frac{\partial^4f}{\partial^4y}(x_i,\eta_i)\right)-\frac{h^4(b-a)}{180}\int_c^d\frac{\partial^4f}{\partial^4x}(\xi,y)dy \\
- & =\left(\sum_{i=1}^n\sum_{j=1}^mc_i\hat{c}_jf(x_i,y_j)\right)  -\frac{k^4(d-c)}{180}\left(\sum_{i=1}^mc_i\frac{\partial^4f}{\partial^4y}(\hat{x},\hat{y})\right)-\frac{h^4(b-a)}{180}(d-c)\frac{\partial^4f}{\partial^4x}(\xi,\eta) \\
+ & =\left(\sum_{i=1}^n\sum_{j=1}^mc_i\hat{c}_jf(x_i,y_j)\right)  -\frac{k^4(d-c)}{180}\left(\underbrace{ \sum_{i=1}^mc_i }_{ \text{sum to }(b -a ) }\underbrace{ \frac{\partial^4f}{\partial^4y}(\hat{x},\hat{y}) }_{ \text{independent of } i}\right)-\frac{h^4(b-a)}{180}\underbrace{ (d-c)\frac{\partial^4f}{\partial^4x}(\xi,\eta)  }_{ \text{MVT for integrals} }\\
  & =\sum_{i=1}^n\sum_{j=1}^mc_i\hat{c}_jf(x_i,y_j)  -\underbrace{ \frac{(b-a)(d-c)}{180}\left(k^4\frac{\partial^4f}{\partial^4y}(\hat{x},\hat{y})+h^4\frac{\partial^4f}{\partial^4x}(\xi,\eta)\right). }_{ \text{error term} }
 \end{aligned}
 $$
+
 
 - **Error bounds** can be derived from here. For example:
 $$\int \int_R \log(x + 2y) \, dA$$ with $n = 7$, $m = 5$
@@ -175,6 +191,7 @@ Quad\_Error  & = \frac{(b-a)(d-c)}{180} \Biggl[ k^4 \frac{\partial^4 f}{\partial
  & \approx 1.328 \times 10^{-4}
 \end{align}
 $$
+> theoretical error bound
 ### 2D Gaussian Quadratures
 
 We have the definition $$
@@ -202,6 +219,11 @@ $$
 \iint_{R} fdA \approx \frac{(b-a)(d-c)}{4} \sum_{i=1}^{n} \sum_{j=1}^{m} c_{i}\hat{c}_{j}f(x_{i},y_{j})
 $$
 **Gaussian quadrature is more accurate**
+> additional calculation:
+> - to calculate the weights $c_{j}$ s we can use this formula $$
+c_{i} = \frac{2}{(1-x_{j}^{2})[P_{n}'(x_{j})]^{2}}
+$$where $x_{j}$ are the roots for the Legendre polynomials
+> - it seems that we'll be given the table?
 
 ## Initial Value ODE
 
@@ -210,6 +232,7 @@ $$
 **Definition**: function $f(t, y)$ satisfies a Lipschitz condition in the variable $y$ on a set $D \subset \mathbb{R}^2$ if a constant $L > 0$ exists with
 $$|f(t, y_1) - f(t, y_2)| \leq L |y_1 - y_2|,$$
 whenever $(t, y_1), (t, y_2)$ are in $D$. $L$ is Lipschitz constant.
+> you can't be forgetting this after the review of the conflict cost paper
 
 **Example** 1: Show that $f(t, y) = t|y|$ satisfies a Lipschitz condition on the region
 $$D = \{(t, y) \mid 0 \leq t \leq T\}.$$
@@ -218,15 +241,24 @@ Solution: For any $(t, y_1), (t, y_2)$ in $D$,
 $$|f(t, y_1) - f(t, y_2)| = |t|y_1| - t|y_2|| \leq t |y_1 - y_2| \leq L |y_1 - y_2|,$$
 for $L = T$.
 **Example** 2: to show Lipschitz condition is not satisfied on $D=\left\{ (t,y)|0\leq t\leq T \right\}$ for $f = ty^{2}$. 
-
+Solution: just note that $$
+\lvert f(t,y_{1}) - f(t,y_{2}) \rvert  = t \lvert y_{1}^{2} - y_{2}^{2} \rvert  = t \lvert y_{1} + y_{2} \rvert \lvert y_{1} - y_{2} \rvert 
+$$
+but $t \lvert y_{1} + y_{3} \rvert$ can be arbitrarily large.
 ### Convex Set
 **Definition**: a set $D \in \mathbb{R}^{2}$ is convex if whenever $(t_{1},y_{1})$ and $(t_{2},y_{2})$ are in $D$, then $$
 (1-\lambda) (t_{1},y_{1}) +\lambda (t_{2},y_{2}) \in D\quad \forall \lambda \in[0,1]
 $$
+> the whole line is in the set
+
 **Theorem**: suppose $f(t,y)$ is defined on  a convex set $D \in \mathbb{R}^{2}$, then if a constant $L>0$ exists with $$
 \left| \frac{ \partial f }{ \partial y } (t,y)\right|\leq L \quad \forall (t,y) \in D
 $$
 then $f$ satisfies a Lipschitz condition with Lipschitz constant $L$.
+
+> proof of sketch: just use the mean value theorem, $$
+\lvert f(t,y_{1})- f(t,y_{2}) \rvert  = \frac{ \partial f }{ \partial y }(t,\xi) \lvert y_{1} - y_{2} \rvert 
+$$where $\xi \in[y_{1},y_{2}]$
 
 **Still the same** $f = ty^{2}$,  we can prove it satisfies Lipschitz condition on the region $$
 D= \left\{ (t,y)| 0\leq t\leq T,-Y\leq y\leq Y \right\} 
@@ -268,6 +300,9 @@ if $f$ is continuous and satisfies a Lipschitz condition in the variable $y$ on 
 \frac{ \partial y }{ \partial t }  = f(t,y), t \in[a,b] \quad y(a)= \alpha
 $$
 is well-posed.
+
+> this is way too hard to prove!
+
 **Example**: show that the initial-value problem $$
 \frac{ \partial y }{ \partial t } = y - t^{2}+1,t\in[0,2]
 $$

@@ -9,13 +9,9 @@ This is the course note for ECON 236B, lecture 9. The note should be used togeth
 > > Law of iterated expectations hold 
 > 
 > Since we have the FIRE settings, 
-> $$\mathbb{E}[X] = E[E[X|Y]] $$
+> $$\mathbb{E}[X] = E[E[X|Y]]$$
 > 
-> More precisely is this $$
-E_{t}[X] = E_{t}[E_{t+1}[X]]
-$$
-
-
+> More precisely is this $$E_{t}[X] = E_{t}[E_{t+1}[X]]$$
 
 > [!PDF|yellow] [[Lecture_9.pdf#page=9&selection=13,2,26,0&color=yellow|Lecture_9, p.9]]
 > > (1 − β )ai,t 
@@ -38,8 +34,6 @@ $$
 > 
 > other's info $\to$  other's action $\to$  my action
 
-
-
 > [!PDF|yellow] [[Lecture_9.pdf#page=15&selection=95,1,96,9&color=yellow|Lecture_9, p.15]]
 > > Noisy REE
 > 
@@ -54,8 +48,6 @@ $$
 > >  λ = σ 2 θ σ 2 θ +σ 2 ε ∈ [0, 1].
 > 
 > Under react corresponds to the survey findings
-
-
 
 > [!PDF|yellow] [[Lecture_9.pdf#page=17&selection=76,0,82,7&color=yellow|Lecture_9, p.17]]
 > > the absolute size of the GE effect is reduced
@@ -78,7 +70,6 @@ $$
 > If your action is closer to others' then you get a higher utility
 
 Therefore even if we have a more precise public signal, it's not improve welfare since the agents impose too much attention on public signals, therefore behaving bad at looking at their own signals and eventually deviates from it's private signal
-
 
 > [!PDF|yellow] [[Lecture_9.pdf#page=28&selection=15,0,19,1&color=yellow|Lecture_9, p.28]]
 > > The winner is the person whose chosen number is the closest to the mean of all chosen numbers multiplied by a commonly known parameter, p.

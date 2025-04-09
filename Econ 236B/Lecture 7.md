@@ -5,8 +5,6 @@ Noisy information models and rational inattention: Foundation
 > 
 > likely a difference between human intelligence and AI
 
-
-
 > [!PDF|] [[Lecture_7.pdf#page=12&selection=126,0,131,11|Lecture_7, p.12]]
 > > Note log2 is concave.
 > 

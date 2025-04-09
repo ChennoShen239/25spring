@@ -8,45 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "abf89fc8e2876c1e",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          },
-          {
             "id": "8f16817d2796cd6b",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
-            }
-          }
-        ]
-      },
-      {
-        "id": "c4932179ab876aef",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "2c2607069d8e4aa8",
-            "type": "leaf",
-            "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Econ 236B/Lecture_9.pdf",
-                "page": 56,
-                "left": -29,
-                "top": 83,
-                "zoom": 0.5126305554269387
+                "file": "Math 128A/Lecture 10.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "Lecture_9"
+              "icon": "lucide-file",
+              "title": "Lecture 10"
             }
           }
         ]
@@ -242,16 +214,19 @@
       "translate:Open translation view": false
     }
   },
-  "active": "4d0abe5cc400e4a2",
+  "active": "8f16817d2796cd6b",
   "lastOpenFiles": [
-    "Lecture 9.md",
-    "Econ 236B/Lecture_9.pdf",
-    "Math 128A/Lecture 10.md",
-    "Econ 236B/Lecture 7.md",
+    "Math 128A/Lecture 9.md",
     "Math 128A/Lecture 8.md",
+    "Math 128A/Lecture 7.md",
+    "Econ 236B/Lecture 7.md",
+    "Lecture 7.pdf",
+    "Econ 236B/Lecture 9.md",
+    "Lecture 9.pdf",
+    "Math 128A/Lecture 10.md",
+    "Econ 236B/Lecture_9.pdf",
     "Math 128B/Part III.md",
     "Screenshot 2025-04-02 at 15.40.23.png",
-    "Math 128A/Lecture 9.md",
     "Screenshot 2025-03-31 at 20.26.45.png",
     "Math 104/Ch5.pdf",
     "Math 128B/Part II.md",
@@ -273,17 +248,14 @@
     "Screenshot 2025-03-15 at 17.37.15.png",
     "Screenshot 2025-03-15 at 17.08.09.png",
     "Screenshot 2025-03-15 at 16.30.19.png",
-    "Math 128A/Lecture 7.md",
     "Screenshot 2025-03-15 at 15.23.36.png",
     "Econ 236B/The Intertemporal Keynesian Cross.md",
     "Econ 236B/Monetary Policy According to HANK.md",
     "Ch4.pdf",
     "Econ 236B/Lecture_6b.pdf",
     "Econ 236B",
-    "Math 128B",
     "Math 128A/Lecture 6.md",
     "Math 128A/Lecture 5.md",
-    "Math 128A",
     "欢迎.md",
     "2025-03-05.md",
     "未命名.canvas"

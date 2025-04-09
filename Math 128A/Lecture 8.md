@@ -225,7 +225,10 @@ $$
   $$
   P_0(x) = 1, \quad P_1(x) = x, \quad (n+1) P_{n+1}(x) = (2n+1) x P_n(x) - n P_{n-1}(x)
   $$
+> this one is particularly important
+
 - **Properties**: $P_n(x)$ has degree $n$, with $n$ distinct roots in $(-1, 1)$.
+	- so we use the $n$ roots as the $\left\{ x_{j} \right\}_{j=1}^{n}$ for the quadrature
 - **Orthogonality**:
 	- mutually orthogonal:
 	$$
@@ -251,6 +254,8 @@ $$
       $$
       \int_{-1}^1 R(x) \, dx = \sum_{j=1}^n c_j R(x_j) = \sum_{j=1}^n c_j P(x_j)
       $$
+>用 Legendre 多项式的根作为节点，是因为它们**与正交性天然兼容**，能“杀掉”积分中的高阶项、最大程度地提升精度，而且误差项最小，是构造高斯求积公式时的最优选择。
+
 
 ### Hermite Interpolation with Legendre Roots
 
@@ -263,6 +268,30 @@ $$
   $$
   f(x) = H(x) + \underbrace{ \frac{f^{(2n)}(\xi(x))}{(2n)!} (x - x_1)^2 \cdots (x - x_n)^2 }_{ :=R(x) }
   $$
+**Review**: construction of Hermite interpolation polynomials
+- our goal is $$
+H(x) = \sum_{i=1}^{n} f(x_{j})h_{j}(x) + f'(x_{j})k_{j}(x)
+$$
+- to construct the $h_{j}$ and $k_{j}$ here, we first need Lagrange basis poly: $$
+\ell_{j}(x) = \prod_{i=1,i\neq j}^{n} \frac{x-x_{i}}{x_{j}-x_{i}} 
+$$
+so that $$
+\ell_{j}(x) = \begin{cases}
+1 & x=x_{j} \\
+0 & o.w.
+\end{cases}
+$$
+- so basically we want $$
+h_{j}(x_{j}) = 1,h_{j}'(x_{j})=0,k_{j}(x_{j})=0,k_{j}'(x_{j}) =1
+$$
+- then we have this $$
+\begin{align}
+h_{j}(x)  & = [1-2\ell'_{j}(x_{j})(x-x_{j})] \ell_{j}(x)^{2} \\
+k_{j}(x) & = (x-x_{j})\ell_{j}(x)^{2}
+\end{align}
+$$
+- and therefore we get the Hermite poly using above steps
+
 
 ### Gaussian Quadrature Error
 
