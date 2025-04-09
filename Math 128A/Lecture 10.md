@@ -1,5 +1,5 @@
 ### Euler's Method
-The problem is $$
+The problem is now $$
 \frac{ \partial y }{ \partial t }  = f(t,y),t\in[a,b],y(a)= \alpha
 $$
 so what we do is to choose a positive integer $N$, and select **mesh points** (grid points)$$
