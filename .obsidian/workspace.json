@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math 128A/Lecture 10.md",
+                "file": "Math 104/Lecture 5.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lecture 10"
+              "title": "Lecture 5"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 201.50271224975586
+    "width": 201.50271224975586,
+    "collapsed": true
   },
   "right": {
     "id": "707048cafdbf033b",
@@ -165,10 +166,10 @@
               "type": "pdf",
               "state": {
                 "file": "Math 104/Ch5.pdf",
-                "page": 9,
-                "left": -18,
-                "top": 487,
-                "zoom": 0.8455882352941176
+                "page": 12,
+                "left": 108,
+                "top": 733,
+                "zoom": 1.58
               },
               "icon": "lucide-file-text",
               "title": "Ch5"
@@ -182,8 +183,8 @@
               "state": {
                 "file": "Econ 236B/Lecture_7.pdf",
                 "page": 63,
-                "left": -18,
-                "top": 5,
+                "left": -4,
+                "top": 95,
                 "zoom": 1.14
               },
               "icon": "lucide-file-text",
@@ -195,7 +196,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 451.5
+    "width": 846.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -213,13 +214,17 @@
       "translate:Open translation view": false
     }
   },
-  "active": "8f16817d2796cd6b",
+  "active": "4d0abe5cc400e4a2",
   "lastOpenFiles": [
+    "Screenshot 2025-04-10 at 5.59.35 PM.png",
+    "Math 104/Ch5.pdf",
+    "Math 104/Lecture 5.md",
+    "Econ 236B/Lecture_7.pdf",
+    "Math 128A/Lecture 10.md",
     "Math 128A/Lecture 9.md",
     "output (1).png",
     "output.png",
     "Math 128A/Lecture 8.md",
-    "Math 128A/Lecture 10.md",
     "Math 128A/Lecture 7.md",
     "Econ 236B/Lecture 7.md",
     "Lecture 7.pdf",
@@ -229,13 +234,10 @@
     "Math 128B/Part III.md",
     "Screenshot 2025-04-02 at 15.40.23.png",
     "Screenshot 2025-03-31 at 20.26.45.png",
-    "Math 104/Ch5.pdf",
     "Math 128B/Part II.md",
-    "Math 104/Lecture 5.md",
     "Math 104/Ch4.pdf",
     "Econ 236B/Lecture_8.pdf",
     "Econ 236B/Lecture 8.md",
-    "Econ 236B/Lecture_7.pdf",
     "Math 104/Practice 1.md",
     "Math 104/Midterm Review.md",
     "conflict-files-obsidian-git.md",

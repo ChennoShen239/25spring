@@ -117,3 +117,16 @@ $$
 > 
 > For proof of this, just use the definition and verify **Sequential Compactness**
 
+> [!PDF|] [[Ch5.pdf#page=11&selection=141,32,141,75|Ch5, p.11]]
+> >  it needn’t attain its supremum or infimum.
+> 
+> The key is that you can't get the maximum or minimum in $\mathbf{K}$
+
+> [!PDF|yellow] [[Ch5.pdf#page=11&selection=351,0,352,1&color=yellow|Ch5, p.11]]
+> > Theorem 4.4. 
+> 
+> Uniformly continuous $f$ given $K \subset \mathbb{R}$ is compact
+
+![[Screenshot 2025-04-10 at 5.59.35 PM.png]]
+> so it's likely you may need this
+
