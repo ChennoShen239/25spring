@@ -130,3 +130,56 @@ $$
 ![[Screenshot 2025-04-10 at 5.59.35 PM.png]]
 > so it's likely you may need this
 
+The main idea of the proof is just to construct 2 different sequences $\left\{ x_{n} \right\}_{n=1}^{\infty}, \left\{ y_{n} \right\}_{n=1}^{\infty}$ so that they share the same limit, then we prove they can't have different image limits.
+
+> [!PDF|yellow] [[Ch5.pdf#page=12&selection=362,0,366,0&color=yellow|Ch5, p.12]]
+> > Theorem 5.1 (Intermediate value).
+> 
+> The proof is pretty simple, just define $c= \sup{E}\in[a,b]$ and prove $f(c) =0$
+
+> [!PDF|red] [[Ch5.pdf#page=14&selection=92,0,97,0&color=red|Ch5, p.14]]
+> > Theorem 5.2 (Intermediate value theorem VERY IMPORTANT!). 
+> 
+> Here we have several requirements:
+> 1. $[a,b]$ is closed and bounded
+> 2. $d \in(f(a),f(b))$
+> 3. $c \in(a,b)$ such that $f(c)=d$
+
+> [!PDF|yellow] [[Ch5.pdf#page=14&selection=289,0,290,0&color=yellow|Ch5, p.14]]
+> > Theorem 5.3.
+> 
+> This is like the special case for Theorem 4.2
+
+> [!PDF|yellow] [[Ch5.pdf#page=15&selection=321,0,322,1&color=yellow|Ch5, p.15]]
+> > Theorem 6.1. 
+> 
+> we first construct an interval $E$ here, then we prove the
+>  $$\lim_{ x \to c^{-} } f(x) = \sup{E}$$
+> result
+> we care about the least upper bound of $E$, so it's enough to give an upper bound for proving the existence of $\sup{E}$.
+> 
+
+
+> [!PDF|yellow] [[Ch5.pdf#page=16&selection=223,0,223,36&color=yellow|Ch5, p.16]]
+> > We leave the details as an exercise.
+> 
+> Let's do this!
+
+1. Since $c\in I$ is an interior point of $I$, so the set $$
+\mathbf{F} = \left\{ f(x): x \in I ,x>c \right\} 
+$$is non-empty
+2. since $f$ is monotonically increasing, we have $f(x)\geq f(c)$ for all $x>c$, then $F$ has an lower bound $f(c)$.
+3. by the completeness of $\mathbb{R}$, we know $R = \inf{\mathbf{F}}$ exists, we now try to prove $$
+\lim_{ x \to c^{+} } f(x) = R
+$$
+4. let $\epsilon>0$ be arbitrary positive number, since $R$ is the infimum of $\mathbf{F}$, so there exists $y_{0} \in \mathbf{F}$ such that $R\leq y_{0}<R+\epsilon$. 
+5. Since $y_{0} \in \mathbf{F}$, we know there exists a $x_{0}>c$ such that $f(x_{0})=y_{0}$, then let $\delta = x_{0}-c>0$ , for any $x \in(c,c+\delta)\cap I$, we know  $$
+R\leq f(x) \leq f(x_{0} )<R+\epsilon
+$$
+6. that is, $\forall x \in(c,c+\delta)$, we have $f(x) \in[R,R+\epsilon)$
+7. that is, $$
+\lim_{ x \to c^+ } f(x) = R = \inf{\mathbf{F}}
+$$
+
+
+
