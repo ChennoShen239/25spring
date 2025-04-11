@@ -37,7 +37,7 @@ Therefore $$
 		\int _{-1}^{1}P(x) \, dx  &  = \int _{-1}^{1}(P_{n }Q + R) \, dx  \tag{from (2)}\\
  & = \int _{-1}^{1} R \, dx \tag{from (1)}\\
  & = \sum_{i=1}^{n} c_{i}R(x_{i})  \tag{Gaussian quadrature}\\
- &  = \sum_{i=1}^{n }  c_{i}P(x_{i}) 
+ &  = \sum_{i=1}^{n }  c_{i}P(x_{i})  \tag{Legendre nodes}
 \end{align}
 
 $$
@@ -148,9 +148,9 @@ Let $R = \left[ a,b \right]\times \left[ c,d \right]$, by Simpson's Rule we'll h
 \end{align}
 $$
 > here let's review about the Simpson's rule: 
-> - for the simple Simpson's rule, we just take 3 points and assign them weights as $\left( \frac{1}{6}h, \frac{2}{3}h, \frac{1}{6}h \right)$
+> - for the simple Simpson's rule, we just take 3 points and assign them weights as $\left( \frac{1}{6}h, \frac{4}{6}h, \frac{1}{6}h \right)$
 > - for the *composite Simpson's rule*, we basically divide the $[a,b]$ into $n$ equal-spaced intervals and apply the simple Simpson's rule to each. In the end the approximation will look like this $$
-	\int _{a}^{b} f(x)\, dx =\frac{h}{3} \left[ f(x_{0}) + 4\sum_{i=1,odd}^{n-1} f(x_{i}) + 2 \sum_{i=1,even}^{n-2}f (x_{i}) + f(x_{n})  \right]
+	\int _{a}^{b} f(x)\, dx =\frac{h}{3} \left[ f(x_{0}) + 4\sum_{i=1,odd}^{n-1} f(x_{i}) + 2 \sum_{i=2,even}^{n-2}f (x_{i}) + f(x_{n})  \right]
 $$where we have $h = \frac{b-a}{n},x_{i} = a+i h$
 
 
@@ -162,6 +162,30 @@ $$\int_a^b g(x) dx = c_1 g(x_1) + c_2 g(x_2) + c_3 g(x_3) - \frac{h^5}{90} g^{(4
 $$h = \frac{b-a}{2}, \quad (c_1, c_2, c_3) = \frac{h}{3}(1, 4, 1).$$
 > just keep in mind there's a $-\frac{h^{5}}{90}g^{(4)}(\xi)$ !
 
+> to simply derive this:
+> 真实积分为：
+> $$I = 2h g(m) + \frac{h^3}{3} g''(m) + \frac{h^5}{60} g^{(4)}(m) + \cdots.$$
+> Simpson公式采用三点插值，其公式（写成 $h=\frac{b-a}{2}$）为
+> $$S = \frac{h}{3}\left[g(m-h) + 4g(m) + g(m+h)\right].$$
+> 对$g(m\pm h)$也做泰勒展开：
+> $$g(m\pm h) = g(m) \pm hg'(m) + \frac{h^2}{2}g''(m) \pm \frac{h^3}{6}g'''(m) + \frac{h^4}{24}g^{(4)}(m) + \cdots.$$
+> 将$g(m-h)$和$g(m+h)$相加，可以得到：
+> $$g(m-h) + g(m+h) = 2g(m) + h^2g''(m) + \frac{h^4}{12}g^{(4)}(m) + \cdots.$$
+> 因此Simpson公式变为：
+> $$S = \frac{h}{3}\left[2g(m) + h^2g''(m) + \frac{h^4}{12}g^{(4)}(m) + 4g(m)\right] = \frac{h}{3}\left[6g(m) + h^2g''(m) + \frac{h^4}{12}g^{(4)}(m)\right].$$
+> 即
+> $$S = 2h g(m) + \frac{h^3}{3} g''(m) + \frac{h^5}{36} g^{(4)}(m) + \cdots.$$
+> 现在比较真实积分$I$和Simpson近似$S$的差异：
+> $$I - S = \left(2h g(m) + \frac{h^3}{3} g''(m) + \frac{h^5}{60} g^{(4)}(m) + \cdots\right) - \left(2h g(m) + \frac{h^3}{3} g''(m) + \frac{h^5}{36} g^{(4)}(m) + \cdots\right).$$
+> 因此主要的差别来自四次项：
+> $$I - S = \left( \frac{1}{60} - \frac{1}{36} \right) h^5 g^{(4)}(m) + \cdots$$
+> 计算系数：
+> $$\frac{1}{60} - \frac{1}{36} = \frac{6-10}{360} = -\frac{4}{360} = -\frac{1}{90}$$
+> 所以误差为
+> $$I - S = -\frac{h^5}{90} g^{(4)}(m) + \cdots$$
+> 由于实际情况中 $g^{(4)}$ 的取值可能在整个区间内变化，根据中值定理，我们可引入一个介于$a$ 和$b$之间的点 $\xi$ 来表示：
+> $$I - S = -\frac{h^5}{90} g^{(4)}(\xi)$$
+> 这就是Simpson公式中误差项的由来。误差项表明Simpson公式在积分时对四阶及更高阶的项会产生误差，其大小与$h^5$ 和$g^{(4)}$ 的值成正比。
 
 Simpson's Rule on $[c,d]$:
 $$(y_1, y_2, y_3) = (c, \frac{c+d}{2}, d).$$
@@ -199,7 +223,7 @@ R = [a,b]\times[c,d]$$
 and the integral we want is $$
 \iint_{R}f(x,y)dA
 	$$
-we do s simple substitution $$
+we do a simple substitution $$
 x  =\frac{a+b}{2}+\frac{b-a}{2}u,\quad y=\frac{c+d}{2}+\frac{d-c}{2}v\quad\mathrm{for}\quad u,v\in[-1,1]. 
 $$
 then double integral becomes $$
@@ -293,6 +317,8 @@ $$|z(t)-y(t)| < k\varepsilon \quad \text{for all } t \text{ in } [a,b].$$
 > 1. a unique ODE solution exists
 > 2. small changes (perturbation) to  ODE imply small changes to solution
 
+![[output.png]]
+
 **Theorem**: Suppose $$
 D = [a,b] \times \mathbb{R}
 $$
@@ -302,6 +328,8 @@ $$
 is well-posed.
 
 > this is way too hard to prove!
+
+![[output (1).png]]
 
 **Example**: show that the initial-value problem $$
 \frac{ \partial y }{ \partial t } = y - t^{2}+1,t\in[0,2]

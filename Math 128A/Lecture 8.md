@@ -276,8 +276,8 @@ $$
 \ell_{j}(x) = \prod_{i=1,i\neq j}^{n} \frac{x-x_{i}}{x_{j}-x_{i}} 
 $$
 so that $$
-\ell_{j}(x) = \begin{cases}
-1 & x=x_{j} \\
+\ell_{j}(x_{i}) = \begin{cases}
+1 & x_{i}=x_{j} \\
 0 & o.w.
 \end{cases}
 $$
@@ -289,6 +289,12 @@ $$
 h_{j}(x)  & = [1-2\ell'_{j}(x_{j})(x-x_{j})] \ell_{j}(x)^{2} \\
 k_{j}(x) & = (x-x_{j})\ell_{j}(x)^{2}
 \end{align}
+$$
+> also remember this: $$
+\begin{align}
+h_{j}  & = [1-2\ell'_{j}(x_{j})(x-x_{j})] \ell_{j}^{2}
+ \\
+k_{j} & = (x-x_{j})\ell_{j}^{2}\end{align}
 $$
 - and therefore we get the Hermite poly using above steps
 
