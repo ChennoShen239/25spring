@@ -241,15 +241,14 @@
           {
             "id": "4594558d4930cc87",
             "type": "leaf",
-            "dimension": 11.11111111111111,
             "state": {
               "type": "pdf",
               "state": {
                 "file": "Math 104/Ch7.pdf",
-                "page": 7,
-                "left": 87,
-                "top": 201,
-                "zoom": 1.51
+                "page": 10,
+                "left": 83,
+                "top": 705,
+                "zoom": 1.4
               },
               "icon": "lucide-file-text",
               "title": "Ch7"

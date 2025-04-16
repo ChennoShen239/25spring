@@ -182,4 +182,26 @@ $$
 
 > Just try to prove the LHS and RHS to be the same formula.
 
+> [!PDF|yellow] [[Ch7.pdf#page=8&selection=238,0,254,1&color=yellow|Ch7, p.8]]
+> > The series does, however, converge uniformly on [−ρ, ρ] for every 0 ≤ ρ < 1.
+> 
+> Did you see the difference? Once you set the $\rho$, you can say it's uniformly convergent. You can't do that to $(-1,1)$!
+
+
+> [!PDF|yellow] [[Ch7.pdf#page=9&selection=0,0,81,1&color=yellow|Ch7, p.9]]
+> > Theorem 5.1. Let (fn) be a sequence of functions fn : A → R. The series ∞X n=1 fn converges uniformly on A if and only if for every ϵ > 0 there exists N ∈ N such that nX k=m+1 fk(x) < ϵ for all x ∈ A and all n > m > N .
+> 
+> Just treat this as the given $n>m$, the $\lvert S_{m} - S_{n} \rvert<\epsilon$ holds.
+
+> [!PDF|yellow] [[Ch7.pdf#page=9&selection=253,14,253,26&color=yellow|Ch7, p.9]]
+> > "majorants,"
+> 
+> 主控函数
+
+> [!PDF|yellow] [[Ch7.pdf#page=9&selection=255,0,354,1&color=yellow|Ch7, p.9]]
+> > Theorem 5.2 (Weierstrass M -test). Let (fn) be a sequence of functions fn : A → R, and suppose that for every n ∈ N there exists a constant Mn ≥ 0 such that |fn(x)| ≤ Mn for all x ∈ A, ∞X n=1 Mn < ∞. Then ∞X n=1 fn(x). converges uniformly on A.
+> 
+> It's like finding a convergent upper bound, the proof will use the Cauchy of the $M_{n}$ sequence
+
+
 
