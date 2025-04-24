@@ -144,6 +144,39 @@
               "icon": "lucide-file-text",
               "title": "Ch8"
             }
+          },
+          {
+            "id": "0529743d76957666",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Math 104/Lecture 8.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Lecture 8"
+            }
+          },
+          {
+            "id": "10130a936a386296",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Math 104/Lecture 8.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Lecture 8"
+            }
           }
         ],
         "currentTab": 2
@@ -168,8 +201,10 @@
       "translate:Open translation view": false
     }
   },
-  "active": "4d0abe5cc400e4a2",
+  "active": "ea4cd60e203ac7c2",
   "lastOpenFiles": [
+    "Lecture 8.pdf",
+    "Math 104/Lecture 8.pdf",
     "Math 104/Ch8.pdf",
     "Math 104/Lecture 8.md",
     "Math 104/Ch4.pdf",
@@ -197,7 +232,6 @@
     "characteristic_roots_latex_highres.png",
     "combined_log_plots.png",
     "Math 104/Lecture 6.md",
-    "Econ 236B/Lecture_10.pdf",
     "Econ 236B/Lecture 10.md",
     "Math 104/Lecture 5.md",
     "Math 128A/Lecture 9.md",

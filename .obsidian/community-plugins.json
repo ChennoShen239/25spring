@@ -3,5 +3,7 @@
   "obsidian-latex-suite",
   "obsidian-git",
   "pdf-plus",
-  "translate"
+  "translate",
+  "obsidian-enhancing-export",
+  "obsidian-pandoc"
 ]
