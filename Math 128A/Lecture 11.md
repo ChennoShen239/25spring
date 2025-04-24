@@ -14,8 +14,7 @@ $$
 ## LTE Estimation
 
 Assume (only for estimating LTE):  
-$w_j \approx y(t_j), \quad \widetilde{w}_j \approx y(t_j)$ &nbsp;&nbsp;&nbsp;&nbsp;(1)
-
+$$w_j \approx y(t_j), \quad \widetilde{w}_j \approx y(t_j)\tag{1}$$ 
 Let $\phi(t, w, h)$ be an order-$n$ method. The local truncation error (LTE) is defined as:
 $$
 \tau_{j+1}(h) \coloneqq \frac{y(t_{j+1}) - y(t_j)}{h} - \phi(t_j, y(t_j), h)
@@ -116,7 +115,7 @@ $$
 y(t_{j+1}) - y(t_j) = \int_{t_j}^{t_{j+1}} \left( \frac{dy}{dt} \right) dt = \int_{t_j}^{t_{j+1}} f(t, y(t)) \, dt.
 $$
 
-We approximate the integral on the right-hand side using quadrature rules based on previously computed values of $f$:
+We a**pproximate the integral on the right-hand** side using quadrature rules based on previously computed values of $f$:
 - $f(t_{j+1}, y(t_{j+1}))$
 - $f(t_j, y(t_j))$
 - $f(t_{j-1}, y(t_{j-1}))$
@@ -136,6 +135,7 @@ which leads to **Euler's method (explicit)**:
 $$
 w_{j+1} = w_j + h f(t_j, w_j), \quad \text{for} \quad j = 0, 1, \dots
 $$
+> note that this Euler's method is explicit, therefore OK to directly get the $w_{j+1}$ by computing once
 
 Alternatively, approximate using the **right endpoint:**
 $$
@@ -149,6 +149,7 @@ which gives the **backward Euler method (implicit)**:
 $$
 w_{j+1} = w_j + h f(t_{j+1}, w_{j+1}), \quad \text{for} \quad j = 0, 1, \dots
 $$
+>But this is implicit, i.e. we need to solve for $w_{j+1}$ numerically from a equation.
 
 Both are **first-order methods**, but the **implicit** one (backward Euler) generally requires solving a nonlinear equation at each step, making it **computationally more expensive**.
 ## Examples: Linear Approximations
@@ -158,8 +159,7 @@ $$
 f(t, y(t)) \approx \frac{(t - t_{j-1}) f(t_j, y(t_j)) + (t_j - t) f(t_{j-1}, y(t_{j-1}))}{h}
 $$
 ![[output (2).png]]
->This is just to take the linear combination of $f(t_{j-1},y(t_{j-1}))$ and $f(t_{j},y(t_{j}))$
-
+>This is just to take the linear combination of $f(t_{j-1},y(t_{j-1}))$ and $f(t_{j},y(t_{j}))$, or maybe you'll remember how to get the distribution from policies.
 
 Then,
 $$
@@ -170,9 +170,21 @@ This leads to the **Adams-Bashforth two-step explicit method**:
 $$
 w_{j+1} = w_j + \frac{h}{2} \left( 3f(t_j, w_j) - f(t_{j-1}, w_{j-1}) \right), \quad \text{for } j = 1, 2, \dots
 $$
+> You see, we basically extrapolate the $f_{j+1}$ with current$f_{j},f_{j-1}$, let's do the derivation:
 
+$$
+\begin{align}
+y_{j+1} - y_{j}  & = \int _{t_{j}}^{t_{j+1}}f(t,y(t)) \, dt \\
+  & =\int _{t_{j}}^{t_{j+1}} \frac{(t - t_{j-1}) f(t_j, y(t_j)) + (t_j - t) f(t_{j-1}, y(t_{j-1}))}{h} \, dt \\
+ & =  -t_{j-1} f_{j} + t_{j}f_{j-1} + \frac{1}{h}\int _{t_{j}}^{t_{j+1}} (f_{j} -f_{j-1} )t \, dt  \\
+ & =-t_{j-1} f_{j} + t_{j}f_{j-1}  + \frac{(f_{j }-f_{j-1})(t_{j}+t_{j+1})}{2} \\
+ & =hf_{j} -t_{j} f_{j} + t_{j} f_{j-1} +\frac{(f_{j }-f_{j-1})(t_{j}+t_{j+1})}{2}  \\
+ & =hf_{j} + (f_{j} -f_{j-1}) \left( \frac{t_{j} +t_{j+1}}{2} - t_{j} \right) \\
+ & =hf_{j} + (f_{j} -f_{j-1} ) \frac{h}{2}  \\
+ & =\frac{h}{2}(3f_{j} - f_{j-1})
+\end{align}
+$$
 ---
-
 Using the points $f(t_j, y(t_j))$ and $f(t_{j+1}, y(t_{j+1}))$, approximate $f(t, y(t))$ as:
 $$
 f(t, y(t)) \approx \frac{(t - t_j) f(t_{j+1}, y(t_{j+1})) + (t_{j+1} - t) f(t_j, y(t_j))}{h}
@@ -187,7 +199,7 @@ This yields the **mid-point method (one-step implicit)**:
 $$
 w_{j+1} = w_j + \frac{h}{2} \left( f(t_j, w_j) + f(t_{j+1}, w_{j+1}) \right), \quad \text{for } j = 1, 2, \dots
 $$
-> This is different by using $t_{j+1}$ instead of $t_{j}$
+> This is different by using $t_{j+1}$ instead of $t_{j-1}$
 ---
 
 Both are **second-order methods**, but the implicit method (mid-point) generally requires solving an equation at each step, making it **computationally more expensive**.
@@ -200,6 +212,8 @@ Let $P(t)$ interpolate $f(t, y(t))$ at the points:
 $$
 f(t_j, y(t_j)),\quad f(t_{j-1}, y(t_{j-1})),\quad \dots,\quad f(t_{j-m+1}, y(t_{j-m+1}))
 $$
+> That is, the last $m$ points we computed
+
 Then,
 $$
 y(t_{j+1}) - y(t_j) = \int_{t_j}^{t_{j+1}} f(t, y(t))\, dt \approx \int_{t_j}^{t_{j+1}} P(t)\, dt
@@ -211,8 +225,11 @@ $$
 
 This leads to the **explicit $m$-point method**, for $j = m-1, m, m+1, \dots$:
 $$
-w_{j+1} = w_j + h\left( b_{m-1} f(t_j, w_j) + b_{m-2} f(t_{j-1}, w_{j-1}) + \cdots + b_0 f(t_{j-m+1}, w_{j-m+1}) \right)
+w_{j+1} = w_j + \underbrace{ h\left( b_{m-1} f(t_j, w_j) + b_{m-2} f(t_{j-1}, w_{j-1}) + \cdots + b_0 f(t_{j-m+1}, w_{j-m+1}) \right) }_{ \sum_{i=0}^{m-1} b_{i}f(t_{j-m+1+i},w_{j-m+1+i}) }
 $$
+>可查 Adams-Bashforth 表
+>The coefficients $b_{j}$ here is just basically coming for the trivial integral so don't worry
+
 
 ---
 
@@ -222,6 +239,7 @@ Let $P(t)$ interpolate $f(t, y(t))$ at the points:
 $$
 f(t_{j+1}, y(t_{j+1})),\quad f(t_j, y(t_j)),\quad \dots,\quad f(t_{j-m+2}, y(t_{j-m+2}))
 $$
+> You see the key difference? we need to compute $f_{j+1}$ so instead we use this one and $m-1$ previous points $f_{j}\dots f_{j-m+2}$ 
 
 Then,
 $$
@@ -236,7 +254,7 @@ This leads to the **implicit $(m-1)$-point method**, for $j = m-1, m, m+1, \dots
 $$
 w_{j+1} = w_j + h\left( b_{m} f(t_{j+1}, w_{j+1}) + b_{m-1} f(t_j, w_j) + b_{m-2} f(t_{j-1}, w_{j-1}) + \cdots + b_0 f(t_{j-m+2}, w_{j-m+2}) \right)
 $$
-
+> therefore we still need to solve it numerically for each step
 ---
 ###  4th-order Adams-Bashforth Method (explicit, 4-step)
 
@@ -280,12 +298,12 @@ y(t_{j+1}) - y(t_j) = \int_{t_j}^{t_{j+1}} (P(t) + R(t)) \, dt
 $$
 Define the quadrature approximation:
 $$
-= h \left( b_{m-1} f(t_j, y(t_j)) + b_{m-2} f(t_{j-1}, y(t_{j-1})) + \cdots + b_0 f(t_{j-m+1}, y(t_{j-m+1})) \right) + \int_{t_j}^{t_{j+1}} R(t) \, dt
+= \underbrace{ h \left( b_{m-1} f(t_j, y(t_j)) + b_{m-2} f(t_{j-1}, y(t_{j-1})) + \cdots + b_0 f(t_{j-m+1}, y(t_{j-m+1})) \right)  }_{ \int _{t_{j}}^{t_{j+1}}P(t) \, dt =h\phi(t_{j},y_{j},h) }+ \int_{t_j}^{t_{j+1}} R(t) \, dt
 $$
 
 The local truncation error (LTE) is defined as:
 $$
-\tau_{j+1}(h) = \frac{1}{h} \int_{t_j}^{t_{j+1}} R(t) \, dt
+\tau_{j+1}(h) = \frac{y_{j+1}-y_{j}}{h} - \phi(t_{j},w_{j},h)= \frac{1}{h} \int_{t_j}^{t_{j+1}} R(t) \, dt
 $$
 which gives
 $$
@@ -293,12 +311,14 @@ $$
 $$
 From the textbook simplification:
 $$
-\tau_{j+1}(h) = \frac{f^{(m)}(\xi, y(\xi))}{m! \, h} \int_{t_j}^{t_{j+1}} \prod_{k=j-m+1}^{j} (t - t_k) \, dt
+\tau_{j+1}(h) = \frac{f^{(m)}(\xi, y(\xi))}{m! \, h} \int_{t_j}^{t_{j+1}} \prod_{k=j-m+1}^{j} (t - t_k) \, dt = \mathcal{O} (h^{m})
 $$
 
 ---
 
 ### Implicit $(m-1)$-step Method
+
+> the name origins from the fact that we use $m-1$ previous points (plus one $f_{j+1}$ we need to solve)
 
 Let $P(t)$ interpolate $f(t, y(t))$ at the points:
 $$
@@ -335,6 +355,7 @@ Simplified:
 $$
 \tau_{j+1}(h) = \frac{f^{(m)}(\xi, y(\xi))}{m! \, h} \int_{t_j}^{t_{j+1}} \prod_{k=j-m+2}^{j+1} (t - t_k) \, dt
 $$
+> Still the order is $\mathcal{O}(h^{m})$!
 ## 4th-order Methods
 
 ### 4th-order Adams-Bashforth Method (explicit, 4-step)
@@ -386,6 +407,15 @@ which evaluates to:
 $$
 = -\boxed{\frac{19}{720}} f^{(4)}(\xi, y(\xi)) \, h^4
 $$
+- **方法选择建议**：
+    
+    - 显式 AB 方法更简单，每步计算便宜；
+        
+    - 隐式 AM 方法更稳定、精度更高，但每步需要求解方程；
+        
+- **误差控制原理**：误差项可用于**自适应步长控制**；
+    
+- **系数对比**：Adams-Moulton 的误差常数更小，说明它在相同阶数下**更精确**。
 ## §5.7 Predictor-Corrector Methods
 
 ### 4th-order Adams-Bashforth Method (explicit, less accurate)
@@ -432,6 +462,7 @@ $$
 
 1. 先用 Adams-Bashforth 做预测，得 $w_{j+1}^{\text{p}}$；
 2. 用预测值代入 Adams-Moulton，得到修正后的 $w_{j+1}$；
+	1. 本质上就是前向迭代一步
 3. 更新数据，继续迭代。
 
 ```matlab
@@ -570,7 +601,7 @@ Hence, the local truncation error is approximated by:
 $$
 \tau_{j+1}(h) = \frac{y_{j+1} - w_{j+1}}{h} \approx -\frac{19}{270} \cdot \frac{w_{j+1} - w_{j+1}^{\mathrm{p}}}{h}
 $$
-
+> So the key idea here is to get the LTE from $w_{j+1}$ and $w_{j+1}^{p}$ 
 ## Step-size Selection
 
 We use the LTE estimate derived from Adams4PC:
@@ -610,10 +641,12 @@ $$
 $$
 q = 1.5 \left( \frac{\epsilon h}{|w_{j+1} - w_{j+1}^{\text{p}}|} \right)^{\frac{1}{4}}
 $$
+>I don't know where did the $1.5$ come from, for the $\left( \frac{270}{19} \right)^{1/4}$ this should be $1.94$
 
 Decision rule:
 
 - If $q < 1$, **reject** the current step and recompute;
+	- here we need to reduce the step length to $qh$
 - If $q \geq 1$, **accept** the current value and proceed with $j \gets j + 1$.
 
 ---
@@ -628,7 +661,7 @@ h =
 h, & \text{if } 1 \leq q \leq 2
 \end{cases}
 $$
-![[output (3).png]]
+![[untitled 1.jpg]]
 Apply hard bounds to ensure numerical safety:
 
 - Maximum step-size: $h = \min(h, h_{\text{max}})$  
@@ -750,7 +783,7 @@ $$
 
 ### The "Magic" Reduction:
 
-We convert this higher-order equation into a system of first-order equations.
+We convert this **higher-order equation** into a system of **first-order equations.**
 
 Define:
 $$
@@ -939,7 +972,7 @@ $$
 
 Suppose that for each component $f_j(t, \mathbf{u})$, the function satisfies a **Lipschitz condition** with constant $L$ on $\mathcal{D}$, i.e.,
 $$
-\left| \frac{\partial f}{\partial u_j}(t, \mathbf{u}) \right| \leq L, \quad \text{for } j = 1, 2, \dots, m
+\left| \frac{\partial f_{j}}{\partial u_j}(t, \mathbf{u}) \right| \leq L, \quad \text{for } j = 1, 2, \dots, m
 $$
 
 Then the initial value problem:
@@ -947,6 +980,38 @@ $$
 \frac{d\mathbf{u}}{dt} = \mathbf{f}(t, \mathbf{u}), \quad \mathbf{u}(a) = \boldsymbol{\alpha}
 $$
 has a **unique solution** $\mathbf{u}(t)$ for all $t \in [a, b]$.
+
+### Proof (Sketch)
+
+Assume two solutions $\mathbf{u}_1(t)$ and $\mathbf{u}_2(t)$ satisfy the same initial condition:
+$$
+\mathbf{u}_1(a) = \mathbf{u}_2(a) = \boldsymbol{\alpha}
+$$
+
+Define the error function:
+$$
+\mathbf{e}(t) = \mathbf{u}_1(t) - \mathbf{u}_2(t)
+$$
+
+Then:
+$$
+\frac{d\mathbf{e}}{dt} = \mathbf{f}(t, \mathbf{u}_1(t)) - \mathbf{f}(t, \mathbf{u}_2(t))
+$$
+
+By the Lipschitz condition:
+$$
+\left\| \frac{d\mathbf{e}}{dt} \right\| \leq L \left\| \mathbf{e}(t) \right\|
+$$
+
+Apply Grönwall’s inequality:
+$$
+\left\| \mathbf{e}(t) \right\| \leq \left\| \mathbf{e}(a) \right\| e^{L(t-a)} = 0
+$$
+
+Thus:
+$$
+\mathbf{u}_1(t) \equiv \mathbf{u}_2(t)
+$$
 
 ---
 
@@ -1020,8 +1085,6 @@ $$
 \frac{dy}{dt} = f(t, y), \quad a \leq t \leq b, \quad y(a) = \alpha
 $$
 
----
-
 ### One-Step Method
 
 The general form of a one-step numerical method is:
@@ -1056,7 +1119,7 @@ $$
 \lim_{h \to 0} \max_{0 \leq j \leq N} |\tau_j(h)| = 0, \quad \text{with } x_j = a + jh
 $$
 
-That is, the local error vanishes uniformly as the step-size $h \to 0$.
+That is, **the local error vanishes uniformly** as the step-size $h \to 0$.
 
 Consistency is the **least requirement** for a method to be valid for solving ODEs.
 
@@ -1071,7 +1134,8 @@ $$
 
 That is, the **numerical solution** $w_j$ approaches the **true solution** $y(t_j)$ uniformly as $h \to 0$ over the interval $[a, b]$.
 
-> ✅ Consistency + Stability ⇒ Convergence (Lax equivalence principle for ODEs)
+> ✅ Consistency + **Stability** ⇒ Convergence (Lax equivalence principle for ODEs)
+> Let's leave the discussion of Stability a little bit later
 
 ## Review: Convergence Analysis for Euler Method
 
@@ -1141,7 +1205,6 @@ A numerical method is **stable** if:
 $$
 \frac{dy}{dt} = f(t, y), \quad a \leq t \leq b, \quad y(a) = \alpha
 $$
-
 ---
 
 ### One-Step Method
@@ -1149,7 +1212,6 @@ Let $w_0 = \alpha$ and iterate:
 $$
 w_{j+1} = w_j + h \cdot \phi(t_j, w_j, h), \quad j = 0, 1, \dots
 $$
-
 ---
 
 ### Assumptions
@@ -1158,16 +1220,15 @@ Assume the function $\phi(t, w, h)$ satisfies:
   \mathcal{D} \overset{\text{def}}{=} \left\{ (t, w, h) \,\middle|\, a \leq t \leq b, \; -\infty < w < \infty, \; 0 < h < h_0 \right\}
   $$
 - $\phi$ is Lipschitz in $w$ with constant $L > 0$ (uniformly in $h$), for $0 < h < h_0$
-
 ---
-
 ### Then:
 - The method is **stable** (small perturbations lead to small deviations)
 - The method is **convergent ⇔ consistent**, and consistency means:
   $$
   \phi(t, y, 0) = f(t, y), \quad \text{for all } a \leq t \leq b
   $$
-
+> We get the correct slope as $h \to {0}$
+> 对于一阶方法，如果你保证它对输入稳定（Lipschitz 条件），那你只需验证**局部一致性**，就能推断出它**整体上是收敛的**。
 ---
 
 ### Error Bound
@@ -1203,8 +1264,6 @@ Iterate for $j = 0, 1, \dots$:
 $$
 w_{j+1} = w_j + \frac{h}{2} \left[ f(t_j, w_j) + f(t_{j+1}, w_j + h f(t_j, w_j)) \right]
 $$
->remember this function form!
-
 ---
 
 ### Corresponding One-Step Function $\phi$
@@ -1306,6 +1365,8 @@ $$
 
 > ✅ Modified Euler’s method satisfies a **Lipschitz condition in $w$**,  
 > with step-size–dependent constant $L = \widehat{L} + \frac{1}{2} h \widehat{L}^2$.
+
+Once we have the Lipschitz condition and the consistency, we can get the convergence
 
 ## Stability Analysis: Multistep Methods (I)
 
@@ -1541,6 +1602,7 @@ $$
 |\mu_i| \leq 1
 $$
 
+>It must have one $\mu_{i} =1$, or it can't even approximate a constant function.
 ---
 
 ### Classification of Stability
@@ -1561,10 +1623,13 @@ Assuming the root condition holds:
 ### Stability Implications
 
 >Strong stability implies the method resists numerical growth due to roundoff or perturbations.  
+>The **best one!** 数值方法非常稳定，是最理想状态。
 
 >Weak stability may lead to **numerical oscillations** in the presence of rounding errors.  
+>在精度需求或长时间积分时可能不可靠。
 
 >Violating the root condition implies **instability** and divergence.
+>方法完全不适合数值积分，即使局部精度很高也不可靠。
 
 ## Convergence Theorem for Multistep Methods
 
@@ -1596,6 +1661,7 @@ If the method is **consistent**, then the following are equivalent:
 - The method satisfies the **root condition**
 - The method is **convergent**
 
+> simply from above Lax theorem!
 ## Example: Fourth-Order Methods
 
 ---

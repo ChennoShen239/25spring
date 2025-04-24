@@ -270,6 +270,8 @@ $$
 - **Method remains second order** after dropping 
 $R_1\left(t + \frac{h}{2}, y + \frac{h}{2} f(t, y)\right)$
 
+> Better just to memorize this
+
 - **Only two function evaluations** to approximate $T^{(2)}(t_j, w_j)$
 **In conclusion**: the 2-nd order Runge - Kutta method ( mid point method)
 let $w_{0} = \alpha$, then recursively $$
@@ -294,7 +296,16 @@ w_{j+1}  & = w_j + \frac{h}{4} \left( f(t_j, w_j) + 3 f\left( t_j + \frac{2h}{3}
 $$
 
 > 📌 **3 function evaluations per step**
-### 4th Order Runge-Kutta Method
+
+> Let's break this down so you can better get the idea behind this:
+
+In this RK3 method:
+1. $k_{1} = f(t_{j},w_{j})$
+2. $k_{2} =f\left( t_{j}+\frac{h}{3} ,w_{j}+\frac{h}{3}k_{1}\right)$
+3. $k_{3}=f\left( t_{j}+\frac{2}{3}h ,w_{j} + \frac{2}{3}hk_{2} \right)$
+4. Then finally we update the $$w_{j+1} = \frac{1}{4}(k_{1}+3k_{3})$$
+RK3 has an LTE of $\mathcal{O}(h^{4})$ and global error $O(h^{3})$ 
+### 4th Order Runge-Kutta Method (RK4)
 
 $$
 w_0 = \alpha; \quad \text{for } j = 0, 1, \cdots, N - 1,
@@ -302,11 +313,11 @@ $$
 
 $$
 \begin{aligned}
-k_1 &= h f(t_j, w_j), \\
-k_2 &= h f\left( t_j + \frac{h}{2}, w_j + \frac{1}{2} k_1 \right), \\
-k_3 &= h f\left( t_j + \frac{h}{2}, w_j + \frac{1}{2} k_2 \right), \\
-k_4 &= h f\left( t_j + h, w_j + k_3 \right), \\
-w_{j+1} &= w_j + \frac{1}{6} \left( k_1 + 2k_2 + 2k_3 + k_4 \right)
+k_1 &=  f(t_j, w_j), \\
+k_2 &=  f\left( t_j + \frac{h}{2}, w_j + \frac{h}{2} k_1 \right), \\
+k_3 &=  f\left( t_j + \frac{h}{2}, w_j + \frac{h}{2} k_2 \right), \\
+k_4 &=  f\left( t_j + h, w_j + hk_3 \right), \\
+w_{j+1} &= w_j + \frac{h}{6} \left( k_1 + 2k_2 + 2k_3 + k_4 \right)
 \end{aligned}
 $$
 
@@ -321,6 +332,9 @@ $$
 **Numerical accuracy adequate unless detected otherwise**
 Lots of numerical inaccuracies _can_ go _undetected_.
 
+
+
+
 ### Adaptive Error Control
 still the same setup
 We consider a variable-step method with a well-chosen function $\phi(t,w,h)$: 
@@ -330,14 +344,16 @@ We consider a variable-step method with a well-chosen function $\phi(t,w,h)$:
 	- set $w_{j+1} =w_{j}+h_{j}\phi(t_{j},w_{j},h_{j})$
 > the key is to adaptively choose step-size to satisfy given tolerance
 
-Given an **order-n** method:
+Given an **order-$n$** method:
 - $w_{0}=\alpha$
 - for $j=0,1,\dots$:$$
 w_{j+1} = w_{j} + h \phi(t_{j},w_{j},h)
 $$
 - local truncation error (LTE)$$
-\tau_{j+1} (h) = \frac{y(t_{j+1})-y(t_{j})}{h}-\phi(t_{j},y(t_{j}),h) = O(h^{n})
+\tau_{j+1} (h) = \underbrace{ \frac{y(t_{j+1})-y(t_{j})}{h} }_{ \text{real slope} }-\underbrace{ \phi(t_{j},y(t_{j}),h) }_{ \text{estimated slope} } = O(h^{n})
 $$
+> you can treat the LTE as the error to the slopes
+
 - **Given tolerance** $\tau > 0$, we would like to estimate **largest** step-size $h$ for which
 $$
 |\tau_{j+1}(h)| \lesssim \tau.
@@ -373,7 +389,7 @@ $$
 - therefore:
 	$$
 \begin{aligned}
-\tau_{j+1}(h) & \approx\quad\frac{y(t_{j+1})-\widetilde{w}_{j+1}}{h}+\frac{\widetilde{w}_{j+1}-w_{j+1}}{h} \\
+\tau_{j+1}(h) & \approx\quad\underbrace{ \frac{y(t_{j+1})-\widetilde{w}_{j+1}}{h} }_{ O(h^{n+1}) }+\frac{\widetilde{w}_{j+1}-w_{j+1}}{h} \\
  & =\quad O\left(h^{n+1}\right)+\frac{\widetilde{w}_{j+1}-w_{j+1}}{h}=O\left(h^n\right).
 \end{aligned}
 $$
@@ -401,13 +417,13 @@ qh\lesssim\left|\frac{\epsilon h}{\widetilde{w}_{j+1}-w_{j+1}}\right|^{\large\fr
 $$
 ### Runge–Kutta–Fehlberg: step-size selection procedure
 
-▶ **compute a conservative value for** $q$:
+>用两个不同阶数的方法（如 4 阶和 5 阶）计算同一个点，利用它们的差来估计误差，再据此动态调整步长。
 
+1. **compute a conservative value for** $q$:
 $$
 q = \left| \frac{\epsilon h}{2 (\widetilde{w}_{j+1} - w_{j+1})} \right|^{\frac{1}{4}}
 $$
-▶ **make restricted step-size change:**
-
+2. **make restricted step-size change:**
 $$
 h =
 \begin{cases}
@@ -415,13 +431,55 @@ h =
 4\, h, & \text{if } q \geq 4.
 \end{cases}
 $$
-▶ **step-size can’t be too big:**
+3. **step-size can’t be too big:**
 
 $$
 h = \min(h, h_{\max})
 $$
-▶ **step-size can’t be too small:**
+4. **step-size can’t be too small:**
 
 $$
 \textbf{if } \quad h < h_{\min} \quad \textbf{then} \quad \textit{declare failure}.
 $$
+|     步骤      |    目的     |
+| :---------: | :-------: |
+| 估计误差（两个解之差） |   获取误差量   |
+| 构造比例因子 $q$  | 判断步长是否合适  |
+|  限制步长变化范围   |  保证数值稳定性  |
+|  限制最大最小步长   | 避免跳过/死循环  |
+|   动态调整步长    | 提高效率、保证精度 |
+
+```python
+while t < T:
+    # Step 1: compute both w and w_tilde
+    w, w_tilde = rkf45_step(t, y, h)
+    
+    # Step 2: estimate error
+    error = abs(w_tilde - w)
+    
+    # Step 3: compute q
+    q = (epsilon * h / (2 * error)) ** 0.25
+    
+    # Step 4: check accept/reject
+    if error < epsilon:
+        # accept the step
+        t += h
+        y = w
+    else:
+        # reject the step
+        pass
+    
+    # Step 5: update h
+    if q <= 0.1:
+        h = 0.1 * h
+    elif q >= 4:
+        h = 4 * h
+    else:
+        h = q * h
+    
+    # Step 6: enforce limits
+    h = min(h, h_max)
+    if h < h_min:
+        raise Exception("Step size too small — method failed")
+
+```
