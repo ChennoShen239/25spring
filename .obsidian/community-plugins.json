@@ -1,9 +1,6 @@
 [
-  "markdown-prettifier",
   "obsidian-latex-suite",
   "obsidian-git",
   "pdf-plus",
-  "translate",
-  "obsidian-enhancing-export",
-  "obsidian-pandoc"
+  "obsidian-linter"
 ]
