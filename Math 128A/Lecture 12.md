@@ -9,11 +9,16 @@ $$
 
 - 测试方程具有瞬态解 $y(t) = \alpha e^{\lambda t}$，当 $t \to \infty$ 时，该解趋于 0。
 - Lipschitz 常数 $L = |\lambda|$ 即使在解趋于 0 的情况下也可能很大。
+
+>[!Definition]
+>**刚性常微分方程 (Stiff ODEs)** 是指一类用标准的**显式**数值方法（如显式欧拉法、经典龙格-库塔法等）求解时，出于**稳定性**的考虑，被迫使用远小于为了保证**精度**所需的步长的常微分方程。
+>
+>简单来说，刚性问题通常包含**跨越多个数量级的、广泛分离的时间尺度**。这意味着解中既有变化非常快的分量，也有变化非常慢的分量。
 ### Desired properties of numerical methods:
 
 - **Convergence**:  
   $$
-  \lim_{h \to 0} |y(t_j) - w_j| = 0.
+  \lim_{h \to 0} \max_{1\leq j \leq N}|y(t_j) - w_j| = 0.
   $$
 
 - **Numerical stability**: small error in $\alpha$ implies small error in $w_j$.
@@ -71,9 +76,8 @@ $$
 - **Implicit Trapezoid**   ( **隐式梯形法**  )
   $$
   w_{j+1} = w_j + \frac{h}{2} \left( f(t_{j+1}, w_{j+1}) + f(t_j, w_j) \right) 
-         = w_j + \frac{\lambda h}{2} (w_{j+1} + w_j)
+         = w_j + \underbrace{ \frac{\lambda h}{2} (w_{j+1} + w_j) }_{ \frac{dy}{dt} = \lambda y }
   $$
-
 - **Solving for** $w_j$:  
   $$
   w_j = \left( \frac{1 + \frac{\lambda h}{2}}{1 - \frac{\lambda h}{2}} \right)^j \alpha
@@ -84,6 +88,15 @@ $$
   \left| \frac{1 + \frac{\lambda h}{2}}{1 - \frac{\lambda h}{2}} \right| < 1
   $$
   for as long as $\mathrm{Re}(\lambda h) < 0$.
+>[!note]
+>Notice when we use the Euler's method, for stability, we need 
+>$$
+-2 < \lambda h<0
+>$$
+> which may lead to very small $h$ , but here we only need $\mathrm{Re}(\lambda h)<0$, which means we can adjust the step $h$ totally by precision
+
+
+
 ## Implicit Trapezoid with Newton Iteration
 
 - **Implicit Trapezoid**

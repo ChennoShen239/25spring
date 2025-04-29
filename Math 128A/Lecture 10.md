@@ -281,6 +281,12 @@ $$
 > 2 function evaluations per step
 > No need for derivative calculations
 
+Let's forget about those expansion things:
+1. calculate $k_{1} = f(t_{j},w_{j})$
+2. then calculate $k_{2} = f\left( t_{j}+ \frac{h}{2},w_{j} + \frac{h}{2} k_{1} \right)$
+3. then finally the update is $$
+w_{j+1} = w_{j} + hk_{2}
+$$
 ### 3rd Order Runge-Kutta Method
 
 $$
@@ -303,8 +309,8 @@ In this RK3 method:
 1. $k_{1} = f(t_{j},w_{j})$
 2. $k_{2} =f\left( t_{j}+\frac{h}{3} ,w_{j}+\frac{h}{3}k_{1}\right)$
 3. $k_{3}=f\left( t_{j}+\frac{2}{3}h ,w_{j} + \frac{2}{3}hk_{2} \right)$
-4. Then finally we update the $$w_{j+1} = \frac{1}{4}(k_{1}+3k_{3})$$
-RK3 has an LTE of $\mathcal{O}(h^{4})$ and global error $O(h^{3})$ 
+4. Then finally we update the $$w_{j+1} = w_{j } + \frac{h}{4}(k_{1}+3k_{3})$$
+RK3 has an LTE of  $O(h^{3})$ 
 ### 4th Order Runge-Kutta Method (RK4)
 
 $$
@@ -322,6 +328,10 @@ w_{j+1} &= w_j + \frac{h}{6} \left( k_1 + 2k_2 + 2k_3 + k_4 \right)
 $$
 
 > 📌 **4 function evaluations per step**
+
+It's like we update the slope by $\frac{h}{2}k_{1}, \frac{h}{2}k_{2},hk_{3}$, then summarize as $$
+\frac{h}{6} (k_{1} + 2k_{2}  + 2k_{3} + k_{4})
+$$
 
 ### **Crying baby Principle** in adaptive algorithms
 

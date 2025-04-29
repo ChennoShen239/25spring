@@ -76,7 +76,7 @@ $$
 \left|q^n \frac{\widetilde{w}_{j+1} - w_{j+1}}{h}\right| \approx \left|K (q h)^n\right| \approx \left|\tau_{j+1}(q h)\right| \lesssim \epsilon
 $$
 
-Thus, compute a **conservative** value for $q$:
+Thus, compute a **conservative** value for $q$: (the estimated $1$ is not accurate so we choose a conservative update that's smaller)
 $$
 q = \left|\frac{\epsilon h}{2 \left(\widetilde{w}_{j+1} - w_{j+1}\right)}\right|^{\frac{1}{n}}
 $$
@@ -85,7 +85,7 @@ Decision rule:
 - If $q < 1$, reject the current $w_{j+1}$.
 - If $q \geq 1$, accept it and set $j = j + 1$.
 
-Make a **restricted step-size change**:
+Make a **restricted step-size change**: (whether we accept current $w_{j+1}$ or not)
 $$
 h = \begin{cases}
 0.1 h, & \text{if } q \leq 0.1, \\
@@ -115,7 +115,7 @@ $$
 y(t_{j+1}) - y(t_j) = \int_{t_j}^{t_{j+1}} \left( \frac{dy}{dt} \right) dt = \int_{t_j}^{t_{j+1}} f(t, y(t)) \, dt.
 $$
 
-We a**pproximate the integral on the right-hand** side using quadrature rules based on previously computed values of $f$:
+We **approximate** the integral on the right-hand side using quadrature rules based on previously computed values of $f$:
 - $f(t_{j+1}, y(t_{j+1}))$
 - $f(t_j, y(t_j))$
 - $f(t_{j-1}, y(t_{j-1}))$
@@ -151,7 +151,7 @@ w_{j+1} = w_j + h f(t_{j+1}, w_{j+1}), \quad \text{for} \quad j = 0, 1, \dots
 $$
 >But this is implicit, i.e. we need to solve for $w_{j+1}$ numerically from a equation.
 
-Both are **first-order methods**, but the **implicit** one (backward Euler) generally requires solving a nonlinear equation at each step, making it **computationally more expensive**.
+Both are **first-order methods**, but the **implicit** one (backward Euler) generally requires solving a nonlinear equation at each step, making it **computationally more expensive**. 
 ## Examples: Linear Approximations
 
 Using the two points $f(t_j, y(t_j))$ and $f(t_{j-1}, y(t_{j-1}))$, approximate $f(t, y(t))$ linearly:
@@ -333,6 +333,7 @@ with
 $$
 R(t) = \frac{f^{(m)}(\xi_t, y(\xi_t))}{m!} \prod_{k=j-m+2}^{j+1} (t - t_k)
 $$
+> You see the only difference is we use $t_{j+1}$ and do not use $t_{j-m+1}$ in the $m-1$ point implicit method
 
 Integrating from $t_j$ to $t_{j+1}$:
 $$
@@ -641,7 +642,11 @@ $$
 $$
 q = 1.5 \left( \frac{\epsilon h}{|w_{j+1} - w_{j+1}^{\text{p}}|} \right)^{\frac{1}{4}}
 $$
->I don't know where did the $1.5$ come from, for the $\left( \frac{270}{19} \right)^{1/4}$ this should be $1.94$
+>I don't know where did the $1.5$ come from, for the $\left( \frac{270}{19} \right)^{1/4}$ this should be $1.94$, but now I think it's a way of being conservative
+
+> Compared with the Adaptive RK4 method: $$
+		q = \left\lvert  \frac{\epsilon h}{2(\tilde{w}_{j+1}-w_{j+1})}  \right\rvert  ^{1/n}
+$$
 
 Decision rule:
 
@@ -932,7 +937,7 @@ $$
 
 We say that **$f$ satisfies a Lipschitz condition** on $\mathcal{D}$ if there exists a constant $L > 0$ such that:
 $$
-\left| f(t, \mathbf{u}) - f(t, \mathbf{z}) \right| \leq L \sum_{j=1}^{m} \left| u_j - z_j \right|
+\left| f(t, \mathbf{u}) - f(t, \mathbf{z}) \right| \leq L \underbrace{ \sum_{j=1}^{m} \left| u_j - z_j \right| }_{ L_{1} \text{ norm} }
 $$
 
 for all vectors:
@@ -974,6 +979,7 @@ Suppose that for each component $f_j(t, \mathbf{u})$, the function satisfies a *
 $$
 \left| \frac{\partial f_{j}}{\partial u_j}(t, \mathbf{u}) \right| \leq L, \quad \text{for } j = 1, 2, \dots, m
 $$
+> The partial derivatives are bounded for $u_{j}$
 
 Then the initial value problem:
 $$
@@ -1046,7 +1052,7 @@ $$
 \mathbf{k}_1 &= h \mathbf{f}(t_j, \mathbf{w}_j) \\
 \mathbf{k}_2 &= h \mathbf{f}\left(t_j + \frac{h}{2}, \mathbf{w}_j + \frac{1}{2} \mathbf{k}_1 \right) \\
 \mathbf{k}_3 &= h \mathbf{f}\left(t_j + \frac{h}{2}, \mathbf{w}_j + \frac{1}{2} \mathbf{k}_2 \right) \\
-\mathbf{k}_4 &= h \mathbf{f}(t_{j+1}, \mathbf{w}_j + \mathbf{k}_3) \\
+\mathbf{k}_4 &= h \mathbf{f}(\underbrace{ t_{j} + h }_{ t_{j+1} }, \mathbf{w}_j + \mathbf{k}_3) \\
 \mathbf{w}_{j+1} &= \mathbf{w}_j + \frac{1}{6} \left( \mathbf{k}_1 + 2\mathbf{k}_2 + 2\mathbf{k}_3 + \mathbf{k}_4 \right)
 \end{aligned}
 $$
@@ -1121,7 +1127,9 @@ $$
 
 That is, **the local error vanishes uniformly** as the step-size $h \to 0$.
 
-Consistency is the **least requirement** for a method to be valid for solving ODEs.
+
+> [!NOTE]
+> Consistency is the **least requirement** for a method to be valid for solving ODEs.
 
 ---
 
@@ -1134,7 +1142,8 @@ $$
 
 That is, the **numerical solution** $w_j$ approaches the **true solution** $y(t_j)$ uniformly as $h \to 0$ over the interval $[a, b]$.
 
-> ✅ Consistency + **Stability** ⇒ Convergence (Lax equivalence principle for ODEs)
+>[!NOTE]
+Consistency + **Stability** ⇒ Convergence (Lax equivalence principle for ODEs)
 > Let's leave the discussion of Stability a little bit later
 
 ## Review: Convergence Analysis for Euler Method
@@ -1143,8 +1152,6 @@ That is, the **numerical solution** $w_j$ approaches the **true solution** $y(t_
 $$
 \frac{dy}{dt} = f(t, y), \quad a \leq t \leq b, \quad y(a) = \alpha \tag{1}
 $$
-
----
 
 ### Euler Method
 Let $h = \frac{b - a}{N}$, $t_j = a + jh$, and define:
@@ -1155,6 +1162,7 @@ This corresponds to $\phi(t_j, w_j, h) = f(t_j, w_j)$.
 
 ---
 ### Local Truncation Error (LTE)
+
 $$
 |\tau_j(h)| = \left| \frac{y(t_{j+1}) - y(t_j)}{h} - f(t_j, y(t_j)) \right|
 = \frac{h}{2} \left| \frac{df}{dt}(\tilde{t}_j, y(\tilde{t}_j)) \right| \xrightarrow{h \to 0} 0
@@ -1180,7 +1188,15 @@ $$
 
 where $M = \max_{t \in [a, b]} |y''(t)|$.
 
-→ **Euler method is convergent**.
+$→$ **Euler method is convergent**.
+
+>[!NOTE]
+>We only need Lipschitz in $y$ to prove the convergence for one-step method
+
+>[!Review]
+>We have this one given precision $$
+\left| y-u \right| _{j+1}  \leq \left( \delta + \frac{hM}{2L} + \frac{\delta}{hL} \right)(\exp(L(t_{j+1}-a))-1)
+$$
 
 ---
 
@@ -1223,7 +1239,7 @@ Assume the function $\phi(t, w, h)$ satisfies:
 ---
 ### Then:
 - The method is **stable** (small perturbations lead to small deviations)
-- The method is **convergent ⇔ consistent**, and consistency means:
+- The method is **convergent $⇔$ consistent**, and consistency means:
   $$
   \phi(t, y, 0) = f(t, y), \quad \text{for all } a \leq t \leq b
   $$
@@ -1264,14 +1280,13 @@ Iterate for $j = 0, 1, \dots$:
 $$
 w_{j+1} = w_j + \frac{h}{2} \left[ f(t_j, w_j) + f(t_{j+1}, w_j + h f(t_j, w_j)) \right]
 $$
----
-
 ### Corresponding One-Step Function $\phi$
 
 Define:
 $$
 \phi(t, w, h) = \frac{1}{2} \left[ f(t, w) + f(t + h, w + h f(t, w)) \right]
 $$
+>This is just the modified Euler's method
 
 Now compare two values $w$ and $\widehat{w}$:
 $$
@@ -1281,19 +1296,14 @@ $$
 & + \frac{1}{2} \left[ f(t + h, w + h f(t, w)) - f(t + h, \widehat{w} + h f(t, \widehat{w})) \right]
 \end{aligned}
 $$
-
----
-
 ### Lipschitz Estimate
 
 Using the assumption $|\partial f / \partial y| \leq \widehat{L}$:
-
 $$
 |\phi(t, w, h) - \phi(t, \widehat{w}, h)| 
 \leq \frac{\widehat{L}}{2} |w - \widehat{w}| 
 + \frac{\widehat{L}}{2} \left| w + h f(t, w) - \widehat{w} - h f(t, \widehat{w}) \right|
 $$
-
 Now estimate the second term:
 $$
 \left| w + h f(t, w) - \widehat{w} - h f(t, \widehat{w}) \right| 
@@ -1363,7 +1373,8 @@ $$
 ---
 ### Conclusion
 
-> ✅ Modified Euler’s method satisfies a **Lipschitz condition in $w$**,  
+>[!note]
+✅ Modified Euler’s method satisfies a **Lipschitz condition in $w$**,  
 > with step-size–dependent constant $L = \widehat{L} + \frac{1}{2} h \widehat{L}^2$.
 
 Once we have the Lipschitz condition and the consistency, we can get the convergence
