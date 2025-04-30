@@ -185,9 +185,9 @@
               "type": "pdf",
               "state": {
                 "file": "Math 104/Ch9.pdf",
-                "page": 12,
+                "page": 22,
                 "left": -14,
-                "top": 192,
+                "top": 212,
                 "zoom": 1.0416666666666667
               },
               "icon": "lucide-file-text",
@@ -216,7 +216,7 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "5cf81e0a6b6cbdd5",
+  "active": "4d0abe5cc400e4a2",
   "lastOpenFiles": [
     "Math 104/Ch9.pdf",
     "Math 104/Lecture 9.md",

@@ -57,10 +57,21 @@ which finishes the proof.
 > > Proposition 1.5. If f, g : A → R are bounded functions such that |f (x) − f (y)| ≤ |g(x) − g(y)| for all x, y ∈ A, then sup A f − inf A f ≤ sup A g − inf A
 >
 > This one is similar to the Lipschitz condition , so the basic idea is to let the RHS:
-$$\lvert g(x) - g(y) \rvert \leq \sup{g} - \inf{g}
-$$
+$$\lvert g(x) - g(y) \rvert \leq \sup{g} - \inf{g}$$
 
 > then we'll have the whole inequality by just the definition of supremum
+
+Don't be so impatient. Let's go through the proof again:
+
+since for all $x,y \in A$, we have $$
+\lvert f(x) - f(y) \rvert \leq \lvert g(x) - g(y) \rvert
+$$
+then given $$
+\lvert g(x) -g(y) \rvert  \leq \sup{g} - \inf{g} \equiv \text{osc}  g
+$$
+so that $$
+\text{osc} f \equiv \sup{f} - \inf{f}  =  \underbrace{ \sup_{x,y \in A}{\left\{ f(x) - f(y)  \right\} } \leq \sup{g} - \inf{g}  }_{ \text{sup preserves the order}  }\equiv \text{osc} g
+$$
 
 > [!PDF|red] [[Ch9.pdf#page=4&selection=6,29,6,45&color=red|Ch9, p.4]]
 > >  almost disjoint
@@ -72,6 +83,12 @@ $$
 >
 > Note the partition is eventually by the end points and if we use end points to represent, then we'll have one more point than intervals.
 
+To use the partitions, we need to memorize $$
+P = \left\{ I_{1} , I_{2} ,\dots,I_{n} \right\}
+$$
+or $$
+P = \left\{ x_{0}, x_{1}, x_{2},\dots ,x_{n} \right\}
+$$
 > [!PDF|yellow] [[Ch9.pdf#page=5&selection=101,0,220,1&color=yellow|Ch9, p.5]]
 > > Definition 2.2. Define the upper Riemann sum of f with respect to the partition P by U (f ; P ) = nX k=1 Mk |Ik| = nX k=1 Mk (xk − xk−1) , and the lower Riemann sum of f with respect to the partition P by L(f ; P ) = nX k=1 mk |Ik| = nX k=1 mk (xk − xk−1) .
 > 
@@ -87,6 +104,10 @@ $$
 > > Definition 2.3. A function f : [a, b] → R is Riemann integrable on [a, b] if it is bounded and its upper integral U (f ) and lower integral L(f ) are equal. In that case, the Riemann integral of f on [a, b], denoted by
 > 
 > This definition comes from $U(f) =L(f)$
+
+Note that if we say some integral is not defined as a Riemann integral, then it may be that:
+1. The upper or lower Riemann sums of $f$ are not well-defined (has $\infty$ or $-\infty$)
+2. The $f$ is so discontinuous that $U(f) \neq L(f)$.
 
 > [!PDF|red] [[Ch9.pdf#page=7&selection=360,8,386,1&color=red|Ch9, p.7]]
 > > n this example, the infimum of the upper Riemann sums is not attained and U (f ; P ) > U (f ) for every partition P .
@@ -104,6 +125,8 @@ $$
 > 
 > Ok this one is pretty annoying, it's called 几乎不相交并 in Chinese, and the basic idea is that we add more separation points to the partition $P$
 
+For a better understanding, the better way is to use the "endpoint" definition. $Q$ is a refinement of $P$ is $P \subset Q$.
+
 > [!PDF|red] [[Ch9.pdf#page=8&selection=398,0,402,1&color=red|Ch9, p.8]]
 > > Example 2.7. Given two partitions, neither one need be a refinement of the other. 
 > 
@@ -113,6 +136,9 @@ $$
 > > Theorem 2.1. Suppose that f : [a, b] → R is bounded, P is a partitions of [a, b], and Q is refinement of P . Then U (f ; Q) ≤ U (f ; P ), L(f ; P ) ≤ L(f ; Q).
 >
 > Let's dive into this one!
+
+>[!Intuition]
+>Intuitively, this means that if the interval $[a,b]$ is split into more sub intervals, then the upper sum will be smaller and closer to $U(f)$, and the lower sum will be greater and closer to $L(f)$.
 
 *Proof*.
 Let $Q$ be a refinement of $P$, and since $P=\left\{ I_{k} \right\}_{k=1}^{n},Q=\left\{ J_{k} \right\}_{k=1}^{m}$, so we have $m\geq n$, then we define $$
@@ -130,7 +156,7 @@ It's easy to see that $$
 \underbrace{ \sum_{\ell=p_{k}}^{q_{k}} M_{\ell}'\lvert J_{\ell} \rvert \leq \sum_{\ell=p_{k}}^{q_{k}} M_{k} \lvert J_{\ell} \rvert  }_{ \text{by def. of supremum} }=M_{k} \lvert I_{k} \rvert 
 $$
 it follows that $$
-U(f;Q) = \sum_{\ell=1}^{m} M_{\ell}' \lvert J_{\ell} \rvert =\sum_{k=1}^{n} \sum_{\ell=p_{k}}^{q_{k}} M_{\ell}'\lvert J_{\ell} \rvert \leq \sum_{i=1}^{n} M_{k}\lvert I_{k} \rvert =U(f;P)
+U(f;Q) = \underbrace{ \sum_{\ell=1}^{m} M_{\ell}' \lvert J_{\ell} \rvert =\sum_{k=1}^{n} \sum_{\ell=p_{k}}^{q_{k}} M_{\ell}'\lvert J_{\ell} \rvert  }_{ \text{transform the partition from } Q\text{ to } P }\leq \sum_{i=1}^{n} M_{k}\lvert I_{k} \rvert =U(f;P)
 $$
 similarly we have the lower bound result since $$
 \sum_{\ell=p_{k}}^{q_{k}} m_{\ell}'\lvert J_{\ell} \rvert \geq m_{k} \lvert I_{k} \rvert 
@@ -141,6 +167,12 @@ $$
 > > Proposition 2.1. If f : [a, b] → R is bounded and P, Q are partitions of [a, b], then L(f ; P ) ≤ U (f ; Q).
 > 
 > The importance comes from that $P,Q$ are arbitrary
+
+Later we use prop 2.1 to prove prop 2.2:
+$$
+L (f) \leq U(f)
+$$ for all $f: \left[ a,b \right] \to \mathbb{R}$ 
+The key idea is to use prop 2.1 for every 2 possible partitions in $\Pi$.
 
 > [!PDF|yellow] [[Ch9.pdf#page=10&selection=376,0,438,4&color=yellow|Ch9, p.10]]
 > > Theorem 3.1 (MOST USEFUL!). A bounded function f : [a, b] → R is Riemann integrable if and only if for every ϵ > 0 there exists a partition P of [a, b], which may depend on ϵ, such that U (f ; P ) − L(f ; P ) < ϵ.
@@ -173,6 +205,8 @@ $$
 > > Proposition 3.1. Suppose that f, g : [a, b] → R are bounded functions and g is integrable on [a, b]. If there exists a constant C ≥ 0 such that asc I f ≤ Casc I g on every interval I ⊂ [a, b], then f is integrable.
 > 
 > The ideas is to control the oscillation of $f$ by an integrable function $g$
+
+I guess this prop 3.1 is the most useful one once you manage the representation of $\text{ osc} f$.
 
 > [!PDF|red] [[Ch9.pdf#page=12&selection=201,0,216,19&color=red|Ch9, p.12]]
 > > Theorem 4.1. A continuous function f : [a, b] → R on a compact interval is Riemann integrable.
@@ -218,12 +252,12 @@ $$
 > [!PDF|yellow] [[Ch9.pdf#page=13&selection=116,0,131,19&color=yellow|Ch9, p.13]]
 > > Theorem 4.2. A monotonic function f : [a, b] → R on a compact interval is Riemann integrable.
 > 
-> This one is kinda funnier
+> This one is kinda funnier, the key idea in proving this is to set all the $I_{k}$ equal to $\frac{b-a}{n}$ so that we can cancel out all of the internal terms while doing the Riemann sums.
 
 > [!PDF|yellow] [[Ch9.pdf#page=13&selection=292,7,292,38&color=yellow|Ch9, p.13]]
 > > summing up a telescoping series
 > 
-> They call it a *telescoping series,* but basically they're just cancelling the term before or after them
+> They call it a *telescoping series,* but basically it's just the former equals to the latter
 
 > [!PDF|yellow] [[Ch9.pdf#page=14&selection=123,0,167,2&color=yellow|Ch9, p.14]]
 > > Theorem 5.1. If f : [a, b] → R is integrable and c ∈ R, then cf is integrable and Z b a cf = c Z b a f.
@@ -262,9 +296,6 @@ $$
 $$
 \int_a^b cf = c \int_a^b f
 $$
-
----
-
 接着考虑 $-f$。  
 因为：
 $$
@@ -298,7 +329,7 @@ $$
 \int_a^b cf = c \int_a^b f
 $$
 > You see the steps?
-> 1. prove linearity holds for $c >0$
+> 1. prove linearity holds for $c >0$ since for the positive $c$ we don't need to shift $\sup{}$ or $\inf{}$.
 > 2. prove it holds for $-1$
 > 3. so for all $c\leq 0,$ they're just $c = -\lvert c \rvert$
 
@@ -348,7 +379,7 @@ $$
 
 从而：
 $$
-U(f + g) \leq U(f + g; P) \leq U(f; P) + U(g; P) < U(f) + U(g) + \varepsilon
+U(f + g) \leq U(f + g; P) \leq \underbrace{ U(f; P) + U(g; P) < U(f) + U(g) + \varepsilon }_{ \text{ by construction of }P }
 $$
 
 由于此不等式对任意 $\varepsilon > 0$ 成立，故：
@@ -412,7 +443,7 @@ $$
 
 对于任意 $x, y \in [a, b]$，有：
 $$
-f^2(x) - f^2(y) = |f(x) + f(y)| \cdot |f(x) - f(y)| \leq 2M \cdot |f(x) - f(y)|
+\left|  f^2(x) - f^2(y) \right| = |f(x) + f(y)| \cdot |f(x) - f(y)| \leq 2M \cdot |f(x) - f(y)|
 $$
 
 对区间 $I \subset [a, b]$ 上的 $x, y$ 取上确界，有：
@@ -465,12 +496,6 @@ $$
 > 
 > The direct monotonicity outcome is proved below:
 
-### 5.2 单调性（Monotonicity）
-
-接下来我们来证明积分的**单调性**。
-
----
-
 ### 定理 5.4  
 设 $f, g : [a, b] \to \mathbb{R}$ 是可积函数，且满足 $f \leq g$。  
 则有：
@@ -490,7 +515,7 @@ $$
 
 因此：
 $$
-\int_a^b f \geq L(f; P) \geq 0
+\int_a^b f = L(f) \geq L(f; P) \geq 0
 $$
 >Until here, the basic idea is to prove that a non-negative function's integral is non-negative
 
@@ -511,6 +536,17 @@ $$
 > > Theorem 5.6. If f : [a, b] → R is continuous, then there exists x ∈ [a, b] such that f (x) = 1 b − a Z b a f.
 > 
 > This is the famous mean value theorem (MVT)
+
+I think you need to go over this proof since this seems non trivial.
+*Proof*.
+Since $f$ is continuous function on a compact interval $[a,b]$ , the extreme value theorem implies it attains its maximum $M$ and minimum value $m$ 
+
+From thm 5.5 we know $$
+m \leq \frac{1}{b-a} \int _{[a,b]}f  \leq M
+$$
+By intermediate value theorem, $f$ takes on every value between $m$ and $M$, so the result follows.
+
+
 
 > [!PDF|yellow] [[Ch9.pdf#page=18&selection=185,0,218,1&color=yellow|Ch9, p.18]]
 > > Theorem 5.7. If f is integrable, then |f | is integrable and Z b a f ≤ Z b a |f |.
@@ -786,7 +822,7 @@ $$
 ### 命题 6.2
 
 
-设 $f : [a, b] \to \mathbb{R}$ 是有界函数，且对所有 $a < r < b$，$f$ 在 $[a, r]$ 上可积。
+设 $f : [a, b] \to \mathbb{R}$ 是**有界**函数，且对所有 $a < r < b$，$f$ 在 $[a, r]$ 上可积。
 
 则：
 
