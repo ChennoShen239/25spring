@@ -94,6 +94,9 @@ $$
 > 
 > For the $U(f;P)$, we use the suprema $M_{k}$ and for the $L(f;P)$, we use the infima $m_{k}$
 
+>[!Darboux Sum]
+>We're actually studying something called the Darboux sum, not strictly Riemann sum. The key difference is we take upper and lower bounds for the Darboux sum but we take a $\xi_{k}$ in each $I_{k}$ for Riemann sum.
+
 > [!PDF|red] [[Ch9.pdf#page=5&selection=327,27,361,1&color=red|Ch9, p.5]]
 > > tegral of f on [a, b] by U (f ) = inf P ∈Π U (f ; P ).
 > 
@@ -959,3 +962,118 @@ $$
 \lim_{ x \to c^{-} } f(x) \neq \lim_{ x \to c^+ }  f(x)
 $$
 2. For essential discontinuity, the *second kind*, at least one of the left limit or the right limit doesn't exist.
+
+---
+Here are something else in the class:
+
+**Definition**: Let $f: [a,b] \to \mathbb{R}$ be a function. A function $F: [a,b] \to \mathbb{R}$ is called a **primitive function** or **antiderivative** of $f$ on $[a,b]$ if $F$ is differentiable on $(a,b)$ and satisfies
+$$
+F'(x) = f(x), \quad \forall x \in (a,b).
+$$
+
+---
+
+**Theorem (Fundamental Theorem of Calculus I):**  
+Let $f: [a,b] \to \mathbb{R}$ be Riemann integrable, and let $F: [a,b] \to \mathbb{R}$ be differentiable on $(a,b)$ such that  
+$$
+F'(x) = f(x), \quad \forall x \in (a,b).
+$$  
+Then  
+$$
+\int_a^b f(x) \, dx = F(b) - F(a).
+$$
+
+**Proof:**  
+
+Let $P = \{x_0, x_1, \dots, x_n\}$ be a partition of $[a,b]$ with $a = x_0 < x_1 < \dots < x_n = b$. For each subinterval $[x_{i-1}, x_i]$, by the Mean Value Theorem (since $F$ is differentiable on $(x_{i-1}, x_i)$ and hence continuous on $[x_{i-1}, x_i]$), there exists $c_i \in (x_{i-1}, x_i)$ such that:
+$$
+F(x_i) - F(x_{i-1}) = F'(c_i)(x_i - x_{i-1}) = f(c_i)(x_i - x_{i-1}).
+$$
+
+Now sum over all subintervals:
+$$
+F(b) - F(a) = \sum_{i=1}^n \left[F(x_i) - F(x_{i-1})\right] = \sum_{i=1}^n f(c_i)(x_i - x_{i-1}).
+$$
+
+This is a **Riemann sum** for $f$ over the partition $P$ with sample points $c_i \in (x_{i-1}, x_i)$.
+
+Since $f$ is Riemann integrable on $[a,b]$, as the mesh of the partition $\|P\| \to 0$, the Riemann sum converges to the integral:
+$$
+\lim_{\|P\| \to 0} \sum_{i=1}^n f(c_i)(x_i - x_{i-1}) = \int_a^b f(x)\, dx.
+$$
+
+Thus,
+$$
+F(b) - F(a) = \int_a^b f(x)\, dx.
+$$
+
+$\blacksquare$
+
+---
+**Theorem (Fundamental Theorem of Calculus II):**  
+Let $f: [a,b] \to \mathbb{R}$ be Riemann integrable. Define $F: [a,b] \to \mathbb{R}$ by  
+$$
+F(x) = \int_a^x f(t)\, dt.
+$$  
+Then:
+1. $F$ is continuous on $[a,b]$;
+2. If $f$ is continuous at some $x_0 \in (a,b)$, then $F$ is differentiable at $x_0$ and  
+$$
+F'(x_0) = f(x_0).
+$$
+
+---
+
+**Proof:**
+
+**(1) Continuity of $F$ on $[a,b]$:**
+
+Let $x \in [a,b]$ and $h$ be a small increment such that $x + h \in [a,b]$. Then
+$$
+F(x + h) - F(x) = \int_a^{x+h} f(t)\, dt - \int_a^x f(t)\, dt = \int_x^{x+h} f(t)\, dt.
+$$
+
+By the integrability of $f$, $f$ is *bounded*: there exists $M > 0$ such that $|f(t)| \leq M$ for all $t \in [a,b]$. Then:
+$$
+|F(x + h) - F(x)| = \left| \int_x^{x+h} f(t)\, dt \right| \leq \int_x^{x+h} |f(t)|\, dt \leq M|h|.
+$$
+
+Thus, as $h \to 0$, $|F(x+h) - F(x)| \to 0$, so $F$ is continuous at $x$. Since $x \in [a,b]$ was arbitrary, $F$ is continuous on $[a,b]$.
+
+---
+
+**(2) Differentiability at $x_0 \in (a,b)$ where $f$ is continuous:**
+
+We consider the definition of the derivative:
+$$
+\frac{F(x_0 + h) - F(x_0)}{h} = \frac{1}{h} \int_{x_0}^{x_0 + h} f(t)\, dt, \quad \text{for small } h \text{ with } x_0 + h \in [a,b].
+$$
+
+By the **Mean Value Theorem for Integrals**, since $f$ is continuous at $x_0$, for any $\varepsilon > 0$, there exists $\delta > 0$ such that for all $t \in [x_0, x_0 + h]$ (or $[x_0 + h, x_0]$ if $h < 0$),
+$$
+|f(t) - f(x_0)| < \varepsilon.
+$$
+
+Then:
+$$
+\left| \frac{1}{h} \int_{x_0}^{x_0 + h} f(t)\, dt - f(x_0) \right| = \left| \frac{1}{h} \int_{x_0}^{x_0 + h} (f(t) - f(x_0))\, dt \right| \leq \underbrace{ \frac{1}{|h|} \int_{x_0}^{x_0 + h} |f(t) - f(x_0)|\, dt }_{  <\frac{1}{|h|} \int_{x_0}^{x_0 + h} \varepsilon\, dt} < \varepsilon.
+$$
+
+So:
+$$
+\lim_{h \to 0} \frac{F(x_0 + h) - F(x_0)}{h} = f(x_0),
+$$
+i.e., $F'(x_0) = f(x_0)$.
+
+$\blacksquare$
+> We can think of an example, let $f(x) = 0$ on $[0,1]\setminus\left\{  \frac{1}{2}  \right\}$ and $f\left( \frac{1}{2} \right) = 1$. We can always see that $F(x)$ = 0 and $F'(x)\equiv0$ but then $F'\left( \frac{1}{2} \right)\neq f\left( \frac{1}{2} \right)$.
+
+One notation is that if we say $f \in R([a,b])$, then we say it's Riemann integrable on $[a,b]$.
+
+1. trivial proof
+2. True of False
+	1. Real number 
+	2. sequential limits and convergence
+	3. squeeze theorem
+	4. Cauchy Criterion
+	5. series, convergence 
