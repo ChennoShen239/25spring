@@ -1,10 +1,10 @@
 {
   "interfaceFontFamily": "Palatino",
-  "textFontFamily": "Palatino",
+  "textFontFamily": "Ysabeau,Ysabeau Infant,LXGW WenKai",
   "cssTheme": "Things",
   "theme": "moonstone",
   "baseFontSize": 20,
-  "monospaceFontFamily": "Hack Nerd Font Mono",
+  "monospaceFontFamily": "Fira Code",
   "translucency": false,
   "nativeMenus": true,
   "enabledCssSnippets": []
