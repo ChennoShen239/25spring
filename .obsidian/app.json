@@ -7,5 +7,7 @@
     "landscape": false,
     "margin": "0",
     "downscalePercent": 78
-  }
+  },
+  "showLineNumber": false,
+  "strictLineBreaks": false
 }

@@ -5,7 +5,7 @@
   "theme": "moonstone",
   "baseFontSize": 20,
   "monospaceFontFamily": "Fira Code",
-  "translucency": false,
+  "translucency": true,
   "nativeMenus": true,
   "enabledCssSnippets": []
 }
