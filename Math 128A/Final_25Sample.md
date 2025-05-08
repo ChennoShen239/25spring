@@ -173,7 +173,8 @@ $$ A = \begin{pmatrix} 0 & 1 & 1 \\ 1 & -2 & -1 \\ 1 & -1 & 1 \end{pmatrix}, \qu
     -   Swap rows 1 and 2 of $P$:
         $$ P \leftarrow \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix} $$
     -   Swap $L_{1,j}$ with $L_{2,j}$ for $j < 1$. There are no such columns, so $L$ is unchanged by this rule for existing entries.
-
+>[!Warning]
+>Keep in mind if we swap rows during the PP in column $k$, for example row $a<b$, then we need to swap every entries in row $a$ and $b$ before the $k$-th column.
 * **Elimination:**
     The pivot element is $a_{11}=1$.
     -   For row 2 ($i=2$): The element $a_{21}=0$. The multiplier $m_{21} = a_{21}/a_{11} = 0/1 = 0$.
@@ -209,11 +210,6 @@ $$ P = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix} $$
 $$ L = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 1 & 1 & 1 \end{pmatrix} $$
 $$ U = \begin{pmatrix} 1 & -2 & -1 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix} $$
 
-Verification (optional):
-$PA = \begin{pmatrix} 0 & 1 & 0 \\ 1 & 0 & 0 \\ 0 & 0 & 1 \end{pmatrix} \begin{pmatrix} 0 & 1 & 1 \\ 1 & -2 & -1 \\ 1 & -1 & 1 \end{pmatrix} = \begin{pmatrix} 1 & -2 & -1 \\ 0 & 1 & 1 \\ 1 & -1 & 1 \end{pmatrix}$
-$LU = \begin{pmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 1 & 1 & 1 \end{pmatrix} \begin{pmatrix} 1 & -2 & -1 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix} = \begin{pmatrix} 1 & -2 & -1 \\ 0 & 1 & 1 \\ 1 & -1 & 1 \end{pmatrix}$
-Since $PA=LU$, the decomposition is correct.
-
 ---
 
 5.  Given an initial value ODE
@@ -223,16 +219,177 @@ Since $PA=LU$, the decomposition is correct.
     with starting values $w_{0},w_{1}$.
     (a) Choose the constants $\gamma$ and $\beta$ so the method (2) is of 2nd order.
 
+***Solutions:***
+
+>[!caution]
+>Keep in mind how to construct the LTE $\tau_{k+1}(h)$!
+
+**1. Define the Local Truncation Error (LTE)**
+
+The given method can be rewritten as:
+$$w_{k+1} + 4w_k - 5w_{k-1} - h(\gamma f_k + \beta f_{k-1}) = 0$$
+The local truncation error $\tau_{k+1}(h)$ is found by substituting the true solution $y(t)$ into the method and dividing by $h$:
+$$\tau_{k+1}(h) = \frac{y(t_{k+1}) + 4y(t_k) - 5y(t_{k-1})}{h} - \left(\gamma y'(t_k) + \beta y'(t_{k-1})\right)$$
+For the method to be of order $p$, we need $\tau_{k+1}(h) = O(h^p)$. For a 2nd order method ($p=2$), we need $\tau_{k+1}(h) = O(h^2)$. This means terms in $\tau_{k+1}(h)$ of order $h^0$ and $h^1$ must be zero.
+
+**2. Taylor Series Expansions**
+
+Let's expand $y(t)$ and $y'(t)$ terms around $t_k$. We'll use $y_k$ for $y(t_k)$, $y'_k$ for $y'(t_k)$, etc.
+* $y(t_{k+1}) = y_k + h y'_k + \frac{h^2}{2} y''_k + \frac{h^3}{6} y'''_k + \frac{h^4}{24} y^{(4)}_k + O(h^5)$
+* $y(t_k) = y_k$
+* $y(t_{k-1}) = y_k - h y'_k + \frac{h^2}{2} y''_k - \frac{h^3}{6} y'''_k + \frac{h^4}{24} y^{(4)}_k + O(h^5)$
+* $y'(t_k) = y'_k$
+* $y'(t_{k-1}) = y'_k - h y''_k + \frac{h^2}{2} y'''_k - \frac{h^3}{6} y^{(4)}_k + O(h^4)$
+
+**3. Substitute Expansions into $\tau_{k+1}(h)$**
+
+Let's first evaluate the fraction part of $\tau_{k+1}(h)$:
+$$\begin{align*} \frac{1}{h} [  y(t_{k+1}) + 4y(t_k) - 5y(t_{k-1}) ] & = \frac{1}{h} [  (y_k + h y'_k + \frac{h^2}{2} y''_k + \frac{h^3}{6} y'''_k + \frac{h^4}{24} y^{(4)}_k) \\ & + 4y_k  - 5(y_k - h y'_k + \frac{h^2}{2} y''_k - \frac{h^3}{6} y'''_k + \frac{h^4}{24} y^{(4)}_k) ] \\&+ O(h^4) \end{align*}$$
+Collecting terms by derivatives of $y_k$:
+$$\begin{align*} &= \frac{1}{h} [(1+4-5)y_k + (h - 5(-h))y'_k + (\frac{h^2}{2} - 5\frac{h^2}{2})y''_k + (\frac{h^3}{6} - 5(-\frac{h^3}{6}))y'''_k + (\frac{h^4}{24} - 5\frac{h^4}{24})y^{(4)}_k] + O(h^4) \\ &= \frac{1}{h} [0 \cdot y_k + 6h y'_k - 2h^2 y''_k + h^3 y'''_k - \frac{4h^4}{24}y^{(4)}_k] + O(h^4) \\ &= 6y'_k - 2h y''_k + h^2 y'''_k - \frac{1}{6}h^3 y^{(4)}_k + O(h^4) \end{align*}$$
+Now for the second part of $\tau_{k+1}(h)$:
+$$\begin{align*} - (\gamma y'(t_k) + \beta y'(t_{k-1})) &= - [\gamma y'_k + \beta (y'_k - h y''_k + \frac{h^2}{2} y'''_k - \frac{h^3}{6} y^{(4)}_k)] + O(h^4) \\ &= -(\gamma+\beta)y'_k + \beta h y''_k - \frac{\beta h^2}{2} y'''_k + \frac{\beta h^3}{6} y^{(4)}_k + O(h^4)\end{align*}$$
+Combining these parts to get $\tau_{k+1}(h)$:
+$$\begin{align*} \tau_{k+1}(h) &= (6y'_k - 2h y''_k + h^2 y'''_k - \frac{1}{6}h^3 y^{(4)}_k) \\ & - ((\gamma+\beta)y'_k - \beta h y''_k + \frac{\beta h^2}{2} y'''_k - \frac{\beta h^3}{6} y^{(4)}_k) + O(h^4) \\ &=  (6 - (\gamma+\beta))y'_k  + (-2 + \beta)h y''_k + (1 - \frac{\beta}{2})h^2 y'''_k  + (-\frac{1}{6} + \frac{\beta}{6})h^3 y^{(4)}_k + O(h^4) \end{align*}$$
+
+**4. Conditions for 2nd Order Accuracy**
+For the method to be 2nd order ($\tau_{k+1}(h) = O(h^2)$), the coefficients of $h^0$ (terms with $y'_k$) and $h^1$ (terms with $h y''_k$) in the expansion of $\tau_{k+1}(h)$ must be zero.
+1.  Coefficient of $y'_k$ (term $h^0$):
+    $6 - \gamma - \beta = 0 \implies \gamma + \beta = 6$
+2.  Coefficient of $h y''_k$ (term $h^1$):
+    $-2 + \beta = 0 \implies \beta = 2$
+
+**5. Solve for $\gamma$ and $\beta$**
+From condition (2), we get $\beta = 2$.
+Substitute $\beta = 2$ into condition (1):
+$\gamma + 2 = 6 \implies \gamma = 4$.
+So, the constants are $\gamma = 4$ and $\beta = 2$.
+
+**6. Check the Resulting Order**
+Let's check the coefficient of $h^2 y'''_k$ with these values:
+$1 - \frac{\beta}{2} = 1 - \frac{2}{2} = 1 - 1 = 0$.
+The coefficient of $h^2$ is also zero. Now check the $h^3 y^{(4)}_k$ term:
+$\frac{\beta-1}{6} = \frac{2-1}{6} = \frac{1}{6}$.
+Since this coefficient is not zero, the local truncation error is:
+$$\tau_{k+1}(h) = \frac{1}{6}h^3 y^{(4)}_k + O(h^4)$$
+Because $\tau_{k+1}(h) = O(h^3)$, the method is actually of 3rd order. A 3rd order method also satisfies the condition of being a 2nd order method.
+
+**Conclusion:**
+The constants are $\gamma = 4$ and $\beta = 2$.
+
 ---
 
 6.  Compute $\mathrm{det}(A)$ with $A=\begin{pmatrix}1&2&0\\2&1&3\\0&4&\alpha\end{pmatrix}$. For which values of $\alpha$ is $\operatorname*{det}(A)=0$?
+
+***Solution***:
+This is so easy.
 
 ---
 
 7.  Determine the exact conditions on the coefficients $a,b,c,d,e$ under which the following function is a cubic spline (i.e., $f\in C^{2}(-\infty,\infty)$):
     $$f(x)=\begin{cases}a(x-1)^2+b\:x^3,&\text{if }x\in(-\infty,0],\\c(x-1)^2,&\text{if }x\in[0,2],\\d(x-2)^3+e(x-1)^2,&\text{if }x\in[2,\infty).\end{cases}$$
+***Solutions:***
+To determine the conditions on the coefficients $a,b,c,d,e$ for the function $f(x)$ to be a cubic spline, $f(x)$ must be $C^2(-\infty,\infty)$. This means $f(x)$, $f'(x)$, and $f''(x)$ must be continuous at the knots $x=0$ and $x=2$.
+
+The function is defined in three pieces:
+1.  $S_0(x) = a(x-1)^2 + bx^3$ for $x \le 0$
+2.  $S_1(x) = c(x-1)^2$ for $0 \le x \le 2$
+3.  $S_2(x) = d(x-2)^3 + e(x-1)^2$ for $x \ge 2$
+
+Let's find the first and second derivatives for each piece:
+
+For $S_0(x) = a(x-1)^2 + bx^3$:
+$S_0'(x) = 2a(x-1) + 3bx^2$
+$S_0''(x) = 2a + 6bx$
+
+For $S_1(x) = c(x-1)^2$:
+$S_1'(x) = 2c(x-1)$
+$S_1''(x) = 2c$
+
+For $S_2(x) = d(x-2)^3 + e(x-1)^2$:
+$S_2'(x) = 3d(x-2)^2 + 2e(x-1)$
+$S_2''(x) = 6d(x-2) + 2e$
+
+Now, we apply the continuity conditions at the knots.
+
+**Continuity at $x=0$:**
+
+1.  **Continuity of $f(x)$**: $S_0(0) = S_1(0)$
+    $a(0-1)^2 + b(0)^3 = c(0-1)^2$
+    $a(1) + 0 = c(1)$
+    $a = c \quad \quad (1)$
+
+2.  **Continuity of $f'(x)$**: $S_0'(0) = S_1'(0)$
+    $2a(0-1) + 3b(0)^2 = 2c(0-1)$
+    $-2a + 0 = -2c$
+    $a = c \quad \quad (2)$ (This is the same as condition 1)
+
+3.  **Continuity of $f''(x)$**: $S_0''(0) = S_1''(0)$
+    $2a + 6b(0) = 2c$
+    $2a = 2c$
+    $a = c \quad \quad (3)$ (This is also the same as condition 1)
+
+From the conditions at $x=0$, we get $a=c$.
+
+**Continuity at $x=2$:**
+
+1.  **Continuity of $f(x)$**: $S_1(2) = S_2(2)$
+    $c(2-1)^2 = d(2-2)^3 + e(2-1)^2$
+    $c(1)^2 = d(0)^3 + e(1)^2$
+    $c = e \quad \quad (4)$
+
+2.  **Continuity of $f'(x)$**: $S_1'(2) = S_2'(2)$
+    $2c(2-1) = 3d(2-2)^2 + 2e(2-1)$
+    $2c(1) = 3d(0) + 2e(1)$
+    $2c = 2e$
+    $c = e \quad \quad (5)$ (This is the same as condition 4)
+
+3.  **Continuity of $f''(x)$**: $S_1''(2) = S_2''(2)$
+    $2c = 6d(2-2) + 2e$
+    $2c = 6d(0) + 2e$
+    $2c = 2e$
+    $c = e \quad \quad (6)$ (This is also the same as condition 4)
+
+From the conditions at $x=2$, we get $c=e$.
+
+**Summary of Conditions:**
+The conditions for $f(x)$ to be a $C^2$ function (and thus a cubic spline, as each piece is a polynomial of degree at most 3) are:
+1.  $a=c$
+2.  $c=e$
+
+Combining these conditions, we have:
+$$a = c = e$$
+There are no conditions imposed on the coefficients $b$ and $d$ by the $C^2$ continuity requirements at the knots. Therefore, $b$ and $d$ can be any real numbers.
+
+**Final Conditions:**
+The exact conditions on the coefficients for $f(x)$ to be a cubic spline are:
+$a = c = e$, while $b$ and $d$ can be any real numbers.
 
 ---
 
 8.  Does the function $f(t, y) = t^{2}y^{3}$ satisfy the Lipschitz condition on the domain
     $$\mathcal{D}\stackrel{\text{def}}{=}\{(t,y)\mid0\leq t\leq1,\:-\infty<y<\infty\}?$$
+***Solutions:***
+To determine if the function $f(t, y) = t^2 y^3$ satisfies the Lipschitz condition on the domain $\mathcal{D} = \{(t,y) \mid 0 \le t \le 1, -\infty < y < \infty\}$, we can examine its partial derivative with respect to $y$.
+
+**1. Definition of Lipschitz Condition (with respect to $y$)**
+A function $f(t,y)$ satisfies a Lipschitz condition with respect to $y$ on a domain $\mathcal{D}$ if there exists a positive constant $L$ (the Lipschitz constant) such that for any $(t, y_1)$ and $(t, y_2)$ in $\mathcal{D}$:
+$$|f(t, y_1) - f(t, y_2)| \le L |y_1 - y_2|$$
+
+**2. Calculate $\frac{\partial f}{\partial y}$**
+For the given function $f(t, y) = t^2 y^3$:
+$$ \frac{\partial f}{\partial y} = \frac{\partial}{\partial y} (t^2 y^3) $$
+Treating $t$ as a constant with respect to $y$:
+$$ \frac{\partial f}{\partial y} = t^2 \cdot (3y^2) = 3t^2 y^2 $$
+
+**3. Analyze the Boundedness of $\left|\frac{\partial f}{\partial y}\right|$ on $\mathcal{D}$**
+The domain $\mathcal{D}$ is defined by $0 \le t \le 1$ and $-\infty < y < \infty$.
+We need to check if $\left|3t^2 y^2\right| = 3t^2 y^2$ (since $t^2 \ge 0$ and $y^2 \ge 0$) is bounded on this domain.
+
+* The term $t^2$ is bounded: $0 \le t^2 \le 1$ (because $0 \le t \le 1$).
+* The term $y^2$ is unbounded because $y$ can range from $-\infty$ to $\infty$. As $y \to \infty$ (or $y \to -\infty$), $y^2 \to \infty$.
+
+Since $\left|\frac{\partial f}{\partial y}\right| = 3t^2 y^2$ can become arbitrarily large within the domain $\mathcal{D}$ (e.g., by taking $t=1$ and letting $y \to \infty$), it is not bounded.
+
+**4. Conclusion**
+Because the partial derivative $\left|\frac{\partial f}{\partial y}\right|$ is unbounded on the given domain $\mathcal{D}$, the function $f(t, y) = t^2 y^3$ **does not satisfy** the Lipschitz condition on this domain.
