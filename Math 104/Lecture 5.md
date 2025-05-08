@@ -23,7 +23,7 @@ $$
 > Here's the proof
 
 Proof of Theorem 1.1
-1. we first prove the "if" part:
+1. we first prove the "if" part: (from "all $\left\{ x_{k} \right\} \to c,f(x_{k})\to f(c)$" to "$f(x)$ is continuous at $c$")
 	1. if $f$ is discontinuous at $c$, then there exists $\epsilon_{0}>0$ such that $\forall \delta>0$, there exists $x \in A$ such that $$
 |x-c|<\delta,|f(x)-f(c)|\geq\epsilon_{0}
 $$
@@ -31,7 +31,7 @@ $$
 |x_{n}-c|< \frac{1}{n},|f(x_{n})-f(c)|\geq \epsilon_{0}
 $$
 	3. by squeeze theorem, $x_{n} \to c$ but $f(x_{n})$ doesn't converge to $f(c)$. Then it contradicts the hypothesis
-2. Then we prove the "only if part":
+2. Then we prove the "only if part": (from "$f$ is continuous at $c$ " to "all $\left\{ x_{n} \right\}\to c,f(x_{n})\to f(c)$")
 	1. if $f$ is continuous at $c$, then for any $\epsilon>0$, there exists $\delta >0$ such that $$
 \forall x \in(c-\delta ,c+\delta),|f(x)-f(c)|<\epsilon
 $$
@@ -48,10 +48,10 @@ $$
 > 
 > A proof of sketch:
 
-1. $f$ is continuous at $0$: when $x \to 0$, no matter for rational numbers or irrational numbers the function value approaches $0$
-2. $f$ is continuous at all **irrational numbers**: for every $c \in \mathbb{R} \setminus \mathbb{Q}$ , and for any neighborhood $U$ of $c$, for any $x \in \mathbb{Q} \cap U$, as $q$ is getting bigger, $f(x) \to 0$, i.e. continuous at $c$
+3. $f$ is continuous at $0$: when $x \to 0$, no matter for rational numbers or irrational numbers the function value approaches $0$
+4. $f$ is continuous at all **irrational numbers**: for every $c \in \mathbb{R} \setminus \mathbb{Q}$ , and for any neighborhood $U$ of $c$, for any $x \in \mathbb{Q} \cap U$, as $q$ is getting bigger, $f(x) \to 0$, i.e. continuous at $c$
 > for a more detailed proof, see the pdf file for it!
-3. $f$ is **discontinuous** at all **rational numbers**: for every $c \in \mathbb{Q}$,  there are infinite many irrational numbers $(x_{n}),\forall x_{n} \in \mathbb{R} \setminus\mathbb{Q}$  and the sequence $(f(x_{n}))\to_{0} \ne \frac{1}{q}$.
+5. $f$ is **discontinuous** at all **rational numbers**: for every $c \in \mathbb{Q}$,  there are infinite many irrational numbers $(x_{n}),\forall x_{n} \in \mathbb{R} \setminus\mathbb{Q}$  and the sequence $(f(x_{n}))\to_{0} \ne \frac{1}{q}$.
 
 > [!PDF|yellow] [[Ch5.pdf#page=7&selection=0,0,2,12&color=yellow|Ch5, p.7]]
 > > Example 2.4. The function
@@ -95,11 +95,11 @@ $$
 > 
 > Proof or Theorem 4.1
 
-1. $\Rightarrow$: 
+6. $\Rightarrow$: 
 	1. since $A$ is bounded, the sequence $(x_{n})$ defined on $A$ is also bounded
 	2. By Bolzano-Weierstrass theorem, $(x_{n})$ has a convergent subsequence $(x_{n_{k}})$ 
 	3. since $A$ is closed, all convergent sequences' limits (including $(x_{n_{k}})$) is in $A$, therefore it's **sequentially compact**
-2. $\Leftarrow$:
+7. $\Leftarrow$:
 	1. We first prove $A$ is bounded:
 		1. assume $A$ is not bounded
 		2. then we can construct $(x_{n})$ such that $$
