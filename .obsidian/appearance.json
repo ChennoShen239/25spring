@@ -1,11 +1,11 @@
 {
   "interfaceFontFamily": "Palatino",
   "textFontFamily": "Ysabeau,Ysabeau Infant,LXGW WenKai",
-  "cssTheme": "Things",
-  "theme": "moonstone",
+  "cssTheme": "Catppuccin",
+  "theme": "system",
   "baseFontSize": 20,
   "monospaceFontFamily": "Fira Code",
-  "translucency": true,
+  "translucency": false,
   "nativeMenus": true,
   "enabledCssSnippets": []
 }

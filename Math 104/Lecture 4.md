@@ -7,7 +7,6 @@
 > 
 > This is the definition, notice we only need the $a \in A$ exists 
 
-
 > [!PDF|yellow] [[Math 104/Ch4.pdf#page=1&selection=108,18,120,0&color=yellow|Ch4, p.1]]
 > >  c ∈ R is an accumulation point of A
 > 
