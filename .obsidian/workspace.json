@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math 128A/Final_24Spring.md",
+                "file": "Math 128A/Final_25Sample.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Final_24Spring"
+              "title": "Final_25Sample"
             }
           },
           {
@@ -232,9 +232,16 @@
   "active": "1e8625cf3f7b7d34",
   "lastOpenFiles": [
     "Math 128A/Lecture 11.md",
-    "Math 128A/Final_24Spring.md",
+    "Math 128A/Final_25Sample.md",
     "Math 128A/Lecture 10.md",
+    "Math 128A/Lecture 12.md",
+    "Math 128A/Lecture 6.md",
+    "Math 128A/Lecture 7.md",
+    "Math 128A/Lecture 8.md",
     "Math 128A/Lecture 9.md",
+    "Math 128A/Midterm Review.md",
+    "Math 128A/Lecture 5.md",
+    "Math 128A/Final_24Spring.md",
     "Math 128B/math128b_lecture_notes.pdf",
     "Math 128B/Part IV.md",
     "Math 128B/Part III.md",
@@ -243,7 +250,6 @@
     "characteristic_roots_latex_highres.png",
     "Math 104/Lecture 9.md",
     "Math 104/Ch9.pdf",
-    "Math 128A/Lecture 12.md",
     "output 2.png",
     "output 1.png",
     "Math 104/Lecture 8.md",
@@ -266,16 +272,11 @@
     "Math 104/Lecture 6.md",
     "Econ 236B/Lecture 10.md",
     "Math 104/Lecture 5.md",
-    "Math 128A/Lecture 8.md",
-    "Math 128A/Lecture 7.md",
     "Econ 236B/Lecture 7.md",
     "Econ 236B/Lecture 9.md",
     "Math 128B/Part II.md",
     "Econ 236B/Lecture 8.md",
     "Math 104/Practice 1.md",
-    "Math 104/Midterm Review.md",
-    "conflict-files-obsidian-git.md",
-    "Math 128A/Midterm Review.md",
     "未命名.canvas"
   ]
 }

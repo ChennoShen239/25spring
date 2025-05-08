@@ -354,8 +354,6 @@ $$
 > $$ \begin{cases} u_1' = u_2, & u_1(0) = 1 \\ u_2' = te^t - u_1, & u_2(0) = -1 \end{cases} $$
 > for $0 \leq t \leq 1$.
 
-
-
 ---
 
 **Your Name and SID:**  
