@@ -34,10 +34,10 @@
               "type": "pdf",
               "state": {
                 "file": "Math 104/Ch4.pdf",
-                "page": 1,
-                "left": -22,
-                "top": 445,
-                "zoom": 0.707107843137255
+                "page": 8,
+                "left": 73,
+                "top": 367,
+                "zoom": 1.15
               },
               "icon": "lucide-file-text",
               "title": "Ch4"
@@ -159,8 +159,8 @@
               "state": {
                 "file": "Math 104/Ch8.pdf",
                 "page": 6,
-                "left": 99,
-                "top": 238,
+                "left": 95,
+                "top": 242,
                 "zoom": 1.68
               },
               "icon": "lucide-file-text",
@@ -173,7 +173,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Math 104/Lecture 8.md",
+                "file": "Math 104/Lecture 4.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -183,7 +183,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Lecture 8"
+              "title": "Backlinks for Lecture 4"
             }
           },
           {
@@ -221,7 +221,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 662
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -238,10 +238,11 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "1e8625cf3f7b7d34",
+  "active": "4d0abe5cc400e4a2",
   "lastOpenFiles": [
-    "Math 104/Ch4.pdf",
+    "Math 104/Ch8.pdf",
     "Math 104/Lecture 4.md",
+    "Math 104/Ch4.pdf",
     "Math 128A/Final_25Sample.md",
     "Math 128A/Lecture 11.md",
     "Math 128A/Lecture 10.md",
@@ -265,7 +266,6 @@
     "output 1.png",
     "Math 104/Lecture 8.md",
     "Math 104/Lecture 8.pdf",
-    "Math 104/Ch8.pdf",
     "Math 104/Ch5.pdf",
     "Math 104/Ch6.pdf",
     "Math 104/Ch7.pdf",

@@ -57,7 +57,7 @@
 
 Proof. of Ex 1
 We first prove the positive case:
-1. $\lim_{ x \to \infty }f(x) = L \implies \lim_{ t \to 0^{+} }f(t)= L$:
+1. $\lim_{ x \to \infty }f(x) = L \implies \lim_{ t \to 0^{+} }f\left( \frac{1}{t} \right)= L$:
 	1. by definition, for all $\epsilon > 0$, there exists $M > 0$ such that $\forall x>M$, $|f(x)-L|<\epsilon$. Then we can let $\delta = | \frac{1}{{M}}|>0$, then $\forall t\in(0,\delta)$, we have $\frac{1}{t}>{M}$, and therefore $|f\left( \frac{1}{t} \right)-L|< \epsilon$.
 2. $\lim_{ t \to 0^{+} }f\left( \frac{1}{t} \right) = L \implies \lim_{ x \to \infty }f(x) = L$:
 	1. by definition, for all $\epsilon >0$, there exists $\delta>0$ such that $\forall \frac{1}{t} \in(0,\delta),|f\left( \frac{1}{t} \right)-L|<\epsilon$. Then we can let $M = \frac{1}{\delta}$, then for all $x > M$, we have equivalently $\frac{1}{x}<\delta$, so $|f(x) -L|<\epsilon$
@@ -80,4 +80,14 @@ Proof of squeeze Theorem:
 L - \epsilon < f(x) \leq g(x) \leq h(x) < L + \epsilon
 $$
 	i.e.$|g(x)-L|< \epsilon$. 
+
+> [!PDF|yellow] [[Ch4.pdf#page=8&selection=113,0,186,23&color=yellow|Ch4, p.8]]
+> > Example 3.1. We have −1 ≤ sin  1 x  ≤ 1 for all x̸ = 0 and lim x→0(−1) = −1, lim x→0 1 = 1, but lim x→0 sin  1 x  does not exist. (where is the problem?)
+> 
+> The problem is that 
+
+$$
+\lim_{ x \to 0 }(-1) \neq \lim_{ x\to 0 }1
+$$
+that is they don't share the same limit.
 
