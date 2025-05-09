@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math 104/Lecture 7.md",
+                "file": "Math 104/Lecture 8.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lecture 7"
+              "title": "Lecture 8"
             }
           }
         ]
@@ -136,10 +136,10 @@
               "type": "pdf",
               "state": {
                 "file": "Math 104/Ch8.pdf",
-                "page": 6,
-                "left": 95,
-                "top": 242,
-                "zoom": 1.68
+                "page": 10,
+                "left": 117,
+                "top": 737,
+                "zoom": 1.55
               },
               "icon": "lucide-file-text",
               "title": "Ch8"
@@ -213,7 +213,6 @@
           {
             "id": "d5ee89763b429171",
             "type": "leaf",
-            "dimension": 12.5,
             "state": {
               "type": "pdf",
               "state": {
@@ -230,15 +229,14 @@
           {
             "id": "7d0d1e6029a44290",
             "type": "leaf",
-            "dimension": 11.11111111111111,
             "state": {
               "type": "pdf",
               "state": {
                 "file": "Math 104/Ch7.pdf",
                 "page": 10,
-                "left": 110,
-                "top": 658,
-                "zoom": 1.51
+                "left": -16,
+                "top": 772,
+                "zoom": 0.9227941176470589
               },
               "icon": "lucide-file-text",
               "title": "Ch7"
@@ -268,6 +266,8 @@
   },
   "active": "4d0abe5cc400e4a2",
   "lastOpenFiles": [
+    "Math 104/Ch8.pdf",
+    "Math 104/Lecture 8.md",
     "Math 104/Ch7.pdf",
     "Math 104/Lecture 7.md",
     "Math 104/Lecture 6.md",
@@ -277,7 +277,6 @@
     "Math 128A/Final_25Sample.md",
     "Math 104/Ch5.pdf",
     "Math 104/Lecture 4.md",
-    "Math 104/Ch8.pdf",
     "Math 104/Ch4.pdf",
     "Math 128A/Lecture 11.md",
     "Math 128A/Lecture 10.md",
@@ -299,7 +298,6 @@
     "Math 104/Ch9.pdf",
     "output 2.png",
     "output 1.png",
-    "Math 104/Lecture 8.md",
     "Math 104/Lecture 8.pdf",
     "untitled 1.jpg",
     "Econ 236B/Lecture_7.pdf",
