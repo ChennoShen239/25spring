@@ -10,6 +10,11 @@
 > 
 > Basic Algebra! Keep in mind you silly boy!
 
+And accordingly there's another one:
+$$
+a^{3} + b^{3} =  (a+b)(a^{2}-ab+b^{2})
+$$
+
 > [!PDF|yellow] [[Ch6.pdf#page=5&selection=339,0,348,25&color=yellow|Ch6, p.5]]
 > > A function is differentiable at a < c < b if and only if the left and right derivatives at c both exist and are equal.
 > 
@@ -31,6 +36,11 @@
 > 2. $f$ is differentiable
 > 3. $f'$ is continuous
 > 4. It's always a open interval
+
+**General Form**
+we extend the definition of $C^{p}$ : A function $f:[a,b]\to \mathbb{R}$ is in $C^{p}(a,b)$ if and only if:
+1. $f',f'',f^{(3)},\dots,f^{(p)}$ all exist
+2. $f^{(p)}$ is continuous on $(a,b)$
 
 > [!PDF|yellow] [[Ch6.pdf#page=8&selection=77,0,81,0&color=yellow|Ch6, p.8]]
 > > Theorem 2.3 (Chain rule).
@@ -79,6 +89,8 @@ If $x_{0}$ is the infimum point, then we just switch all the inequalities and th
 > 
 > We only have the $f' \to \uparrow$ side and we don't have the other direction
 
+To illustrate this, just think of the function $f =x^{3}$, which has $f'(0)=0$ but is still monotonically increasing.
+
 > [!PDF|yellow] [[Ch6.pdf#page=10&selection=316,0,317,1&color=yellow|Ch6, p.10]]
 > > Example 3.2. 
 > 
@@ -111,6 +123,12 @@ We suppose that $c \in(x_{1},x_{2})$, then we have $g'(x_{1})<0, g'(x_{2})>0$. T
 > 3. $f'(c) \neq{0}$
 > 4. $f'$ is continuous at $c$
 
+| Proposition 4.1   | Theorem 4.1           |
+| ----------------- | --------------------- |
+| 假设已经知道反函数存在且可导    | 给出生成反函数的充分条件          |
+| 对 $f^{-1}$ 给出导数公式 | 同时**保证反函数存在**，还给出导数公式 |
+| 更多是代数上处理反函数       | 更偏向分析，关注函数局部行为和构造     |
+
 > [!PDF|red] [[Ch6.pdf#page=11&selection=511,0,515,17&color=red|Ch6, p.11]]
 > > Since we only consider local invertibility, we don’t need f to be one-to-one.
 > 
@@ -128,6 +146,30 @@ We suppose that $c \in(x_{1},x_{2})$, then we have $g'(x_{1})<0, g'(x_{2})>0$. T
 
 The proof of this is basically just construct a function $h$ that satisfies the Rolle's Theorem.
 
+But you can memorize the proof by replicating this function: $$
+[\underbrace{ f(b) }_{ \text{to }f(x) }-f(a)][\underbrace{ g(b) }_{ \text{ to }g(x) }-g(a)]
+$$
+
+
+> [!PDF|note] [[Ch6.pdf#page=12&selection=135,0,136,41&color=note|Ch6, p.12]]
+> > As an example of the application of the inverse function theorem, we consider a simple problem from bifurcation theory.
+
+给定函数  
+$$
+f(x; k) = x - k(e^x - 1),
+$$  
+我们希望解出 $x$ 使得 $f(x; k) = y$。我们观察到：
+
+- 当 $y = 0$ 时，有一个显然解 $x = 0$。
+- 函数在 $x = 0$ 处的偏导为：
+  $$
+  f_x(0; k) = 1 - k.
+  $$
+- 如果 $f_x(0; k) \ne 0$，也就是 $k \ne 1$，则满足反函数定理的条件。
+
+根据**反函数定理**，在 $x = 0$ 和 $y = 0$ 的邻域内，$f(x; k)$ 有一个局部反函数，从而方程 $f(x; k) = y$ 有唯一的局部解 $x$。
+
+
 > [!PDF|yellow] [[Ch6.pdf#page=13&selection=320,0,440,2&color=yellow|Ch6, p.13]]
 > > Theorem 5.2 (L’Hospital’s rule). Suppose that f, g : (a, b) → R are differentiable functions on a bounded open interval (a, b) such that g′(x)̸ = 0 for x ∈ (a, b) and lim x→a+ f (x) = 0, lim x→a+ g(x) = 0. Then lim x→a+ f ′(x) g′(x) = L implies that lim x→a+ f (x) g(x) = L.
 > 
@@ -139,12 +181,26 @@ The proof of this is basically just construct a function $h$ that satisfies the 
 > 
 > This condition is to guarantee the origin limit won't be $\frac{\infty}{0}$
 
+The key to proving this is to split $\frac{f}{g}$ into 3 terms and control them to all be under $\frac{\epsilon}{3}$
+$$
+\frac{f(x)}{g(x)} = \underbrace{ \left[ \frac{f(x)-f(y)}{g(x)-g(y)} \right] }_{ \frac{f'(c)}{g'(c)} \text{ by Cauchy MVT} }\underbrace{ \left[ \frac{g(x)-g(y)}{g(x)} \right] }_{ \to 1 } + \underbrace{ \frac{f(y)}{g(x)} }_{ \to 0 }
+$$
+
 > [!PDF|yellow] [[Ch6.pdf#page=17&selection=421,0,471,9&color=yellow|Ch6, p.17]]
 > > Theorem 6.1 (Taylor with Lagrange Remainder). Suppose that f : (a, b) → R has n + 1 derivatives on (a, b) and let a < c < b. For every a < x < b, there exists ξ between c and x such that
 > 
 > Note that we need the $f$ to have $n+1$ derivatives now.
 
-The proof need 2 aux functions, $g$ as the residual and $h$ for the Rolle's Theorem. $$
+The proof need 2 aux functions, $g$ as the residual and $h$ for the Rolle's Theorem.
+We fix $x$ and $c$, then we construct the $g(t)$ for $t \in(a,b)$:
+$$
+g(t) = f(x) - f(t) - f'(t) (x-t) - \frac{1}{2} f''(t)(x-t)^{2} -\dots-\frac{1}{n!}f^{(n)}(t)(x-t)^{n}
+$$
+and this will have a $0$ residual at $g(x)=0$ and use some hard derivatives we have $$
+g'(t) = - \frac{1}{n!}f^{(n+1)}(t)(x-t)^{n}
+$$
+therefore we can construct this aux function for Rolle's Theorem.
+$$
 h(t) = g(t)  - \left( \frac{x-t}{x-c}  \right)^{n+1}g(c)
 $$
 After the Rolle's theorem, we can easily get to the point.
@@ -154,6 +210,10 @@ After the Rolle's theorem, we can easily get to the point.
 > 
 > A new definition!
 
+- 要找极值，不需要全体遍历，只需考虑：
+    1. 端点    
+    2. 临界点（不可导或导数为零）    
+- 但这些点**不一定**是极值点，需进一步判断（例如通过导数符号变化或二阶导数）
+- 两个例子明确指出：**临界点不一定意味着局部极值**
 
-
-
+![[output 3.png]]

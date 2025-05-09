@@ -218,10 +218,10 @@
               "type": "pdf",
               "state": {
                 "file": "Math 104/Ch6.pdf",
-                "page": 1,
-                "left": 90,
-                "top": 423,
-                "zoom": 1.3
+                "page": 20,
+                "left": 75,
+                "top": 260,
+                "zoom": 1.33
               },
               "icon": "lucide-file-text",
               "title": "Ch6"
@@ -251,6 +251,8 @@
   },
   "active": "4d0abe5cc400e4a2",
   "lastOpenFiles": [
+    "output 3.png",
+    "Math 104/Ch6.pdf",
     "Math 104/Lecture 6.md",
     "Math 104/Lecture 5.md",
     "Math 128A/Final_25Sample.md",
@@ -280,7 +282,6 @@
     "output 1.png",
     "Math 104/Lecture 8.md",
     "Math 104/Lecture 8.pdf",
-    "Math 104/Ch6.pdf",
     "Math 104/Ch7.pdf",
     "Math 104/Lecture 7.md",
     "untitled 1.jpg",
