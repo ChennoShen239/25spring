@@ -48,10 +48,10 @@ $$
 > 
 > A proof of sketch:
 
-3. $f$ is continuous at $0$: when $x \to 0$, no matter for rational numbers or irrational numbers the function value approaches $0$
-4. $f$ is continuous at all **irrational numbers**: for every $c \in \mathbb{R} \setminus \mathbb{Q}$ , and for any neighborhood $U$ of $c$, for any $x \in \mathbb{Q} \cap U$, as $q$ is getting bigger, $f(x) \to 0$, i.e. continuous at $c$
+1. $f$ is continuous at $0$: when $x \to 0$, no matter for rational numbers or irrational numbers the function value approaches $0$
+2. $f$ is continuous at all **irrational numbers**: for every $c \in \mathbb{R} \setminus \mathbb{Q}$ , and for any neighborhood $U$ of $c$, for any $x \in \mathbb{Q} \cap U$, as $q$ is getting bigger, $f(x) \to 0$, i.e. continuous at $c$
 > for a more detailed proof, see the pdf file for it!
-5. $f$ is **discontinuous** at all **rational numbers**: for every $c \in \mathbb{Q}$,  there are infinite many irrational numbers $(x_{n}),\forall x_{n} \in \mathbb{R} \setminus\mathbb{Q}$  and the sequence $(f(x_{n}))\to_{0} \ne \frac{1}{q}$.
+3. $f$ is **discontinuous** at all **rational numbers**: for every $c \in \mathbb{Q}$,  there are infinite many irrational numbers $(x_{n}),\forall x_{n} \in \mathbb{R} \setminus\mathbb{Q}$  and the sequence $(f(x_{n}))\to {0} \ne \frac{1}{q}$.
 
 > [!PDF|yellow] [[Ch5.pdf#page=7&selection=0,0,2,12&color=yellow|Ch5, p.7]]
 > > Example 2.4. The function
@@ -95,11 +95,11 @@ $$
 > 
 > Proof or Theorem 4.1
 
-6. $\Rightarrow$: 
+4. $\Rightarrow$: 
 	1. since $A$ is bounded, the sequence $(x_{n})$ defined on $A$ is also bounded
 	2. By Bolzano-Weierstrass theorem, $(x_{n})$ has a convergent subsequence $(x_{n_{k}})$ 
 	3. since $A$ is closed, all convergent sequences' limits (including $(x_{n_{k}})$) is in $A$, therefore it's **sequentially compact**
-7. $\Leftarrow$:
+5. $\Leftarrow$:
 	1. We first prove $A$ is bounded:
 		1. assume $A$ is not bounded
 		2. then we can construct $(x_{n})$ such that $$
@@ -110,8 +110,13 @@ $$
 		1. assume $A$ is not closed
 		2. then there exists a limit point $a \not\in A$
 		3. since $a$ is a limit point, there exists such sequence $(x_{n})  \subseteq A,x_{n} \to a$
-		4. by sequential compactness, $(x_{n})$ must have a convergent subsequence $(x_{n_{k}})$ such that $x_{n_{k}}\to b \in A$.
+		4. by **sequential compactness**, $(x_{n})$ must have a convergent subsequence $(x_{n_{k}})$ such that $x_{n_{k}}\to b \in A$.
 		5. then we must have $a=b$, which contradicts $a \not\in A$.
+
+>[!note]
+>It's quite useful to remember the definition of the sequential compactness.
+
+
 > [!PDF|yellow] [[Ch5.pdf#page=9&selection=284,0,284,11&color=yellow|Ch5, p.9]]
 > > Theorem 4.2
 > 
@@ -121,6 +126,18 @@ $$
 > >  it needn’t attain its supremum or infimum.
 > 
 > The key is that you can't get the maximum or minimum in $\mathbf{K}$
+
+
+> [!PDF|yellow] [[Ch5.pdf#page=10&selection=245,0,286,1&color=yellow|Ch5, p.10]]
+> > Theorem 4.3 (Weierstrass extreme value). If f : K → R is continuous and K ⊂ R is compact, then f is bounded on K and f attains its maximum and minimum values on K.
+
+This one is useful since we need to satisfy several things:
+1. $K\subset \mathbb{R}$ is compact (closed and bounded)
+2. $f$ is continuous
+
+The results are:
+1. $f$ is bounded on $K$
+2. $f$ attains its maximum and minimum on $K$
 
 > [!PDF|yellow] [[Ch5.pdf#page=11&selection=351,0,352,1&color=yellow|Ch5, p.11]]
 > > Theorem 4.4. 
@@ -156,9 +173,12 @@ The main idea of the proof is just to construct 2 different sequences $\left\{ x
 > we first construct an interval $E$ here, then we prove the
 >  $$\lim_{ x \to c^{-} } f(x) = \sup{E}$$
 > result
-> we care about the least upper bound of $E$, so it's enough to give an upper bound for proving the existence of $\sup{E}$.
-> 
+> we care about the least upper bound of $E$, so it's enough to give an upper bound for proving the existence of $\sup{E}$. (Good boy!)
 
+Here we let $$
+E = \left\{ f(x) \in \mathbb{R} |x \in I ,x<c\right\} 
+$$
+then $L = \sup{E}$ must exist but may be smaller than $f(c)$ (if $f$ is discontinuous at $c$)
 
 > [!PDF|yellow] [[Ch5.pdf#page=16&selection=223,0,223,36&color=yellow|Ch5, p.16]]
 > > We leave the details as an exercise.
