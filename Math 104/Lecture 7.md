@@ -62,8 +62,7 @@ it's easy to see $f_{n} \to f$ pointwise
 $$
 6. let $n>N,x \in A$, then we have $$
 \lvert f_{n} (x) - f(x) \rvert \leq \lvert f_{n} - f_{m} \rvert  + \lvert f_{m} -f \rvert < \frac{\epsilon}{2} + \lvert f_{m} -f \rvert 
-$$holds for every $m >N$ 
-then given $f_{n} \to f$ pointwise, we know $f_{m}(x) \to f(x)$, so there exists a $N_{1} \in \mathbb{N}$ such that $\lvert f_{m}(x) -f(x) \rvert< \frac{\epsilon}{2}$ for all $m > N_{1}$, so it follows that $$
+$$holds for every $m >N$ then given $f_{n} \to f$ pointwise, we know $f_{m}(x) \to f(x)$, so there exists a $N_{1} \in \mathbb{N}$ such that $\lvert f_{m}(x) -f(x) \rvert< \frac{\epsilon}{2}$ for all $m > N_{1}$, so it follows that $$
 \lvert f_{n} - f \rvert < \epsilon 
 $$
 > Recall how we get the $m$, it's from 2 conditions: 1. it's bigger than $N$, 2. it can let the $\lvert f_{m} -f \rvert$ be small enough. 
@@ -83,6 +82,9 @@ $$
 > > Theorem 4.2. If a sequence (fn) of continuous functions fn : A → R converges uniformly on A ⊂ R to f : A → R, then f is continuous on A.
 > 
 > This part is similar
+
+And this is the difference between point-wise convergence and uniform convergence.
+
 
 > [!PDF|note] [[Ch7.pdf#page=6&selection=36,0,82,1&color=note|Ch7, p.6]]
 > > Exercise 1. Prove lim n→∞ lim x→c fn(x) = lim x→c lim n→∞ fn(x). if fn uniformly converges to f .
@@ -114,8 +116,31 @@ then we know the $\lim_{ n \to \infty }$ and $\lim_{ x  \to c }$ can be exchange
 > ![[Pasted image 20250414183520.png]]
 > Note that $(f_{n})$ can be only **pointwise convergent** but $(f'_{n})$ has to be **uniformly convergent**.
 
-We go through the proof now.
 The key thought is to split this into 3 parts and prove them to be close to $0$ by $\frac{\epsilon}{3}$
+
+Let's go through the sketch of the proof now:
+1. let $x\neq c$, we consider $$
+\frac{f(x)-f(c)}{x-c} - g(c)
+$$
+we split it into 3 parts:$$
+\left[ \frac{f(x)-f(c)}{x-c} -\frac{f_{n}(x)-f_{n}(c)}{x-c}\right] + \left[ \frac{f_{n}(x)-f_{n}(c)}{x-c}-f'_{n}(c) \right] + [f'_{n}(c)-f'(c)]
+$$
+2. we first control the 3-rd term: since $f'_{n} \to f'$ uniformly converge, so we have $N_{2}$ to let the 3-rd term be below $\frac{\epsilon}{3}$
+3. then we control the 2-nd term: still, since the $f_{n}$ is differentiable, then continuous, so we have $\frac{f_{n}(x)-f_{n}(c)}{x-c} \to f'_{n}(c)$ as $x \to c$. So again we have some $\delta$ such that $\forall x \in(c-\delta,c+\delta)$ ,  we have the 2-nd term be below $\frac{\epsilon}{3}$
+4. then for the 1st term, **we only know $f_{n} \to f$ is point-wise convergence, so we can't directly control the difference of $\frac{f(x)-f(c)}{x-c}$**
+*solution*: we need to import an aux function $f_{m}$
+
+we have $$
+\begin{align}
+\left|\frac{f(x)-f(c)}{x-c} -\frac{f_{n}(x)-f_{n}(c)}{x-c}\right| &  \leq \left|\frac{f(x)-f(c)}{x-c} -\frac{f_{m}(x)-f_{m}(c)}{x-c}\right|  \\
+ &  +\left|\frac{f_{m}(x)-f_{m}(c)}{x-c} -\frac{f_{n}(x)-f_{n}(c)}{x-c}\right| 
+\end{align}
+$$
+by triangle inequality. Then for the first term, we can just use the point-wise convergence of $f_{m} \to f$. For the second term, we can use the **Lagrange MVT** , so that $$
+\left|\frac{f_{m}(x)-f_{m}(c)}{x-c} -\frac{f_{n}(x)-f_{n}(c)}{x-c}\right|  = \left| f'_{m}(\xi) - f'_{n}(\xi) \right| 
+$$
+**But we know $f'_{n} \to f$ is uniformly Cauchy**, so we can control the whole term under $\frac{\epsilon}{3}$ by a $N_{1}$.  QED.
+
 
 > [!PDF|note] [[Ch7.pdf#page=7&selection=397,0,399,22&color=note|Ch7, p.7]]
 > > Exercise 2. Prove the above claim.
