@@ -16,6 +16,17 @@
 >
 > Essentially, this is just the definition
 
+### 命题 1.3（Proposition 1.3）
+
+如果 $f, g : A \to \mathbb{R}$ 是定义在集合 $A$ 上的有界函数，则：
+
+$$
+\sup_A(f + g) \leq \sup_A f + \sup_A g
+$$
+
+$$
+\inf_A(f + g) \geq \inf_A f + \inf_A g
+$$
 > [!PDF|yellow] [[Ch9.pdf#page=2&selection=464,0,537,1&color=yellow|Ch9, p.2]]
 > > Proposition 1.4. If f, g : A → R are bounded functions, then sup A f − sup A g ≤ sup A |f − g|, inf A f − inf A g ≤ sup A f − g | .
 >
@@ -62,7 +73,6 @@ $$\lvert g(x) - g(y) \rvert \leq \sup{g} - \inf{g}$$
 > then we'll have the whole inequality by just the definition of supremum
 
 Don't be so impatient. Let's go through the proof again:
-
 since for all $x,y \in A$, we have $$
 \lvert f(x) - f(y) \rvert \leq \lvert g(x) - g(y) \rvert
 $$
@@ -72,16 +82,21 @@ $$
 so that $$
 \text{osc} f \equiv \sup{f} - \inf{f}  =  \underbrace{ \sup_{x,y \in A}{\left\{ f(x) - f(y)  \right\} } \leq \sup{g} - \inf{g}  }_{ \text{sup preserves the order}  }\equiv \text{osc} g
 $$
+>[!note]
+>The key is to pick the $x,y$ so that we can have $\lvert f(x) - f(y) \rvert= \text{osc}_{A}f$, then we know if we pick these $x,y$, the RHS $\lvert g(x) - g(y) \rvert\leq \text{osc}_{A}g$ still holds and will complete the proof.
+
 
 > [!PDF|red] [[Ch9.pdf#page=4&selection=6,29,6,45&color=red|Ch9, p.4]]
 > >  almost disjoint
 >
-> They share no points or only one point
+
+They share no points or only one point.
 
 > [!PDF|yellow] [[Ch9.pdf#page=4&selection=24,0,50,1&color=yellow|Ch9, p.4]]
 > > Definition 2.1. Let I be a nonempty, compact interval. A partition of I is a finite collection {I1, I2, . . . , In} of almost disjoint, nonempty, compact subintervals whose union is I.
 >
-> Note the partition is eventually by the end points and if we use end points to represent, then we'll have one more point than intervals.
+
+ Note the partition is eventually represented by the end points and if we use end points to represent, then we'll have one more point than intervals.
 
 To use the partitions, we need to memorize $$
 P = \left\{ I_{1} , I_{2} ,\dots,I_{n} \right\}
@@ -111,6 +126,12 @@ $$
 Note that if we say some integral is not defined as a Riemann integral, then it may be that:
 1. The upper or lower Riemann sums of $f$ are not well-defined (has $\infty$ or $-\infty$)
 2. The $f$ is so discontinuous that $U(f) \neq L(f)$.
+
+
+> [!PDF|yellow] [[Ch9.pdf#page=6&selection=95,0,95,48&color=yellow|Ch9, p.6]]
+> > An unbounded function is not Riemann integrable.
+
+And another case is that if a function $f$ is Riemann integrable, the it must be bounded.
 
 > [!PDF|red] [[Ch9.pdf#page=7&selection=360,8,386,1&color=red|Ch9, p.7]]
 > > n this example, the infimum of the upper Riemann sums is not attained and U (f ; P ) > U (f ) for every partition P .
@@ -171,6 +192,9 @@ $$
 > 
 > The importance comes from that $P,Q$ are arbitrary
 
+>[!caution]
+>So once we can prove something like $L(f;P)\geq U(f;Q)$ for some arbitrary $P,Q\in \Pi$, we can use prop 2.1 to claim that we have $L(f)\geq L(f;P)\geq U(f;Q)\geq U(f)$, but by definition we also have $L(f)\leq U(f)$. So the conclusion is that $U(f) = L(f)$ and $f$ is Riemann integrable.
+
 Later we use prop 2.1 to prove prop 2.2:
 $$
 L (f) \leq U(f)
@@ -192,6 +216,8 @@ $$
 \underbrace{ U(f;P) - L (f;P) \leq U(f;Q) - L(f;R)  }_{ U(f;P) \leq U(f;Q),L(f;P) \geq L(f;R) } < \underbrace{ U(f) - L(f) + {\epsilon} = \epsilon }_{ f \text{ integrable} }
 $$
 > this is just theorem 2.1
+
+![[output (1) 1.png]]
 
 > [!PDF|yellow] [[Ch9.pdf#page=11&selection=345,1,375,2&color=yellow|Ch9, p.11]]
 > > efinition 3.1. The oscillation of a bounded function f on a set A is osc f A = sup A f − inf A f.
@@ -262,6 +288,7 @@ $$
 > 
 > They call it a *telescoping series,* but basically it's just the former equals to the latter
 
+---
 > [!PDF|yellow] [[Ch9.pdf#page=14&selection=123,0,167,2&color=yellow|Ch9, p.14]]
 > > Theorem 5.1. If f : [a, b] → R is integrable and c ∈ R, then cf is integrable and Z b a cf = c Z b a f.
 > 
@@ -331,10 +358,12 @@ $cf$ 可积，且有：
 $$
 \int_a^b cf = c \int_a^b f
 $$
-> You see the steps?
+>[!note]
+>You see the steps?
 > 1. prove linearity holds for $c >0$ since for the positive $c$ we don't need to shift $\sup{}$ or $\inf{}$.
 > 2. prove it holds for $-1$
 > 3. so for all $c\leq 0,$ they're just $c = -\lvert c \rvert$
+
 
 > [!PDF|yellow] [[Ch9.pdf#page=15&selection=305,0,357,2&color=yellow|Ch9, p.15]]
 > > Theorem 5.2. If f, g : [a, b] → R are integrable functions, then f + g is integrable, and Z b a (f + g) = Z b a f + Z b a g.
@@ -411,6 +440,8 @@ $$
 $$
 U(f + g) = L(f + g)
 $$
+>[!caution]
+>You see, this is what I'm talking about, we can alway prove the Riemann integrability by finding such $U(f)\leq L(f)$, we just need one partition $P$ (usually just one common refinement from some other 2 partitions which will use the definition of the supremum and infimum)
 
 即 $f + g$ 是黎曼可积函数。  
 并且不等式中的等号也成立，因此：
@@ -586,7 +617,7 @@ $$
 
 为了完成证明，我们还需说明：**若 $f$ 可积，则 $|f|$ 也可积**。
 
-对任意 $x, y \in [a, b]$，由**反三角不等式**有：
+对任意 $x, y \in [a, b]$，由**反三角不等式(Reverse Triangle Inequality)**有：
 $$
 \left||f(x)| - |f(y)|\right| \leq |f(x) - f(y)|
 $$
@@ -754,7 +785,6 @@ $$
 $$
 
 在此划分下，$g$ 最多在两个区间上与 $f$ 不同（例如 $c$ 是划分点的端点）。
-
 在这些区间 $I_k$ 上有：
 
 $$
@@ -1068,12 +1098,8 @@ i.e., $F'(x_0) = f(x_0)$.
 $\blacksquare$
 > We can think of an example, let $f(x) = 0$ on $[0,1]\setminus\left\{  \frac{1}{2}  \right\}$ and $f\left( \frac{1}{2} \right) = 1$. We can always see that $F(x)$ = 0 and $F'(x)\equiv0$ but then $F'\left( \frac{1}{2} \right)\neq f\left( \frac{1}{2} \right)$.
 
+>[!caution]
+>In the previous case, $F'\left( \frac{1}{2} \right)$ doesn't exist and $F$ is not differentiable at $x= \frac{1}{2}$.
+
 One notation is that if we say $f \in R([a,b])$, then we say it's Riemann integrable on $[a,b]$.
 
-1. trivial proof
-2. True of False
-	1. Real number 
-	2. sequential limits and convergence
-	3. squeeze theorem
-	4. Cauchy Criterion
-	5. series, convergence 

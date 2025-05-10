@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math 104/Lecture 8.md",
+                "file": "Math 104/Lecture 9.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lecture 8"
+              "title": "Lecture 9"
             }
           }
         ]
@@ -185,10 +185,10 @@
               "type": "pdf",
               "state": {
                 "file": "Math 104/Ch9.pdf",
-                "page": 7,
-                "left": -14,
-                "top": 659,
-                "zoom": 1.0416666666666667
+                "page": 24,
+                "left": 28,
+                "top": 509,
+                "zoom": 1.4
               },
               "icon": "lucide-file-text",
               "title": "Ch9"
@@ -266,8 +266,11 @@
   },
   "active": "4d0abe5cc400e4a2",
   "lastOpenFiles": [
-    "Math 104/Ch8.pdf",
+    "Math 104/Ch9.pdf",
+    "Math 104/Lecture 9.md",
+    "output (1) 1.png",
     "Math 104/Lecture 8.md",
+    "Math 104/Ch8.pdf",
     "Math 104/Ch7.pdf",
     "Math 104/Lecture 7.md",
     "Math 104/Lecture 6.md",
@@ -294,8 +297,6 @@
     "Lecture 8.pdf",
     "combined_log_plots.png",
     "characteristic_roots_latex_highres.png",
-    "Math 104/Lecture 9.md",
-    "Math 104/Ch9.pdf",
     "output 2.png",
     "output 1.png",
     "Math 104/Lecture 8.pdf",
@@ -306,7 +307,6 @@
     "Econ 236B/Lecture 11.md",
     "Information Friction/Information Frictions.md",
     "Pasted image 20250421222018.png",
-    "Pasted image 20250421221612.png",
     "Econ 236B/Lecture 10.md",
     "Econ 236B/Lecture 7.md",
     "Econ 236B/Lecture 9.md",
