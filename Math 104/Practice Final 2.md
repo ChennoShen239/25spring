@@ -279,7 +279,7 @@ So, the *pointwise limit function* is $f(x) = \lim_{n\to\infty} f_n(x) = \frac{1
 Next, we check for *uniform convergence* on $[1, 2]$.
 Consider $|f_n(x) - f(x)|$:
 $$|f_n(x) - \frac{1}{2}| = \left| \frac{n+\sin x}{2n+\sin^2 x} - \frac{1}{2} \right| = \left| \frac{2(n+\sin x) - (2n+\sin^2 x)}{2(2n+\sin^2 x)} \right|$$
-$$= \left| \frac{2n+2\sin x - 2n - \sin^2 x}{4n+2\sin^2 x} \right| = \left| \frac{2\sin x - \sin^2 x}{4n+2\sin^2 x} \right|.$$
+$$**= \left| \frac{2n+2\sin x - 2n - \sin^2 x}{4n+2\sin^2 x} \right| = \left| \frac{2\sin x - \sin^2 x}{4n+2\sin^2 x} \right|.**$$
 Since $-1 \le \sin x \le 1$ and $0 \le \sin^2 x \le 1$:
 The numerator $|2\sin x - \sin^2 x| \le |2\sin x| + |-\sin^2 x| \le 2|\sin x| + \sin^2 x \le 2(1) + 1 = 3$.
 The denominator $4n+2\sin^2 x \ge 4n + 2(0) = 4n$.

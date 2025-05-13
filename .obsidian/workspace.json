@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math 104/Practice Final 2.md",
+                "file": "Math 104/Practice Final 3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Practice Final 2"
+              "title": "Practice Final 3"
             }
           }
         ]
@@ -266,11 +266,12 @@
   },
   "active": "321cda5b65296493",
   "lastOpenFiles": [
+    "Math 104/Practice Final 2.md",
+    "Math 104/Practice Final 3.md",
     "Math 128B/Part IV.md",
     "Math 128B/PartIII Translated.md",
     "Math 128B/Part III.md",
     "Math 128B/Interpolation.md",
-    "Math 104/Practice Final 2.md",
     "Math 128A/Lecture 6.md",
     "Math 128A/Lecture 14.md",
     "Math 128A/Lecture 13.md",
@@ -304,7 +305,6 @@
     "Math 104/Ch4.pdf",
     "Math 128A/Midterm Review.md",
     "Math 128A/Lecture 5.md",
-    "Math 128A/Final_24Spring.md",
     "Math 128B/math128b_lecture_notes.pdf",
     "Lecture 8.pdf",
     "combined_log_plots.png",
