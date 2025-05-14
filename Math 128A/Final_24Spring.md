@@ -152,17 +152,21 @@ $$A = \begin{pmatrix}1 & 1 & 0\\ 1 & 3 & -1\\ 0 & -1 & 1\end{pmatrix}.$$
 - Compute the LU factorization of $A$ without partial pivoting.
 > **Solution:**
 > Given $A = \begin{pmatrix}1 & 1 & 0\\ 1 & 3 & -1\\ 0 & -1 & 1\end{pmatrix}$.
->
 > -   **Show $A$ is symmetric positive definite.**
 >
 >     $A$ is symmetric since $A = A^T$. For positive definiteness, we check the leading principal minors (Sylvester's Criterion):
 >     1.  $M_1 = \det([1]) = 1 > 0$.
 >     2.  $M_2 = \det\begin{pmatrix}1 & 1\\ 1 & 3\end{pmatrix} = (1)(3) - (1)(1) = 2 > 0$.
->     3.  $M_3 = \det(A) = 1\det\begin{pmatrix}3 & -1\\ -1 & 1\end{pmatrix} - 1\det\begin{pmatrix}1 & -1\\ 0 & 1\end{pmatrix} = 1(3-1) - 1(1-0) = 2-1 = 1 > 0$.
+>     3.  $$\begin{align}
+M_3  & = \det(A)  \\
+ & = 1\det\begin{pmatrix}3 & -1\\ -1 & 1\end{pmatrix} - 1\det\begin{pmatrix}1 & -1\\ 0 & 1\end{pmatrix}  \\
+ & = 1(3-1) - 1(1-0)  \\
+ & = 2-1 = 1 > 0
+\end{align}
+     $$
 >     Since $A$ is symmetric and its leading principal minors are all positive, $A$ is symmetric positive definite.
 >
 > -   **Compute the LU factorization of $A$ without partial pivoting.**
->
 >     We seek $A=LU$.
 >     $$ A = \begin{pmatrix}1 & 1 & 0\\ 1 & 3 & -1\\ 0 & -1 & 1\end{pmatrix} $$
 >     $R_2 \leftarrow R_2 - (1)R_1 \implies l_{21}=1$. ($A_{31}$ is already 0, so $l_{31}=0$.)
@@ -184,7 +188,7 @@ is well-posed on
 $${\mathcal D} = \{(t, y) \mid 0 \leq t \leq 1,\; -\infty < y < \infty\}.$$
 
 > **Solution:**
-> An initial value problem (IVP) $y' = f(t,y)$, $y(t_0) = y_0$ is well-posed on a domain $\mathcal{D}$ if a unique solution exists and this solution depends continuously on the initial conditions. This is typically guaranteed if $f(t,y)$ is continuous on $\mathcal{D}$ and satisfies a Lipschitz condition with respect to $y$ on $\mathcal{D}$.
+> An initial value problem (IVP) $y' = f(t,y)$, $y(t_0) = y_0$ is well-posed on a domain $\mathcal{D}$ if a unique solution exists and this solution depends *continuously* on the initial conditions. This is typically guaranteed if $f(t,y)$ is continuous on $\mathcal{D}$ and satisfies a Lipschitz condition with respect to $y$ on $\mathcal{D}$.
 >
 > For the given IVP:
 > $$ y' = -t|y| + 1, \quad 0 \leq t \leq 1, \quad y(0) = 1 $$
@@ -226,8 +230,8 @@ $$A = \begin{pmatrix}1 & 1 & 1\\ 0 & 3 & \alpha\\ 0 & 1 & 2\end{pmatrix} \in \ma
 > **Solution:**
 > Given the matrix
 > $$A = \begin{pmatrix}1 & 1 & 1\\ 0 & 3 & \alpha\\ 0 & 1 & 2\end{pmatrix}.$$
->
-> -   **Compute the determinant of $A$.**
+> 
+>-   **Compute the determinant of $A$.**
 >     We can compute the determinant by expanding along the first column:
 >     $$ \begin{align}
 \det(A)  & = 1 \cdot \det\begin{pmatrix}3 & \alpha\\ 1 & 2\end{pmatrix} - 0 \cdot \det\begin{pmatrix}1 & 1\\ 1 & 2\end{pmatrix} + 0 \cdot \det\begin{pmatrix}1 & 1\\ 3 & \alpha\end{pmatrix} \\

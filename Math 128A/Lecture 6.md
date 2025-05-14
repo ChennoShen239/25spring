@@ -1,4 +1,4 @@
-# Numerical Analysis Document
+# Numerical Analysis
 
 ## Section 3.3: Divided Differences
 
@@ -538,6 +538,7 @@ $$
   S(x) \in C^2[x_0, x_n] \quad (\text{smooth enough: } 3(n-1) \text{ conditions}).
   $$
 > There are $3(n-1)$ conditions for $S(x) \in C^2[x_0, x_n]$ because, at each of the $n-1$ interior points, the cubic spline must satisfy three continuity requirements: the function itself, its first derivative, and its second derivative must be continuous, resulting in $3\times (n-1)$ conditions. 
+
 - $4n$ unknowns vs. $4n - 2$ conditions so far.
 
 ### The Splines Equations (I)

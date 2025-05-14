@@ -1,7 +1,3 @@
----
-date created: 2025-03-05 21:23
-date updated: 2025-03-05 21:32
----
 
 # Polynomial Interpolation
 
@@ -92,7 +88,7 @@ Suppose $x_0, x_1, \dots, x_n$ are distinct numbers in the interval $[a, b]$ and
 
 ### Uniqueness Theorem
 
-**Theorem**: _Assume that the nodal points $x_0, \dots, x_n$ are mutually distinct. Then the interpolating <mark style="background: #FF5582A6;">polynomial</mark> $P(x)$ of degree $\leq n$ is unique._
+**Theorem**: _Assume that the nodal points $x_0, \dots, x_n$ are mutually distinct. Then the interpolating polynomial $P(x)$ of degree $\leq n$ is unique._
 
 ### Example: Error Bound Calculation
 
@@ -217,7 +213,7 @@ Q_{i, i+1, \dots, j+1}(x) \stackrel{\text{def}}{=} \frac{(x - x_{j+1}) Q_{i, i+1
 $$
 
 > To better remember, just keep in mind that the numbers in the subscript of $Q$ represent the indices of the sample points that the interpolation passes through.
-![](https://xljxkbafyo.feishu.cn/space/api/box/stream/download/asynccode/?code=OTA5NWE2YjQzNDZhMDk4YmM1YjFkNzQzNzRiYzFhNDBfZjNWOE0wN0dzOXIyVFdwcFVuQ2JuV1E4Q2twZGttMkdfVG9rZW46QXVSb2JOWUNHb0VUMzZ4dnRZbmNRaEJMblNmXzE3NDEyMzk5MTY6MTc0MTI0MzUxNl9WNA)  
+
 ```python
 def neville_original(x, f, target_x):
     n = len(x)
@@ -243,7 +239,6 @@ $$
 Q_i(x) \stackrel{\text{def}}{=} \frac{(x - x_{i+1}) Q_i(x) - (x - x_i) Q_{i+1}(x)}{x_i - x_{i+1}}.
 $$
 
-![](https://xljxkbafyo.feishu.cn/space/api/box/stream/download/asynccode/?code=MWQzZDNhMmQ4OWNjZjA1MzBiZTM0Y2E1OWM5YzU0NDhfY09kWXl5WXBPRzhiN2dkekp0bFVSZURKUXdMQ2owdkVfVG9rZW46R2kxTmJkUlJFb3JpcTV4bXJ0VWN6VkFwbnFiXzE3NDEyNDAwNjM6MTc0MTI0MzY2M19WNA)
 
 ```python
 def neville_memory_reuse(x, f, target_x):
@@ -352,9 +347,6 @@ $$
 #### Coefficients and Divided Differences Table
 
 Coefficients are numbers on top of all $f[\cdot]$ columns.
-
-![](https://xljxkbafyo.feishu.cn/space/api/box/stream/download/asynccode/?code=OWZhZDg0YzA5YjIzMzQyOWI5OTdiMTJkYWZjYjIxOTFfeEdlTUgxTkhzU25id0lmOHdOaW5ubndRNThnY2tRU2xfVG9rZW46UU1MN2J4NzRVb2hCQXZ4VEZERWNnS2VnblBoXzE3NDEyNDIwNDc6MTc0MTI0NTY0N19WNA)
-
 The interpolating polynomial $P(x)$ is given by:
 
 $$
@@ -388,9 +380,6 @@ Thus:
 $$
 f[x_0, x_1, \dots, x_n] = \frac{f^{(n)}(\xi)}{n!}.
 $$
-
-![](https://xljxkbafyo.feishu.cn/space/api/box/stream/download/asynccode/?code=OGQ5YmJjZmNmOTNiNmFhNGJmZjc0ODk3ZWQ5NTJlYjNfRVVvWFRjYkpBNHU2ZlpSRWVNclRVQmJBM01wZHVyd1FfVG9rZW46R1pmVGJ4WE1Wb2lFaHF4RUEzamNyd2FTbjFlXzE3NDEyNDIzNzY6MTc0MTI0NTk3Nl9WNA)
-![](https://xljxkbafyo.feishu.cn/space/api/box/stream/download/asynccode/?code=MmVhMzk0OGVjMDE5OTI5YWI4ZGU2ZjQyMTg4YzNlZmJfWHBXSUJ0Wjlaa2c1MXF5ZDdHR0tGZDhaSFNsTzdGdTVfVG9rZW46WGR2eGJUUmpFbzA5NW54YWFVYmNtNHRobkJoXzE3NDEyNDIzOTI6MTc0MTI0NTk5Ml9WNA)
 
 ### Divided Difference Algorithms
 

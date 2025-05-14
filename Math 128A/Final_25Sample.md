@@ -4,7 +4,7 @@ This is a closed book exam, with the exception of a one-page cheat sheet on one 
 
 ---
 
-1.  Let $h>0$. Develop a finite difference method to approximate the derivative $f^{\prime}(x_{0})$ using function values $f(x_{0}-h), f(x_{0}+2h)$.
+1.  Let $h>0$. Develop a finite difference method to approximate the *derivative* $f^{\prime}(x_{0})$ using function values $f(x_{0}-h), f(x_{0}+2h)$.
     (a) What is the order of your method?
     (b) Turn your method into a second order method with extrapolation.
 ***Solution*:** 
@@ -14,7 +14,11 @@ $f(x_0-h) = f(x_0) - h f'(x_0) + \frac{h^2}{2} f''(x_0) + O(h^3)$
 $f(x_0+2h) = f(x_0) + 2h f'(x_0) + 2h^2 f''(x_0) + O(h^3)$
 
 Substituting into the approximation:
-$c_1 f(x_0-h) + c_2 f(x_0+2h) = (c_1+c_2)f(x_0) + (-c_1+2c_2)h f'(x_0) + (\frac{c_1}{2}+2c_2)h^2 f''(x_0) + O(h^3)$.
+$$\begin{align}
+c_1 f(x_0-h) + c_2 f(x_0+2h)  & = (c_1+c_2)f(x_0)  \\
+ & + (-c_1+2c_2)h f'(x_0)  \\
+ & + (\frac{c_1}{2}+2c_2)h^2 f''(x_0) + O(h^3)
+\end{align}$$
 >[!Note]
 >The key is to construct the equations based on this approximation
 
@@ -23,9 +27,9 @@ To approximate $f'(x_0)$, we set:
 2.  $(-c_1+2c_2)h = 1$
 
 Solving this system:
-$(-c_1-2c_1)h = 1 \implies -3c_1h = 1 \implies c_1 = -\frac{1}{3h}$.
+$$(-c_1-2c_1)h = 1 \implies -3c_1h = 1 \implies c_1 = -\frac{1}{3h}$$
 Thus, $c_2 = \frac{1}{3h}$.
-The finite difference formula is $N(h) = \frac{f(x_0+2h) - f(x_0-h)}{3h}$.
+The finite difference formula is $$N(h) = \frac{f(x_0+2h) - f(x_0-h)}{3h}$$
 
 **(a) Order of the method**
 
@@ -57,9 +61,9 @@ $N_2(h) = 2 \left( \frac{f(x_0+h) - f(x_0-h/2)}{3h/2} \right) - \left( \frac{f(x
 $N_2(h) = \frac{4(f(x_0+h) - f(x_0-h/2))}{3h} - \frac{f(x_0+2h) - f(x_0-h)}{3h}$
 $N_2(h) = \frac{1}{3h} \left( 4f(x_0+h) - 4f(x_0-h/2) - f(x_0+2h) + f(x_0-h) \right)$.
 This method $N_2(h)$ is second order ($O(h^2)$).
+
 >[!note]
 >The key idea here is to extrapolate using $N\left( \frac{h}{2} \right)$ to eliminate $K_{1}$, then we can get the key formula: $N_{2}(h)  = 2N\left( \frac{h}{2} \right)-N(h)$.
----
 
 ---
 2.  Consider the iteration
@@ -67,9 +71,9 @@ This method $N_2(h)$ is second order ($O(h^2)$).
     where $0<\alpha\leq1$ is given. Assume that the iteration converges to $0$ for all initial points $x_0$. What is the order of convergence for $0<\alpha<1$? What is the order of convergence for $\alpha=1$?
 
 ***Solution:***
-Let the fixed-point iteration function be $g(x)$. The iteration is given by $x_{k+1} = g(x_k)$, where
+Let the *fixed-point iteration* function be $g(x)$. The iteration is given by $x_{k+1} = g(x_k)$, where
 $$g(x) = -(\alpha-1)x + \frac{1}{2}x^2 = (1-\alpha)x + \frac{1}{2}x^2.$$
-We are given that the iteration converges to the fixed point $x^*=0$. The order of convergence is determined by the derivatives of $g(x)$ evaluated at $x^*=0$.
+We are given that the iteration converges to the fixed point $x^*=0$. The *order* of convergence is determined by the derivatives of $g(x)$ evaluated at $x^*=0$.
 
 First, calculate the derivatives of $g(x)$:
 $$g'(x) = \frac{d}{dx}\left((1-\alpha)x + \frac{1}{2}x^2\right) = (1-\alpha) + x$$
@@ -98,12 +102,12 @@ In this case, $1-\alpha = 1-1 = 0$.
 Therefore, $g'(0) = 0$.
 Since $g'(0) = 0$, the convergence is faster than linear. We look at the next derivative:
 $g''(0) = 1$.
-Since $g'(0) = 0$ and $g''(0) = 1 \neq 0$, the theory of fixed-point iteration states that the convergence is quadratic.
+Since $g'(0) = 0$ and $g''(0) = 1 \neq 0$, the theory of fixed-point iteration states that the convergence is *quadratic*.
 Thus, for $\alpha = 1$, the order of convergence is **2 (quadratic)**.
 
 To summarize:
-* For $0 < \alpha < 1$, the order of convergence is 1 (linear).
-* For $\alpha = 1$, the order of convergence is 2 (quadratic).
+* For $0 < \alpha < 1$, the *order* of convergence is 1 (linear).
+* For $\alpha = 1$, the *order* of convergence is 2 (quadratic).
 
 >[!caution]
 >You need to keep in mind the definition of the order of convergence and the rate of convergence!
@@ -117,14 +121,12 @@ To summarize:
 ***Solutions:***
 The problem is to determine the constants $C$ and $x_0$ such that the quadrature rule
 $$\int_{-\infty}^{\infty}e^{-|x|}f(x)dx \approx C f(x_0)$$
-is exact for the functions $f(x)=1$ and $f(x)=x$.
-
-We enforce this exactness for each function.
+is exact for the functions $f(x)=1$ and $f(x)=x$. We enforce this exactness for each function.
 
 **Case 1: $f(x)=1$**
 The exact integral is:
 $$ I_1 = \int_{-\infty}^{\infty} e^{-|x|} (1) dx $$
-Since $e^{-|x|}$ is an even function, we have:
+Since $e^{-|x|}$ is an *even* function, we have:
 $$ I_1 = 2 \int_{0}^{\infty} e^{-x} dx = 2 \left[-e^{-x}\right]_{0}^{\infty} = 2 (0 - (-e^0)) = 2(1) = 2 $$
 The approximation is:
 $$ A_1 = C \cdot f(x_0) = C \cdot 1 = C $$
@@ -134,7 +136,7 @@ $$ C = 2 \tag{1} $$
 **Case 2: $f(x)=x$**
 The exact integral is:
 $$ I_2 = \int_{-\infty}^{\infty} e^{-|x|} x dx $$
-The integrand $g(x) = x e^{-|x|}$ is an odd function, as $g(-x) = (-x)e^{-|-x|} = -x e^{-|x|} = -g(x)$. The integral of an odd function over a symmetric interval $(-\infty, \infty)$ is 0.
+The integrand $g(x) = x e^{-|x|}$ is an *odd* function, as $g(-x) = (-x)e^{-|-x|} = -x e^{-|x|} = -g(x)$. The integral of an odd function over a symmetric interval $(-\infty, \infty)$ is 0.
 $$ I_2 = 0 $$
 The approximation is:
 $$ A_2 = C \cdot f(x_0) = C \cdot x_0 $$
@@ -154,7 +156,7 @@ Therefore, the constants are $C=2$ and $x_0=0$.
 
 ---
 
-4.  By performing Gaussian elimination with partial pivoting, find the permutation matrix $P$, the lower triangular matrix $L$ with 1’s on its diagonal, and the upper triangular matrix $U$ so that
+4.  By performing *Gaussian elimination with partial pivoting*, find the permutation matrix $P$, the lower triangular matrix $L$ with 1’s on its diagonal, and the upper triangular matrix $U$ so that
     $$PA=LU,\quad\text{where}\quad A=\begin{pmatrix}0&1&1\\1&-2&-1\\1&-1&1\end{pmatrix}.$$
 ***Solutions:***
 
@@ -228,7 +230,7 @@ $$ U = \begin{pmatrix} 1 & -2 & -1 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{pmatrix} $$
 
 The given method can be rewritten as:
 $$w_{k+1} + 4w_k - 5w_{k-1} - h(\gamma f_k + \beta f_{k-1}) = 0$$
-The local truncation error $\tau_{k+1}(h)$ is found by substituting the true solution $y(t)$ into the method and dividing by $h$:
+The local truncation error $\tau_{k+1}(h)$ is found by *substituting the true solution $y(t)$ into the method* and dividing by $h$:
 $$\tau_{k+1}(h) = \frac{y(t_{k+1}) + 4y(t_k) - 5y(t_{k-1})}{h} - \left(\gamma y'(t_k) + \beta y'(t_{k-1})\right)$$
 For the method to be of order $p$, we need $\tau_{k+1}(h) = O(h^p)$. For a 2nd order method ($p=2$), we need $\tau_{k+1}(h) = O(h^2)$. This means terms in $\tau_{k+1}(h)$ of order $h^0$ and $h^1$ must be zero.
 
@@ -253,11 +255,11 @@ Combining these parts to get $\tau_{k+1}(h)$:
 $$\begin{align*} \tau_{k+1}(h) &= (6y'_k - 2h y''_k + h^2 y'''_k - \frac{1}{6}h^3 y^{(4)}_k) \\ & - ((\gamma+\beta)y'_k - \beta h y''_k + \frac{\beta h^2}{2} y'''_k - \frac{\beta h^3}{6} y^{(4)}_k) + O(h^4) \\ &=  (6 - (\gamma+\beta))y'_k  + (-2 + \beta)h y''_k + (1 - \frac{\beta}{2})h^2 y'''_k  + (-\frac{1}{6} + \frac{\beta}{6})h^3 y^{(4)}_k + O(h^4) \end{align*}$$
 
 **4. Conditions for 2nd Order Accuracy**
-For the method to be 2nd order ($\tau_{k+1}(h) = O(h^2)$), the coefficients of $h^0$ (terms with $y'_k$) and $h^1$ (terms with $h y''_k$) in the expansion of $\tau_{k+1}(h)$ must be zero.
-1.  Coefficient of $y'_k$ (term $h^0$):
-    $6 - \gamma - \beta = 0 \implies \gamma + \beta = 6$
-2.  Coefficient of $h y''_k$ (term $h^1$):
-    $-2 + \beta = 0 \implies \beta = 2$
+For the method to be *2nd* order ($\tau_{k+1}(h) = O(h^2)$), the coefficients of $h^0$ (terms with $y'_k$) and $h^1$ (terms with $h y''_k$) in the expansion of $\tau_{k+1}(h)$ must be zero.
+1.  *Coefficient* of $y'_k$ (term $h^0$):
+    $$6 - \gamma - \beta = 0 \implies \gamma + \beta = 6$$
+2.  *Coefficient* of $h y''_k$ (term $h^1$):
+    $$-2 + \beta = 0 \implies \beta = 2$$
 
 **5. Solve for $\gamma$ and $\beta$**
 From condition (2), we get $\beta = 2$.
@@ -272,7 +274,7 @@ The coefficient of $h^2$ is also zero. Now check the $h^3 y^{(4)}_k$ term:
 $\frac{\beta-1}{6} = \frac{2-1}{6} = \frac{1}{6}$.
 Since this coefficient is not zero, the local truncation error is:
 $$\tau_{k+1}(h) = \frac{1}{6}h^3 y^{(4)}_k + O(h^4)$$
-Because $\tau_{k+1}(h) = O(h^3)$, the method is actually of 3rd order. A 3rd order method also satisfies the condition of being a 2nd order method.
+Because $\tau_{k+1}(h) = O(h^3)$, the method is actually of *3rd order*. A 3rd order method also satisfies the condition of being a 2nd order method.
 
 **Conclusion:**
 The constants are $\gamma = 4$ and $\beta = 2$.

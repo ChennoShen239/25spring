@@ -137,7 +137,7 @@ f(x_0 + h) & = f(x_0) + h f'(x_0) + \frac{1}{2} h^2 f''(\xi), \\
 & \approx \frac{f(x_0 + h) - f(x_0)}{h}.
 \end{aligned}$$
 
-1.  forward-difference formula for $h > 0$,
+1. forward-difference formula for $h > 0$,
 2. backward-difference formula for $h < 0$.
 **Example**: Use the forward-difference formula to approximate the derivative of $f(x) = \ln(x)$ at $x_0 = 1.8$, using $h = 0.1, 0.05, 0.01$.
 
