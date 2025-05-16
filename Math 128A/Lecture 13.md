@@ -307,8 +307,7 @@ $$A \cdot B = \begin{pmatrix} A_{11}B_{11} & A_{11}B_{12} \\ A_{21}B_{11} & A_{2
 
 第一步消元：
 $$l_{j1} \stackrel{def}{=} \frac{a_{j1}}{a_{11}}, \quad (E_j - l_{j1}E_1) \rightarrow (E_j), \quad 2 \le j \le n$$
-新的 $a_{jk} = a_{jk} - l_{j1}a_{1k}$，对于 $j,k = 2, \ldots, n$。
-这可以表示为矩阵乘积：
+新的 $a_{jk} = a_{jk} - l_{j1}a_{1k}$，对于 $j,k = 2, \ldots, n$。这可以表示为矩阵乘积：
 $$A = \begin{pmatrix} 1 & & & \\ l_{21} & 1 & & \\ \vdots & & \ddots & \\ l_{n1} & & & 1 \end{pmatrix} \begin{pmatrix} a_{11} & a_{12} & \cdots & a_{1n} \\ 0 & a'_{22} & \cdots & a'_{2n} \\ \vdots & \vdots & \ddots & \vdots \\ 0 & a'_{n2} & \cdots & a'_{nn} \end{pmatrix}$$ (此处 $a'_{jk}$ 表示更新后的值)
 
 第二步消元 (假设 $a'_{22} \ne 0$) 作用于子矩阵：
@@ -324,7 +323,7 @@ $$a_{jk} = a_{jk} - l_{js}a_{sk} \quad \text{(覆盖 } a_{jk} \text{)}，s+1 \le
 
 GE后，A 变为上三角矩阵 U。
 $$U = \begin{pmatrix} u_{11} & u_{12} & \cdots & u_{1n} \\ & u_{22} & \cdots & u_{2n} \\ & & \ddots & \vdots \\ & & & u_{nn} \end{pmatrix}$$
-L 是单位下三角矩阵，其元素为消元过程中的乘数 $l_{js}$。
+$L$ 是单位下三角矩阵，其元素为消元过程中的乘数 $l_{js}$。
 $$L = \begin{pmatrix} 1 & & & \\ l_{21} & 1 & & \\ \vdots & \vdots & \ddots & \\ l_{n1} & l_{n2} & \cdots & 1 \end{pmatrix}$$
 
 **例子:**

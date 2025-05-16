@@ -38,7 +38,7 @@
     $$\beta=\limsup|a_k|^{1/k}=\lim_{n\to\infty}|a_{2n!}|^{1/(2n!)}=\lim_{n\to\infty}1^{1/(2n!)}=1$$
     and hence the radius of convergence is $R=1$. At $x=1$
     $$\sum_{n=0}^\infty x^{2n!} = \sum_{n=0}^\infty 1$$
-    which diverges. Since the series contains only even powers of $x$ (as $2n!$ is even for $n \ge 1$; for $n=0$, $2(0!) = 2(1)=2$), if $x^{2n!}$ terms are considered, then if $x=-1$, $(-1)^{2n!} = 1$. Thus the series is $\sum 1$ which diverges. (The original text: "Since the series is even, it diverges at $x=-1$ also" is a bit loose if referring to $f(x)=f(-x)$; it's more that the terms $x^{2n!}$ become $1$ for $x=\pm 1$ if $2n!$ is always even). Hence the exact interval of convergence is $(-1,1)$.
+    which diverges. Since the series contains only even powers of $x$ (as $2n!$ is even for $n \ge 1$; for $n=0$, $2(0!) = 2(1)=2$), if $x^{2n!}$ terms are considered, then if $x=-1$, $(-1)^{2n!} = 1$. Thus the series is $\sum 1$ which diverges. 
 
 2.  (a) Prove by using the definition of convergence only, without using limit theorems, that if $(s_{n})$ is a sequence converging to $s$, then $\lim_{n\to\infty}s_{n}^{2}=s^{2}$.
     (b) Prove by using the definition of continuity, or by using the $\epsilon-\delta$ property, that $f(x)=x^{2}$ is a continuous function on $\mathbb{R}$.
@@ -82,7 +82,10 @@ $$
 3.  Let $f$ be a twice differentiable function defined on the closed interval $[0,1]$. Suppose $r,s,t\in[0,1]$ are defined so that $r<s<t$ and $f(r)=f(s)=f(t)=0$. Prove that there exists an $x\in(0,1)$ such that $f^{\prime\prime}(x)=0$.
 
     **Solution:**
-    Since $f(r)=f(s)=0$ and $f$ is differentiable on $[0,1]$ (and thus continuous on $[r,s]$ and differentiable on $(r,s)$), by Rolle's Theorem, there exists a $c\in(r,s)$ such that $f'(c)=0$.
+> 由 $f(r)=f(s)=f(t)=0$ 且 $f$ 二阶可导，连续应用两次 Rolle 定理可得存在 $c,d \in (0,1)$ 使得 $f'(c) = f'(d) = 0$，再对 $f'$ 应用 Rolle 定理得 $f''(x) = 0$ for some $x \in (c,d) \subset (0,1)$。
+
+ .
+	Since $f(r)=f(s)=0$ and $f$ is differentiable on $[0,1]$ (and thus continuous on $[r,s]$ and differentiable on $(r,s)$), by Rolle's Theorem, there exists a $c\in(r,s)$ such that $f'(c)=0$.
     Similarly, since $f(s)=f(t)=0$, by Rolle's Theorem, there exists a $d\in(s,t)$ such that $f'(d)=0$.
     Since $r<c<s<d<t$, we have $c < d$.
     Now consider the function $f'(x)$ on the interval $[c,d]$. We know $f'(c)=0$ and $f'(d)=0$. Since $f$ is twice differentiable, $f'$ is differentiable on $[0,1]$ (and thus continuous on $[c,d]$ and differentiable on $(c,d)$).
@@ -137,7 +140,14 @@ $$
     In Case 2, $f(b) < 0 < f(a)$. By the Intermediate Value Theorem, there exists an $x \in (a,b)$ such that $f(x)=0$.
     In both cases, such an $x$ exists.
 
-6.  Let $f$ be a real-valued function defined on an interval $[0,b]$ as
+>[!concise Proof]
+> 由于 $f$ 在 $\mathbb{R}$ 上连续，特别地在闭区间 $[a,b]$ 上连续；
+> 又由于 $f(a)f(b) < 0$，即 $f(a)$ 与 $f(b)$ 异号，
+> 所以根据**介值定理**，存在 $x \in (a,b)$ 使得 $$
+f(x) = 0
+$$
+
+6. Let $f$ be a real-valued function defined on an interval $[0,b]$ as
     $$f(x)=\begin{cases}x & \quad \mathrm{for~}x\in\mathbb{Q},\\0 & \quad \mathrm{for~}x\notin\mathbb{Q}.\end{cases}$$
     Consider a partition $P=\{0=t_{0}<t_{1}<\ldots<t_{n}=b\}$. What are the upper and lower Darboux sums $U(f,P)$ and $L(f,P)$? Is $f$ integrable on $[0,b]$?
 

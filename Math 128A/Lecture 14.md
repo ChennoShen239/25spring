@@ -79,7 +79,7 @@ $$P = \begin{pmatrix} 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0 \\ 0 & 0 &
 **成本分析：**
 * 计算 $P \cdot A = L \cdot U$：大约 $\frac{2}{3}n^3$ 次运算。
 * 前向和后向替换：大约 $2n^2$ 次运算。
-* 最重要的是高效地计算 $P \cdot A = L \cdot U$。
+* *最重要的是高效地计算 $P \cdot A = L \cdot U$。*
 
 # §6.6 严格对角占优 (SDD) 矩阵
 
@@ -140,18 +140,14 @@ $$= x_1^2 + (x_1 - x_2)^2 + (x_2 - x_3)^2 + x_3^2 > 0 \quad (\text{因为 } x \n
 
 令 $A=(a_{ij}) \in \mathcal{R}^{n \times n}$ 为 SPD。
 则 $A^T = A$，所以 $a_{jk} = a_{kj}$。
-$a_{11} = \begin{pmatrix} 1 & 0 & \cdots & 0 \end{pmatrix} A \begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix} > 0$。
-因此 $a_{11} \ne 0$，无需主元选择。
-第一步高斯消元：
+$$a_{11} = \begin{pmatrix} 1 & 0 & \cdots & 0 \end{pmatrix} A \begin{pmatrix} 1 \\ 0 \\ \vdots \\ 0 \end{pmatrix} > 0$$
+因此 $a_{11} \ne 0$，无需主元选择。第一步高斯消元：
 $$A = \begin{pmatrix} 1 & & \\ l_1 & I \end{pmatrix} \begin{pmatrix} a_{11} & a_{11}l_1^T \\ 0 & \hat{A} \end{pmatrix}$$
 其中 $l_1 = \begin{pmatrix} l_{21} \\ \vdots \\ l_{n1} \end{pmatrix}$，$l_{j1} = \frac{a_{j1}}{a_{11}}$。$\hat{A}$ 是消元后的 $(n-1) \times (n-1)$ 子矩阵。
 由于 A 的对称性，可以写成：
 $$A = \begin{pmatrix} 1 & \\ l_1 & I \end{pmatrix} \begin{pmatrix} a_{11} & \\ & \hat{A} \end{pmatrix} \begin{pmatrix} 1 & l_1^T \\ & I \end{pmatrix}$$
 下一步：证明 $\hat{A}$ 仍然是 SPD。
-已知 $\hat{A}^T = \hat{A}$ (对称性保持)。
-令 $\hat{x} \in \mathcal{R}^{n-1}$ 为任意非零向量。我们需要证明 $\hat{x}^T \hat{A} \hat{x} > 0$。
-构造 $x = \begin{pmatrix} -l_1^T \hat{x} \\ \hat{x} \end{pmatrix} \in \mathcal{R}^n$。如果 $\hat{x} \ne 0$，则 $x \ne 0$。
-可以证明：
+已知 $\hat{A}^T = \hat{A}$ (对称性保持)。令 $\hat{x} \in \mathcal{R}^{n-1}$ 为任意非零向量。我们需要证明 $\hat{x}^T \hat{A} \hat{x} > 0$。构造 $x = \begin{pmatrix} -l_1^T \hat{x} \\ \hat{x} \end{pmatrix} \in \mathcal{R}^n$。如果 $\hat{x} \ne 0$，则 $x \ne 0$。可以证明：
 $$\hat{x}^T \hat{A} \hat{x} = x^T A x > 0$$
 因此 $\hat{A}$ 是 SPD。
 

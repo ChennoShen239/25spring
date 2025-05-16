@@ -4,6 +4,28 @@
     "type": "split",
     "children": [
       {
+        "id": "e4110d53224e6bc0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "6d7b22b66fa09b82",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Math 104/Ch5.pdf",
+                "page": 15,
+                "left": -39,
+                "top": 673,
+                "zoom": 0.37990196078431376
+              },
+              "icon": "lucide-file-text",
+              "title": "Ch5"
+            }
+          }
+        ]
+      },
+      {
         "id": "0b84618e00560fbc",
         "type": "tabs",
         "children": [
@@ -13,12 +35,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Math 128A/Lecture 7.md",
+                "file": "Math 104/Lecture 4.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lecture 7"
+              "title": "Lecture 4"
             }
           }
         ]
@@ -78,8 +100,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 201.50271224975586,
-    "collapsed": true
+    "width": 201.50271224975586
   },
   "right": {
     "id": "707048cafdbf033b",
@@ -264,28 +285,30 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "321cda5b65296493",
+  "active": "6d7b22b66fa09b82",
   "lastOpenFiles": [
-    "Math 128A/Lecture 6.md",
-    "Math 128A/Lecture 5.md",
-    "Math 128A/Final_25Sample.md",
-    "Math 128A/Final_24Spring.md",
-    "Math 128A/Final Review Slides.md",
-    "Math 128A/Lecture 10.md",
-    "Math 128A/Lecture 9.md",
-    "Math 128A/Lecture 8.md",
-    "Math 128A/Lecture 7.md",
+    "Math 104/Ch4.pdf",
+    "Math 104/Lecture 4.md",
     "Math 104/Practice Final 3.md",
     "Math 104/Practice Final 2.md",
-    "Math 128B/Part IV.md",
-    "Math 128B/PartIII Translated.md",
-    "Math 128B/Part III.md",
-    "Math 128B/Interpolation.md",
+    "Math 104/Practice Final 1.md",
+    "Math 128A/Final Review Slides.md",
     "Math 128A/Lecture 14.md",
     "Math 128A/Lecture 13.md",
     "Math 128A/Lecture 12.md",
     "Math 128A/Lecture 11.md",
-    "Math 104/Practice Final 1.md",
+    "Math 128A/Lecture 10.md",
+    "Math 128A/Lecture 9.md",
+    "Math 128A/Lecture 8.md",
+    "Math 128A/Lecture 7.md",
+    "Math 128A/Lecture 6.md",
+    "Math 128A/Lecture 5.md",
+    "Math 128A/Final_25Sample.md",
+    "Math 128A/Final_24Spring.md",
+    "Math 128B/Part IV.md",
+    "Math 128B/PartIII Translated.md",
+    "Math 128B/Part III.md",
+    "Math 128B/Interpolation.md",
     "Pasted image 20250510144809.png",
     "Pasted image 20250510144216.png",
     "Pasted image 20250510142946.png",
@@ -301,10 +324,7 @@
     "Math 104/Lecture 6.md",
     "output 3.png",
     "Math 104/Ch6.pdf",
-    "Math 104/Lecture 5.md",
     "Math 104/Ch5.pdf",
-    "Math 104/Lecture 4.md",
-    "Math 104/Ch4.pdf",
     "Math 128B/math128b_lecture_notes.pdf",
     "Lecture 8.pdf",
     "combined_log_plots.png",
