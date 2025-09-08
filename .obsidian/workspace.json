@@ -11,14 +11,16 @@
             "id": "6d7b22b66fa09b82",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "Information Friction/Information Frictions.md",
-                "mode": "source",
-                "source": false
+                "file": "Term 7/SocialNetWork/社会与经济网络导论-课程大纲 2025秋 0907.pdf",
+                "page": 1,
+                "left": -21,
+                "top": 842,
+                "zoom": 0.7194456110877782
               },
-              "icon": "lucide-file",
-              "title": "Information Frictions"
+              "icon": "lucide-file-text",
+              "title": "社会与经济网络导论-课程大纲 2025秋 0907"
             }
           }
         ]
@@ -246,7 +248,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 793
+    "width": 477
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -266,12 +268,16 @@
   },
   "active": "6d7b22b66fa09b82",
   "lastOpenFiles": [
+    "MyOwnPage/Roadmap.md",
+    "Term 7/SocialNetWork/社会与经济网络导论-课程大纲 2025秋 0907.pdf",
+    "Term 7/SocialNetWork",
+    "Term 7",
+    "Information Friction/Information Frictions.md",
     "Math 128A/Final_25Sample.md",
     "Math 128A/Lecture 12.md",
     "Math 128B/Interpolation.md",
     "Math 128B/Part III.md",
     "Math 128B/Part IV.md",
-    "MyOwnPage/Roadmap.md",
     "DID.md",
     "MyOwnPage",
     "Math 128B/Part I Translated.md",
@@ -298,20 +304,15 @@
     "Pasted image 20250510142946.png",
     "Pasted image 20250510142432.png",
     "Pasted image 20250510112715.png",
-    "Math 104/Lecture 9.md",
     "Math 104/Ch9.pdf",
     "output (1) 1.png",
-    "Math 104/Lecture 8.md",
     "Math 104/Ch8.pdf",
     "Math 104/Ch7.pdf",
     "output 3.png",
     "Math 104/Ch6.pdf",
-    "Math 128B/math128b_lecture_notes.pdf",
-    "Lecture 8.pdf",
     "combined_log_plots.png",
     "characteristic_roots_latex_highres.png",
     "output 2.png",
-    "Math 104/Lecture 8.pdf",
     "未命名.canvas"
   ]
 }
