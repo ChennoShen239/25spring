@@ -11,16 +11,14 @@
             "id": "6d7b22b66fa09b82",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Term 7/SocialNetWork/社会与经济网络导论-课程大纲 2025秋 0907.pdf",
-                "page": 1,
-                "left": -21,
-                "top": 842,
-                "zoom": 0.7194456110877782
+                "file": "2025-09-08.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "社会与经济网络导论-课程大纲 2025秋 0907"
+              "icon": "lucide-file",
+              "title": "2025-09-08"
             }
           }
         ]
@@ -269,6 +267,8 @@
   "active": "6d7b22b66fa09b82",
   "lastOpenFiles": [
     "MyOwnPage/Roadmap.md",
+    "2025-09-08.md",
+    "MyOwnPage/未命名.md",
     "Term 7/SocialNetWork/社会与经济网络导论-课程大纲 2025秋 0907.pdf",
     "Term 7/SocialNetWork",
     "Term 7",
@@ -298,7 +298,6 @@
     "Math 128A/Lecture 6.md",
     "Math 128A/Lecture 5.md",
     "Math 128A/Final_24Spring.md",
-    "Math 128B/PartIII Translated.md",
     "Pasted image 20250510144809.png",
     "Pasted image 20250510144216.png",
     "Pasted image 20250510142946.png",
