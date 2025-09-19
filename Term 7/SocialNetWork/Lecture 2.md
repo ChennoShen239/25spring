@@ -288,4 +288,4 @@ $$
 
 ![[Pasted image 20250919231012.png]]
 
-![[Pasted image 20250919231021.png]]'
+![[Pasted image 20250919231021.png]]
