@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "lecture 8",
+                "query": "tag:#）",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -61,7 +61,7 @@
                 "sortOrder": "alphabetical"
               },
               "icon": "lucide-search",
-              "title": "Search"
+              "title": "搜索"
             }
           },
           {
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 347.00271224975586,
-    "collapsed": true
+    "width": 347.00271224975586
   },
   "right": {
     "id": "707048cafdbf033b",
@@ -267,6 +266,7 @@
   },
   "active": "6d7b22b66fa09b82",
   "lastOpenFiles": [
+    "Pasted image 20250919223020.png",
     "Pasted image 20250919211652.png",
     "Pasted image 20250919210952.png",
     "Pasted image 20250919210909.png",
@@ -312,7 +312,6 @@
     "Math 104/Ch7.pdf",
     "output 3.png",
     "Math 104/Ch6.pdf",
-    "combined_log_plots.png",
     "未命名.canvas"
   ]
 }
