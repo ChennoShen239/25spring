@@ -1,81 +1,333 @@
-- 要玩大航海
-- 中欧专列，北极航线试运行
+# 度量/属性
+- 微观
+    - 度
+    - 中心性
+    - 聚类 - 共同好友
+- 宏观
+    - 距离
+    - 直径
+    - 连通分量
 
-# Measures/Properties
-- Micro 
-	- Degree
-	- Centrality
-	- Clustering - common friends
-- Macro
-	- Distance
-	- Diameter
-	- Components
-## Another Centrality
-- Influence, prestige, eigenvectors
-	- not what you know but who you know.
-- So what's that "prestige"
-> Image that you know 2 person, that's Alice and Bob and there is one guy who knows 2 person, Laoda and DT.
+## 另一种中心性
+- 影响力、声望、特征向量
+    - 重要的不是你知道什么，而是你认识谁。
+- 那么“声望”是什么？
+> 假设你认识两个人，爱丽丝和鲍勃。另一个人认识两个人，大佬和DT。
 
-# Eigenvector Centrality — Rigorous Definition
+# 特征向量中心性 — 严格定义
 
-## Setup
-Let $G=(V,E)$ be a (possibly weighted) graph with $|V|=n$.  
-Let $A\in\mathbb{R}^{n\times n}$ be its **adjacency matrix** with non-negative entries:
-- **Undirected**: $A$ is symmetric, $A_{ij}=A_{ji}\ge 0$.
-- **Directed**: $A_{ij}\ge 0$ is the weight of the edge $i\to j$.
+## 设置
+设 $G=(V,E)$ 是一个（可能带权的）图，其中 $|V|=n$。
+设 $A\in\mathbb{R}^{n\times n}$ 是其**邻接矩阵**，其元素为非负值：
+- **无向图**：$A$ 是对称的，$A_{ij}=A_{ji}\ge 0$。
+- **有向图**：$A_{ij}\ge 0$ 是边 $i\to j$ 的权重。
 
-Assume $A\ge 0$ (entrywise) and at least one edge exists.
+假设 $A\ge 0$（逐元素）且至少存在一条边。
 
-## Core idea (fixed-point relation)
-A node is important if it is linked **to important nodes**. Formally, a centrality vector
+## 核心思想（不动点关系）
+一个节点的重要性取决于**其所连接节点的重要性**。形式上，一个中心性向量
 $$
 x=\begin{bmatrix}x_1&\cdots&x_n\end{bmatrix}^\top\in\mathbb{R}_{\ge 0}^n\setminus\{0\}
 $$
-satisfies
+满足
 $$
-x_i \;\propto\; \sum_{j=1}^n A_{ij}\,x_j\quad\text{for all }i,
+x_i \;\propto\; \sum_{j=1}^n A_{ij}\,x_j\quad\text{对于所有 }i,
 $$
-i.e.
+即
 $$
 A x \;=\; \lambda x
 $$
-for some scalar $\lambda>0$.
+对于某个标量 $\lambda>0$。
 
-## Rigorous definition (Perron eigenvector)
-Let $\rho(A)$ denote the spectral radius of $A$. An **eigenvector-centrality vector** is any
+## 严格定义（佩龙特征向量）
+令 $\rho(A)$ 表示 $A$ 的谱半径。**特征向量中心性向量**是任何满足以下条件的向量
 $$
 x \in \mathbb{R}_{\ge 0}^n\setminus\{0\}\quad\text{s.t.}\quad A x \;=\; \rho(A)\,x,
 $$
-with a chosen normalization, e.g. $\|x\|_1=1$ or $\|x\|_2=1$.
+并选择一种归一化方式，例如 $\|x\|_1=1$ 或 $\|x\|_2=1$。
 
-### Existence and uniqueness (Perron–Frobenius)
-- If $A$ is **irreducible** (e.g., $G$ is connected for undirected graphs; strongly connected for directed graphs), then:
-  1. $\rho(A)>0$ is a **simple** eigenvalue;
-  2. There exists a unique (up to positive scaling) **strictly positive** eigenvector $x\gg 0$ with $A x=\rho(A)x$.
-- If $A$ is **reducible** (graph not connected / not strongly connected), any nonnegative solution of $A x=\rho(A)x$ has support contained in the union of strongly connected components whose **local** spectral radius equals $\rho(A)$. Nodes outside these components receive centrality $0$ under this definition.
+### 存在性与唯一性（佩龙-弗罗贝尼乌斯定理）
+- 如果 $A$ 是**不可约的**（例如，无向图是连通的；有向图是强连通的），那么：
+  1. $\rho(A)>0$ 是一个**单**特征值；
+  2. 存在一个唯一的（在正标量乘法意义下）**严格为正**的特征向量 $x\gg 0$，满足 $A x=\rho(A)x$。
+  
+- 如果 $A$ 是**可约的**（图不连通/不是强连通的），任何满足 $A x=\rho(A)x$ 的非负解的支撑集都包含在那些**局部**谱半径等于 $\rho(A)$ 的强连通分量的并集中。根据此定义，在这些分量之外的节点中心性为 $0$。
 
-## Directed graphs (in/out versions)
-For a directed graph, two common choices are:
-- **Incoming (authority-style)**: $A^\top x=\rho(A^\top)x$ (note $\rho(A^\top)=\rho(A)$).
-- **Outgoing (hub-style)**: $A x=\rho(A)x$.
+## 有向图（入度/出度版本）
+对于有向图，两种常见的选择是：
+- **传入（权威型）**：$A^\top x=\rho(A^\top)x$（注意 $\rho(A^\top)=\rho(A)$）。
+- **传出（枢纽型）**：$A x=\rho(A)x$。
 
-(Eigenvector centrality typically fixes one orientation and uses the Perron eigenvector accordingly; HITS separates hubs/authorities.)
+（特征向量中心性通常固定一个方向，并相应地使用佩龙特征向量；HITS算法则将枢纽和权威分开处理。）
 
-## Computation (power iteration)
-If $A$ is **primitive** (irreducible and aperiodic), the **power method** converges to the Perron vector:
+## 计算（幂迭代法）
+如果 $A$ 是**本原的**（不可约且非周期），**幂法**会收敛到佩龙向量：
 $$
 x^{(t+1)} \;=\; \frac{A\,x^{(t)}}{\|A\,x^{(t)}\|_p},\qquad t=0,1,2,\dots
 $$
-for any $x^{(0)}\gg 0$ and norm $p\in\{1,2\}$. The limit is the normalized eigenvector $x$ with $A x=\rho(A)x$.
+对于任何 $x^{(0)}\gg 0$ 和范数 $p\in\{1,2\}$。其极限是归一化后的特征向量 $x$，满足 $A x=\rho(A)x$。
 
-## Normalizations
-Common normalizations enforce comparability:
-- $\|x\|_1=1$ (sum to one),
-- $\|x\|_2=1$ (unit Euclidean norm),
-- $\max_i x_i=1$.
+## 归一化
+常用的归一化方法强制了可比性：
+- $\|x\|_1=1$（和为一），
+- $\|x\|_2=1$（单位欧几里得范数），
+- $\max_i x_i=1$。
 
-## Notes and variants
-- **Weights**: *Any nonnegative weights are allowed; negative edges violate Perron–Frobenius assumptions.*
-- **Disconnection sensitivity**: Nodes not in the dominant (strongly) connected component of maximal spectral radius obtain $x_i=0$.
-- **Katz centrality** (regularized variant): solves $x=\alpha A x + \beta \mathbf{1}$ with $0<\alpha<1/\rho(A)$; as $\beta\to 0^+$ and $\alpha\uparrow 1/\rho(A)$, Katz centrality approaches the Perron vector (up to scaling).
+## 注释与变体
+- **权重**：*允许任何非负权重；负权边违反了佩龙-弗罗贝尼乌斯定理的假设。*
+- **对不连通的敏感性**：不在具有最大谱半径的主导（强）连通分量中的节点，其中心性值 $x_i=0$。
+- **卡茨中心性（Katz centrality）**（正则化变体）：求解 $x=\alpha A x + \beta \mathbf{1}$，其中 $0<\alpha<1/\rho(A)$；当 $\beta\to 0^+$ 且 $\alpha\uparrow 1/\rho(A)$ 时，卡茨中心性（在缩放因子内）趋近于佩龙向量。
+
+
+# 卡茨-博纳西奇中心性 — 严格定义
+
+## 设置
+设 $A\in\mathbb{R}^{n\times n}$ 是一个（可能为有向、可能带权的）邻接矩阵。
+设 $b\in\mathbb{R}^n$ 是一个非零基准向量，$\alpha\in\mathbb{R}$ 是一个衰减因子。
+我们使用 $\rho(M)$ 表示方阵 $M$ 的谱半径，用 $|A|$ 表示逐元素的绝对值。
+
+## 通用（卡茨-博纳西奇）定义
+对于任何满足
+$$
+\alpha\,\rho(|A|)\;<\;1,
+$$
+的 $\alpha$，带有参数 $(\alpha,b)$ 的**卡茨-博纳西奇中心性**（在经济学中也称为**博纳西奇中心性**）是向量
+$$
+x(\alpha,b)\;:=\;(I-\alpha A)^{-1}b\;\in\;\mathbb{R}^n.
+$$
+这个定义是明确的，因为诺伊曼级数是绝对收敛的：
+$$
+(I-\alpha A)^{-1}\;=\;\sum_{k=0}^{\infty}(\alpha A)^k,
+\qquad
+x(\alpha,b)\;=\;\sum_{k=0}^{\infty}\alpha^k A^k b.
+$$
+> [!note]
+> **诺伊曼级数（Neumann series）** 指的是形如
+> $$
+> \sum_{k=0}^{\infty} X^k
+> $$
+> 的幂级数，其中 $X$ 是一个线性算子或矩阵（在有限维里可理解为矩阵）。它是标量几何级数
+> $\sum_{k=0}^\infty x^k=\frac{1}{1-x}$（$|x|<1$）的算子/矩阵推广。
+> 
+> ### 何时收敛？收敛到什么？
+> - **充分条件（任意次乘法一致的算子范数）**：若 $\|X\|<1$，则级数绝对收敛，
+>   且
+>   $$
+>   (I-X)^{-1}=\sum_{k=0}^{\infty} X^k .
+>   $$
+> - **必要且充分（有限维情形）**：谱半径 $\rho(X)<1$ 当且仅当 $\sum_{k=0}^{\infty}X^k$ 收敛，
+>   此时同样有 $(I-X)^{-1}=\sum_{k=0}^{\infty}X^k$。
+> 
+> 证明思路：对部分和 $S_T=\sum_{k=0}^{T}X^k$，有
+> $$
+> (I-X)S_T=I-X^{T+1}.
+> $$
+> 若 $X^{T+1}\to 0$（例如 $\|X\|<1$ 或更一般地 $\rho(X)<1$），则 $S_T\to (I-X)^{-1}$。
+> 
+> ### 应用于 Katz–Bonacich（你提到的式子）
+> 令 $X=\alpha A$。若
+> $$
+> |\alpha|\,\rho(|A|)<1,
+> $$
+> 则
+> $$
+> (I-\alpha A)^{-1}=\sum_{k=0}^{\infty}(\alpha A)^k,
+> \qquad
+> x(\alpha,b)=\sum_{k=0}^{\infty}\alpha^k A^k b
+> $$
+> **绝对收敛**（逐元素的绝对收敛），从而定义明确。  
+> - 当 $A\ge 0$ 时，常用更紧条件 $0\le \alpha<1/\rho(A)$，此时各项均为非负，具有清晰的“路径加总/网络乘数”含义。
+> - 若 $A$ 有正负权，以上绝对收敛条件保证意义良好，但项的符号可交替。
+> 
+> ### 直观理解
+> - 标量几何级数的“折现累加”思想在矩阵里变成“**所有长度的路径按衰减系数逐步加权后求和**”；只要“每一步的放大力度”足够小（阈值由谱半径决定），所有回路/反馈的总效应就有限，且可写成 $(I-\alpha A)^{-1}$。
+> 
+### 解释
+如果 $(A^k)_{ij}$ 计算了从 $i$ 到 $j$ 的长度为 $k$ 的（加权）路径数量，那么 $x(\alpha,b)_i$ 是所有从节点 $i$ 开始、并由 $b$ 指定“终点质量”的路径的 $\alpha$ 衰减加权总和。
+
+- **标准卡茨中心性**：取 $b=\beta\mathbf 1$，其中 $\beta>0$：
+  $$
+  x_{\text{Katz}}(\alpha,\beta)\;=\;(I-\alpha A)^{-1}(\beta \mathbf 1)
+  \;=\;\beta\sum_{k=0}^{\infty}\alpha^k A^k\mathbf 1.
+  $$
+- **博纳西奇（经济学）惯例**：通常 $b=\mathbf 1$，所以 $x(\alpha)= (I-\alpha A)^{-1}\mathbf 1$。
+
+> 对于有向图，选择 $A$ 来编码预期的影响方向（例如，入链或出链）。使用 $A^\top$ 只是颠覆了该惯例。
+
+## 基本属性
+假设 $A\ge 0$（逐元素）且 $b\ge 0$，其中 $\alpha\in[0,1/\rho(A))$：
+- **$A$ 和 $b$ 的单调性**：
+  $$
+  A\uparrow\ \text{或}\ b\uparrow \;\Longrightarrow\; x(\alpha,b)\uparrow
+  \quad\text{(逐元素)}.
+  $$
+- **非负性**：$x(\alpha,b)\ge 0$。如果 $A$ 不可约且 $b\gg 0$，则 $x(\alpha,b)\gg 0$。
+- **在 $\alpha$ 上的连续性/解析性**：在 $(-1/\rho(|A|),1/\rho(|A|))$ 区间内。
+
+### 敏感性（矩阵微积分）
+令 $M(\alpha):=(I-\alpha A)^{-1}$。那么 $x=M b$ 且
+$$
+dx \;=\; \alpha\,M\,(dA)\,x \;+\; M\,db.
+$$
+因此，对于 $A$ 的第 $(i,j)$ 个元素，
+$$
+\frac{\partial x}{\partial A_{ij}}
+\;=\;
+\alpha\,M\,e_i\,e_j^\top x
+\;=\;
+\alpha\,x_j\,M\,e_i,
+\quad\text{即}\quad
+\big(\tfrac{\partial x}{\partial A_{ij}}\big)_\ell
+=
+\alpha\,x_j\,M_{\ell i}.
+$$
+> [!note]
+> 由定义 $M(\alpha)=(I-\alpha A)^{-1}$，有
+> $$
+> x = M b \quad\Longleftrightarrow\quad (I-\alpha A)\,x = b.
+> $$
+> 把 $\alpha$ 视为常数，对 $A,b,x$ 做全微分并用乘法法则：
+> $$
+> d\big[(I-\alpha A)x\big] = db
+> \;\;\Longrightarrow\;\;
+> (I-\alpha A)\,dx + d(I-\alpha A)\,x = db.
+> $$
+> 而 $d(I-\alpha A) = -\alpha\,dA$，于是
+> $$
+> (I-\alpha A)\,dx - \alpha\,(dA)\,x = db.
+> $$
+> 左乘 $(I-\alpha A)^{-1}=M$ 得
+> $$
+> dx = \alpha\,M\,(dA)\,x + M\,db.
+> $$
+> 
+
+## 有符号网络
+如果 $A$ 包含混合符号，只要 $\alpha\rho(|A|)<1$，诺伊曼级数的绝对收敛性就能得到保证，从而得出
+$$
+x(\alpha,b)=\sum_{k=0}^{\infty}\alpha^k A^k b
+$$
+（$x$ 中可能包含混合符号）。也可以将 $A$ 分解为 $A=A^+ - A^-$，其中 $A^\pm\ge 0$，以分离正/负贡献。
+
+## 归一化
+由于 $x(\alpha,b)$ 随 $b$ 线性缩放，用户通常会报告一个归一化版本，例如 $\|x\|_1=1$、$\|x\|_2=1$ 或 $\max_i x_i=1$。
+
+# 路径计数
+
+给定一个邻接矩阵 G：
+
+```python
+
+import numpy as np
+
+G = np.array([[0,1,0,1],
+
+[1,0,0,1],
+
+[0,0,0,1],
+
+[1,1,1,0]])
+
+print(G**2) # 注意：在Numpy中，`G**2` 是逐元素乘方，矩阵乘法应为 `G @ G` 或 `np.linalg.matrix_power(G, 2)`
+
+```
+
+
+结果是
+
+```
+
+[[2 1 1 1]
+
+[1 2 1 1]
+
+[1 1 1 0]
+
+[1 1 0 3]]
+
+```
+
+这里的数字 `2` 表示*从 i 到 j 长度为 2 的路径数量*。
+
+这个逻辑同样适用于 $G^n$。
+
+
+### 3.3：应用——是什么影响扩散？
+
+**阅读（Reading）：**  
+Banerjee, Chandrasekhar, Duflo, Jackson, *Diffusion of Microfinance* (Science 2013)
+
+#### 是什么影响信息扩散（Information Diffusion）？
+- **首次接触点（First contact points）：** 让我们考察一下“注入点”（injection points）在网络中的位置如何起作用。  
+  参见：Banerjee, Chandrasekhar, Duflo, Jackson, *Diffusion of Microfinance* (Science 2013)
+
+- 研究背景：卡纳塔克邦（Karnataka）的 75 个农村村庄，最初与小额信贷相对隔离。
+- BSS 在其中 43 个村庄进入并提供了小额信贷。
+- 我们在进入之前对村庄进行调查，观察网络结构及各类人口学特征。
+- 并在时间维度上跟踪小额信贷的参与情况。
+
+**Karnataka：**
+![[Pasted image 20250922141435.png]]
+#### 背景：印度 75 个村庄——网络
+**借贷（Borrow）：**
+- **“人情（Favor）”网络：**  
+  – 既借也贷现金  
+  – 既借也贷煤油—大米（kero-rice）
+- **“社会（Social）”网络：**  
+  – 互相拜访、走动（both visit come and go）  
+  – 朋友（最常一起交谈的人，talk together most）
+- **其他：**（寺庙、医疗帮助……）
+#### 数据还包括
+- 个体层面的小额信贷参与及其时间。
+- 家庭数量及其构成。
+- 人口学特征：年龄、性别、亚种姓、宗教、职业、受教育水平、家庭等。
+- 财富变量：厕所（latrine）、房间数、屋顶（材料/状况）。
+- 自助小组（Self Help Group, SHG）参与率、配给卡（ration card）、投票。
+- 种姓：村庄中“较高种姓”（GM/FC 和 OBC）的比例（其余为 SC/ST）。
+- **限制：** 与收入相关的变量不多。
+
+#### 假设（Hypothesis）
+- 在那些**最先被接触的人**拥有更多连接（更高的**度中心性**）的村庄里，关于小额信贷的信息应当传播得更好。
+- 知情者越多应当导致参与度更高。
+![[Pasted image 20250922141510.png]]
+因为这张散点图显示的事实与“度中心性越高→扩散越好”的原始假设相反或至少不支持它。
+
+>[!Why should we revise the hypothesis?]
+>- 横轴是“被首先接触者（leaders）的平均度数”，纵轴是“非领导户的小额信贷采纳率”。如果原假设成立，拟合线应明显向上倾斜；但图中拟合线近乎平坦、甚至略向下。这说明**领导者拥有更多直接联系人（更高度数）并没有带来更高的采纳率**。
+>     
+> - 这提示“度数”只计**联系数量**，忽略了**联系对象在网络中的位置与影响力**：
+>     
+>     1. 若领导者主要连到网络边缘节点，即使度数高，信息也难以层层传开；
+>         
+>     2. 若多位领导者的邻居高度重叠，度数高但覆盖面并未扩大；
+>         
+>     3. 度数不反映“二阶及更高阶”的传播潜力（我的联系人是否又有很多重要联系人）。
+>         
+> - 因而需要把假设改为：看**特征向量中心性（eigenvector centrality）**——它按“你连到的人有多中心”给连接加权，更能刻画多步传播能力。后续回归里，eigLeader 的系数显著为正，而 degreeLeader 不显著，正好与这张图给出的直观证据一致。
+#### 修正后的假设（Hypothesis Revised）
+- 在那些**最先被接触的人**具有更高**特征向量中心性（eigenvector centrality）** 的村庄里，关于小额信贷的信息应当传播得更好。
+- 知情者越多应当导致参与度更高。
+#### 变量与回归结果
+
+![[Pasted image 20250922141547.png]]
+
+### 3.4 应用——一种新的中心性度量：扩散中心性（Diffusion Centrality）
+
+#### 扩散中心性：$DC_i(p,T)$
+在以下机制下，会有多少个节点被告知（informed）：
+- 节点 $i$ 最初被告知；
+- 每个已被告知的节点在每个时期以概率 $p$ 将信息告知其每个邻居；
+- 总共运行 $T$ 个时期？
+
+#### 扩散中心性
+$$
+DC(p,T) \;=\; \sum_{t=1}^{T} (pG)^{t}\,\mathbf{1}
+$$
+$G^{t}$：计数路径（counting walks）  
+当 $p<1$ 时：存在“衰减（decay）”，用于刻画信息传递的概率。
+
+#### 性质（Properties）
+- 若 $T=1$：与度数（degree）成正比。
+- 若 $p<\frac{1}{\lambda_1}$ 且 $T$ 很大，极限为 Katz–Bonacich 中心性（$\lambda_1$ 为最大特征值）。
+- 若 $p\ge \frac{1}{\lambda_1}$ 且 $T$ 很大，极限为特征向量中心性（Eigenvector centrality）。
 
