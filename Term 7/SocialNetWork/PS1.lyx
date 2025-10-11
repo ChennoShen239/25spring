@@ -180,10 +180,10 @@ decay centrality (with
  ) is given by
 \begin_inset Formula 
 \begin{align*}
-C_{3}^{\delta}(g) & =\sum_{j\ne3}\delta^{\,\ell(3,j)}\\
- & =3\delta+2\delta^{2}\\
- & =1.5+2\times0.25\\
- & =2
+C_{3}^{\delta}(g) & =\frac{1}{\left(n-1\right)\delta}\sum_{j\ne3}\delta^{\,\ell(3,j)}\\
+ & =\frac{1}{\left(n-1\right)\delta}\left(3\delta+2\delta^{2}\right)\\
+ & =\frac{2}{5}\left(1.5+2\times0.25\right)\\
+ & =\frac{4}{5}
 \end{align*}
 
 \end_inset
@@ -195,7 +195,7 @@ C_{3}^{\delta}(g) & =\sum_{j\ne3}\delta^{\,\ell(3,j)}\\
 degree centrality is given by
 \begin_inset Formula 
 \[
-C_{D}\left(3\right)=3
+C_{D}\left(3\right)=\frac{3}{n-1}=\frac{3}{5}
 \]
 
 \end_inset
@@ -207,7 +207,7 @@ C_{D}\left(3\right)=3
 betweenness centrality
 \begin_inset Formula 
 \[
-C_{3}^{B}(g)=\sum_{\substack{j<k\\
+C_{3}^{B}(g)=\frac{2}{\left(n-1\right)\left(n-2\right)}\sum_{\substack{j<k\\
 j,k\neq3
 }
 }\frac{P_{3}(j,k)}{P_{j,k}}
@@ -234,10 +234,10 @@ Node 3 lies on the shortest path for the following pairs:
  So 
 \begin_inset Formula 
 \[
-C_{3}^{B}(g)=\sum_{\substack{j<k\\
+C_{3}^{B}(g)=\frac{2}{\left(n-1\right)\left(n-2\right)}\sum_{\substack{j<k\\
 j,k\neq3
 }
-}\frac{P_{3}(j,k)}{P_{j,k}}=6
+}\frac{P_{3}(j,k)}{P_{j,k}}=\frac{1}{10}\times6=0.6
 \]
 
 \end_inset
@@ -269,10 +269,10 @@ decay centrality (with
  ) is given by
 \begin_inset Formula 
 \begin{align*}
-C_{5}^{\delta}(g) & =\sum_{j\ne5}\delta^{\,\ell(5,j)}\\
- & =\delta+2\delta^{2}+2\delta^{3}\\
- & =0.5+0.5+0.25\\
- & =1.25
+C_{5}^{\delta}(g) & =\frac{1}{\left(n-1\right)\delta}\sum_{j\ne5}\delta^{\,\ell(5,j)}\\
+ & =\frac{1}{\left(n-1\right)\delta}\left(\delta+2\delta^{2}+2\delta^{3}\right)\\
+ & =\frac{2}{5}\left(0.5+0.5+0.25\right)\\
+ & =0.5
 \end{align*}
 
 \end_inset
@@ -284,7 +284,7 @@ C_{5}^{\delta}(g) & =\sum_{j\ne5}\delta^{\,\ell(5,j)}\\
 degree centrality is given by
 \begin_inset Formula 
 \[
-C_{D}\left(5\right)=1
+C_{D}\left(5\right)=\frac{1}{5}
 \]
 
 \end_inset
@@ -299,7 +299,7 @@ betweenness centrality:
  it cannot lie on the shortest path between any two other nodes.
 \begin_inset Formula 
 \[
-C_{5}^{B}(g)=\sum_{\substack{j<k\\
+C_{5}^{B}(g)=\frac{2}{\left(n-1\right)\left(n-2\right)}\sum_{\substack{j<k\\
 j,k\neq5
 }
 }\frac{P_{5}(j,k)}{P_{j,k}}=0
@@ -725,7 +725,7 @@ norm for normalization,
  we have 
 \begin_inset Formula 
 \[
-\mathbf{c}=\left[c_{1},c_{2},c_{3},c_{4}\right]'=\frac{1}{6}\left[\sqrt{3},1,1,1\right]'
+\mathbf{c}=\left[c_{1},c_{2},c_{3},c_{4}\right]'=\frac{1}{\sqrt{6}}\left[\sqrt{3},1,1,1\right]'
 \]
 
 \end_inset
@@ -900,7 +900,7 @@ By definition,
  we have
 \begin_inset Formula 
 \[
-C_{D}=\sum_{t=0}^{3}\left(0.5G\right)^{t}\mathbf{1}=(\mathbf{I}+(0.5G)^{1}+(0.5G)^{2}+(0.5G)^{3})\mathbf{1}
+C_{D}=\sum_{t=1}^{3}\left(0.5G\right)^{t}\mathbf{1}=((0.5G)^{1}+(0.5G)^{2}+(0.5G)^{3})\mathbf{1}
 \]
 
 \end_inset
@@ -908,10 +908,10 @@ C_{D}=\sum_{t=0}^{3}\left(0.5G\right)^{t}\mathbf{1}=(\mathbf{I}+(0.5G)^{1}+(0.5G
 so we have 
 \begin_inset Formula 
 \[
-\mathbf{I}+0.5G+0.25G^{2}+0.125G^{3}=\begin{pmatrix}1.75 & 0.875 & 0.875 & 0.875\\
-0.875 & 1.25 & 0.25 & 0.25\\
-0.875 & 0.25 & 1.25 & 0.25\\
-0.875 & 0.25 & 0.25 & 1.25
+0.5G+0.25G^{2}+0.125G^{3}=\begin{pmatrix}0.75 & 0.875 & 0.875 & 0.875\\
+0.875 & 0.25 & 0.25 & 0.25\\
+0.875 & 0.25 & 0.25 & 0.25\\
+0.875 & 0.25 & 0.25 & 0.25
 \end{pmatrix}
 \]
 
@@ -920,7 +920,7 @@ so we have
 so we have
 \begin_inset Formula 
 \[
-C_{D}=\left[4.375,2.625,2.625,2.625\right]'
+C_{D}=\left[3.375,1.625,1.625,1.625\right]'
 \]
 
 \end_inset
@@ -1012,9 +1012,37 @@ so we have
 \end_inset
 
  or equivalently 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+In the problem statement we have 
+\begin_inset Quotes eld
+\end_inset
+
+provide an approximation of the diameter,
+ 
+\begin_inset Formula $r$
+\end_inset
+
+.
+\begin_inset Quotes erd
+\end_inset
+
+ To avoid notation conflict,
+ I use 
+\begin_inset Formula $D$
+\end_inset
+
+ here to denote the diameter.
+\end_layout
+
+\end_inset
+
+
 \begin_inset Formula 
 \[
-d=2r\approx2\frac{\ln n}{\ln\left(d-1\right)}
+D\approx2\frac{\ln n}{\ln\left(d-1\right)}
 \]
 
 \end_inset
@@ -1031,7 +1059,7 @@ Given the result in C,
  we have
 \begin_inset Formula 
 \begin{align*}
-d & \approx2\frac{\ln5\times10^{9}}{\ln99}\\
+D & \approx2\frac{\ln5\times10^{9}}{\ln99}\\
  & \approx2\log_{99}5\times10^{9}\\
  & \approx2\log_{100}5\times10^{9}\\
  & \approx\log_{10}5\times10^{9}\\
@@ -1041,7 +1069,7 @@ d & \approx2\frac{\ln5\times10^{9}}{\ln99}\\
 
 \end_inset
 
-Note that a radius of 4 would not be enough to contain 5 billion nodes,
+Note that a diameter of 9 would not be enough to contain 5 billion nodes,
  so we must round up to the next integer.
 \end_layout
 
