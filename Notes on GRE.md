@@ -6,4 +6,10 @@
 6. boorish 粗鲁的
 7. spontaneous 自发的
 8. forbear 忍住
-9. 
+9. expedient 权宜之计的
+10. defensible 站得住脚的
+11. broached 宣布谈论
+12. proscribe 禁止
+13. contentious 有争议的
+14. prominent 杰出的，显著的
+15. loath 不情愿
