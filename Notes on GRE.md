@@ -13,3 +13,10 @@
 13. contentious 有争议的
 14. prominent 杰出的，显著的
 15. loath 不情愿
+16. intercepting 拦截
+17. prevarication 支支吾吾
+18. forthcoming 坦率的
+19. deceitful 欺骗的
+20. exiguity 微小，稀少
+21. vindicated 证明合理性
+22. sequester within 隔离于
