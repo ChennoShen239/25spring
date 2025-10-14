@@ -36,3 +36,5 @@
 36. undermine 破坏
 37. posit 断定
 38. salinity 盐度
+39. susceptible 易受影响的
+40. influxes 涌入
