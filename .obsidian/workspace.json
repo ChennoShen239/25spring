@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes on GRE.md",
+                "file": "2025-10-14.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Notes on GRE"
+              "title": "2025-10-14"
             }
           }
         ]
@@ -266,8 +266,9 @@
   },
   "active": "6d7b22b66fa09b82",
   "lastOpenFiles": [
-    "2025-10-13.md",
     "Notes on GRE.md",
+    "2025-10-14.md",
+    "2025-10-13.md",
     "2025-10-12.md",
     "2025-10-11.md",
     "Term 7/SocialNetWork/PS1.pdf",
@@ -311,7 +312,6 @@
     "Math 104/Ch4.pdf",
     "Math 104/Lecture 4.md",
     "Math 104/Practice Final 3.md",
-    "Math 104/Practice Final 2.md",
     "未命名.canvas"
   ]
 }
