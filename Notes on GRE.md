@@ -32,3 +32,7 @@
 32. felling 砍伐
 33. unearth 挖掘
 34. attest to 证明
+35. solicit consumers 招揽消费者
+36. undermine 破坏
+37. posit 断定
+38. salinity 盐度
