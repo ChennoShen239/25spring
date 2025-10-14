@@ -20,3 +20,8 @@
 20. exiguity 微小，稀少
 21. vindicated 证明合理性
 22. sequester within 隔离于
+23. rehabilitations 重新解读，重塑
+24. reclamations 回复名誉
+25. reformations 改革
+26. recapitulations 重述
+27. reiteration 重复反复
