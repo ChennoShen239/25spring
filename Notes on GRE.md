@@ -30,3 +30,5 @@
 30. literalism 字面主义
 31. subjectivity 主观性
 32. felling 砍伐
+33. unearth 挖掘
+34. attest to 证明
