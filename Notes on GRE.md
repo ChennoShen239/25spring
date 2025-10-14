@@ -25,3 +25,8 @@
 25. reformations 改革
 26. recapitulations 重述
 27. reiteration 重复反复
+28. sensation 感觉
+29. emblematic 象征性的
+30. literalism 字面主义
+31. subjectivity 主观性
+32. felling 看法
