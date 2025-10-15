@@ -49,3 +49,10 @@
 49. stale 陈腐的
 50. deferential 尊敬的
 51. hubris 骄傲自大
+52. weathered 风化的
+53. scattered all over 广泛分布
+54. concealed 隐藏
+55. ceramics 陶器
+56. imposed over 覆盖在上面
+57. slip 化妆土
+58. 
