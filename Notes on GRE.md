@@ -2,46 +2,50 @@
 2. censorious 吹毛求疵的
 3. pedantic 卖弄学问的
 4. impetuous 鲁莽的，急躁冲动的
-5. chivalrous 彬彬有礼的
-6. boorish 粗鲁的
-7. spontaneous 自发的
-8. forbear 忍住
-9. expedient 权宜之计的
-10. defensible 站得住脚的
-11. broached 宣布谈论
-12. proscribe 禁止
-13. contentious 有争议的
-14. prominent 杰出的，显著的
-15. loath 不情愿
-16. intercepting 拦截
-17. prevarication 支支吾吾
-18. forthcoming 坦率的
-19. deceitful 欺骗的
-20. exiguity 微小，稀少
-21. vindicated 证明合理性
-22. sequester within 隔离于
-23. rehabilitations 重新解读，重塑
-24. reclamations 回复名誉
-25. reformations 改革
-26. recapitulations 重述
-27. reiteration 重复反复
-28. sensation 感觉
-29. emblematic 象征性的
-30. literalism 字面主义
-31. subjectivity 主观性
-32. felling 砍伐
-33. unearth 挖掘
-34. attest to 证明
-35. solicit consumers 招揽消费者
-36. undermine 破坏
-37. posit 断定
-38. salinity 盐度
-39. susceptible 易受影响的
-40. influxes 涌入
-41. veracity 真实诚实
-42. risible 可笑的
-43. largesse 捐款
-44. scathing 严厉的
-45. valediction 告别
-46. modicum 一点点
-47. 
+5. impotent 无力的
+6. chivalrous 彬彬有礼的
+7. boorish 粗鲁的
+8. spontaneous 自发的
+9. forbear 忍住
+10. expedient 权宜之计的
+11. defensible 站得住脚的
+12. broached 宣布谈论
+13. proscribe 禁止
+14. contentious 有争议的
+15. prominent 杰出的，显著的
+16. loath 不情愿
+17. intercepting 拦截
+18. prevarication 支支吾吾
+19. forthcoming 坦率的
+20. deceitful 欺骗的
+21. exiguity 微小，稀少
+22. vindicated 证明合理性
+23. sequester within 隔离于
+24. rehabilitations 重新解读，重塑
+25. reclamations 回复名誉
+26. reformations 改革
+27. recapitulations 重述
+28. reiteration 重复反复
+29. sensation 感觉
+30. emblematic 象征性的
+31. literalism 字面主义
+32. subjectivity 主观性
+33. felling 砍伐
+34. unearth 挖掘
+35. attest to 证明
+36. solicit consumers 招揽消费者
+37. undermine 破坏
+38. posit 断定
+39. salinity 盐度
+40. susceptible 易受影响的
+41. influxes 涌入
+42. veracity 真实诚实
+43. risible 可笑的
+44. largesse 捐款
+45. scathing 严厉的
+46. valediction 告别
+47. modicum 一点点
+48. pressing 迫切的
+49. stale 陈腐的
+50. deferential 尊敬的
+51. 
