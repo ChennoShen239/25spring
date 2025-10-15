@@ -40,3 +40,8 @@
 40. influxes 涌入
 41. veracity 真实诚实
 42. risible 可笑的
+43. largesse 捐款
+44. scathing 严厉的
+45. valediction 告别
+46. modicum 一点点
+47. 
