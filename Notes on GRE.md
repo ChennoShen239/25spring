@@ -38,3 +38,5 @@
 38. salinity 盐度
 39. susceptible 易受影响的
 40. influxes 涌入
+41. veracity 真实诚实
+42. risible 可笑的
