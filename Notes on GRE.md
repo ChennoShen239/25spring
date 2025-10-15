@@ -55,4 +55,4 @@
 55. ceramics 陶器
 56. imposed over 覆盖在上面
 57. slip 化妆土
-58. 
+58. therapeutic 治疗
