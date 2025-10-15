@@ -64,3 +64,14 @@
 64. exile literature 流亡文学
 65. agreeable 令人愉快的
 66. restful 宁静的
+67. defoliation 落叶
+68. mediated by 由……介导
+69. ramify through 通过分支
+70. vitality 活力
+71. long overdue 早就该
+72. feeding from 以。。。为食
+73. reproductive 繁殖
+74. offspring 后代
+75. larval form 幼虫形态
+76. yolk 蛋黄
+77. proffer 提供
