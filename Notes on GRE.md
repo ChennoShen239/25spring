@@ -48,4 +48,4 @@
 48. pressing 迫切的
 49. stale 陈腐的
 50. deferential 尊敬的
-51. 
+51. hubris 骄傲自大
