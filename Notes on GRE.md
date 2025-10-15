@@ -56,3 +56,5 @@
 56. imposed over 覆盖在上面
 57. slip 化妆土
 58. therapeutic 治疗
+59. unanimous 一致
+60. disdain 蔑视
