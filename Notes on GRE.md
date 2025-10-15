@@ -58,3 +58,9 @@
 58. therapeutic 治疗
 59. unanimous 一致
 60. disdain 蔑视
+61. anthology 选集
+62. the canon of 经典
+63. irreconcilable with 矛盾
+64. exile literature 流亡文学
+65. agreeable 令人愉快的
+66. restful 宁静的
