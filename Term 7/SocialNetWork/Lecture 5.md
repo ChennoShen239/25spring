@@ -104,3 +104,15 @@ w/o frictions, transfers can solve inefficiencies:
 >[!note]
 >在网络形成的过程中，任何一个连接的建立或切断，都会同时对网络中的许多其他个体产生各种复杂且相互关联的影响（既有正面的也有负面的）。这些影响不能被单独、依次地解决，而必须作为一个整体系统被同时考虑和处理，这使得通过简单的协商或补偿来达到整体效率变得极其困难。
 
+## 5.5 Pairwise Nash Stability
+
+Recall the announcement game:
+- Agents simultaneously announce their preferred sets of neighbors $S_{i}$
+- The map is $$
+g(S)=\{ ij|i\in S_{j} \cap j\in S_{i} \}
+$$
+*Nash Stability*
+Formally, $$
+u_{i}(g(S))\ge u_{i}(g(S_{i}',S_{-i})) \forall i,S_{i}'
+$$that is, no agent strictly benefits any alternative announcement $S_{i}'$
+*Proposition*: $g$ is Nash stable iff no agent wants to delete **some set of** their links.
