@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 347.00271224975586
+    "width": 347.00271224975586,
+    "collapsed": true
   },
   "right": {
     "id": "707048cafdbf033b",
@@ -266,6 +267,9 @@
   },
   "active": "6d7b22b66fa09b82",
   "lastOpenFiles": [
+    "Pasted image 20251020205420.png",
+    "Pasted image 20251020205033.png",
+    "Pasted image 20251020204611.png",
     "2025-10-20.md",
     "Term 7/SocialNetWork/Lecture 5.md",
     "Notes on GRE.md",
@@ -295,8 +299,6 @@
     "Pasted image 20250919230455.png",
     "Pasted image 20250919230224.png",
     "Pasted image 20250919230223.png",
-    "Pasted image 20250919225612.png",
-    "Pasted image 20250919225410.png",
     "2025-09-08.md",
     "MyOwnPage/Roadmap.md",
     "MyOwnPage/未命名.md",
@@ -308,7 +310,6 @@
     "Math 128B/Interpolation.md",
     "Math 128B/Part III.md",
     "Math 128B/Part IV.md",
-    "DID.md",
     "MyOwnPage",
     "Math 104/Ch5.pdf",
     "Math 104/Ch4.pdf",

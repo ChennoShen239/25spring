@@ -1,56 +1,46 @@
-社会与经济网络导论
+# Lecture 5: Strategic Network Formation Models
 
-第五讲：策略性网络形成模型
+## 5.1 JW 96
+Let  $u_{i}(g)$ be the payoff to $i$ if the network is $g$
+- undirected network formation
+Consider a game
+- each agent announces who they wish to link
+- a link forms iff both name each other
+Nash Eq.
+- no agent can gain from changing their action
+Consider a formation game w/ 2 agents![[Pasted image 20251020204611.png]]
+- 2 equilibria!
+## 5.2
+**Pairwise Stability**
+1. No single agent gains from severing a link – relationships must be beneficial to be maintained
+2. No pair of agents both gain from adding a link (at least one strictly) – beneficial relationships are pursued when available
 
-![](https://storage.simpletex.cn/view/fHM6b69bp2W474U6U9Wka6zpngvE1NcdM)
+*Notation*:
+For a network $g$:
+- $g-ij$ is the network where $ij$ is **removed**
+- $g+ji$ is the network where $ij$ is **added**
+So the definition becomes:
+1. $u_{i}(g)\ge u_{i}(j-ij)$ for $i$ and $ij$ in $g$
+2. $u_{i}(g+ij)>u_{i}(g)\implies u_{j}(g+ij)<u_{j}(g)$ for $ij$ not in $g$
+>a weak concept, but often narrows things down
 
-邢亦青
+![[Pasted image 20251020205033.png]]
 
-xingyq@nsd.pku.edu.cn
+*Example: Coauther JW96*
+Agents get value form collaboration:
+- let $d_{i}$ be the time that $i$ spend on the paper
+- then $$
+u_{i}(g) =\sum_{j:ij\in g}^{n} \left[ \frac{1}{d_{i}}+\frac{1}{d_{j}}+\frac{1}{d_{i}d_{j}} \right]=1+\sum_{j:ij\in g}^{n} \left[ \frac{1}{d_{j}}+\frac{1}{d_{i}d_{j}} \right]
+	$$where $d_{i}$ is the degree of a node $i$
+- no direct costs to links
 
-------------------------------------------------------------------
+Consider the $n=4$ game:
+![[Pasted image 20251020205420.png]]
 
-# 大纲
+Only the last one is **Pairwise Stable**
 
-· 第一部分：背景与基础
-  - 网络的定义与特征 (1,2)
-  - 经验背景 (3)
-
-· 第二部分：网络形成
-  - 随机网络模型 (4,5)
-  - 策略性网络模型 (6, 11)
-
-· 第三部分：网络与行为
-  - 扩散与学习 (7,8)
-  - 网络博弈 (9)
-
-------------------------------------------------------------------
-
-### 网络形成的经济博弈论模型
-
-![](https://storage.simpletex.cn/view/fhBTQEZmnZpTWKT64arkWhDX7m5xNE3UN)
-
-· 每个网络中，各行动者（agent）对应的成本与收益
-
-· 行动者选择建立连接
-
-· 对比激励机制与社会效率
-
-------------------------------------------------------------------
-
-# 一些问题
-
-· 哪些网络可能会形成？
-
-· 面对不同扰动，是否存在某些网络比其他网络更稳定？
-
-· 形成的网路是否是有效率的？
-
-· 如果它们不是有效率的，其效率有多低？
-
-· 干预能否帮助提升效率？
-
-· 这类模型能否为我们观察到的网络特征提供深刻见解？
-
-------------------------------------------------------------------
-
+## Efficiency
+*Pareto Efficient*
+A network $g$ is Pareto efficient iff there doesn't exist $g'$ such that $$
+u_{i}(g')\ge u_{i}(g)
+$$for all $i$ and the inequality holds strictly for some $i$
