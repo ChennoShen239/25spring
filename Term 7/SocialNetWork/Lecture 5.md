@@ -81,3 +81,9 @@ $$then $$
 u_{i}(g) +t_{i}(g)=\sum_{j=1}^{n} \frac{u_{j}(g)}{n}
 $$So that **every agent has societal incentives**
 
+
+**Basic Requirements on Transfers**
+1. completely isolated nodes that generate no value get $0$
+2. Nodes that are completely interchangable get same transfers
+
+![[Pasted image 20251020234615.png]]
