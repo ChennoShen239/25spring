@@ -93,4 +93,14 @@ The node with payoff of 5 can always sever a link and get a higher payoff $6>5$
 
 *Coase Theorem*:
 w/o frictions, transfers can solve inefficiencies:
-> 
+> "A theory is not like an airline or bus timetable. We are not interested simply in the accuracy of its predictions. A theory also serves as a base for thinking. It helps us to understand what is going on by enabling us to organize our thoughts.”
+>
+>—Ronald Coase
+
+- transfers fail to lead to efficiency…
+- What's special here?
+	- Combination of *multiple externalities* that all need to be handled at once
+
+>[!note]
+>在网络形成的过程中，任何一个连接的建立或切断，都会同时对网络中的许多其他个体产生各种复杂且相互关联的影响（既有正面的也有负面的）。这些影响不能被单独、依次地解决，而必须作为一个整体系统被同时考虑和处理，这使得通过简单的协商或补偿来达到整体效率变得极其困难。
+
