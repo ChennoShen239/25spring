@@ -80,3 +80,4 @@ t_{i}(g) = \sum_{j=1}^{n} \frac{u_{j}(g)}{n}-u_{i}(g)
 $$then $$
 u_{i}(g) +t_{i}(g)=\sum_{j=1}^{n} \frac{u_{j}(g)}{n}
 $$So that **every agent has societal incentives**
+
