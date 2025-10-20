@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes on GRE.md",
+                "file": "2025-10-20.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Notes on GRE"
+              "title": "2025-10-20"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 347.00271224975586,
-    "collapsed": true
+    "width": 347.00271224975586
   },
   "right": {
     "id": "707048cafdbf033b",
@@ -267,8 +266,9 @@
   },
   "active": "6d7b22b66fa09b82",
   "lastOpenFiles": [
-    "2025-10-15.md",
     "Notes on GRE.md",
+    "2025-10-20.md",
+    "2025-10-15.md",
     "2025-10-14.md",
     "2025-10-13.md",
     "2025-10-12.md",
@@ -312,7 +312,6 @@
     "Math 128B/Part I Translated.md",
     "Math 104/Ch5.pdf",
     "Math 104/Ch4.pdf",
-    "Math 104/Lecture 4.md",
     "未命名.canvas"
   ]
 }
