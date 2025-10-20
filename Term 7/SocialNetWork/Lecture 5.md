@@ -84,6 +84,13 @@ $$So that **every agent has societal incentives**
 
 **Basic Requirements on Transfers**
 1. completely isolated nodes that generate no value get $0$
-2. Nodes that are completely interchangable get same transfers
+2. Nodes that are completely interchangeable get same transfers
 
 ![[Pasted image 20251020234615.png]]
+
+**This is not an eq w/ transfer cause**:
+The node with payoff of 5 can always sever a link and get a higher payoff $6>5$
+
+*Coase Theorem*:
+w/o frictions, transfers can solve inefficiencies:
+> 
