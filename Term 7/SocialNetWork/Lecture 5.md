@@ -44,3 +44,39 @@ Only the last one is **Pairwise Stable**
 A network $g$ is Pareto efficient iff there doesn't exist $g'$ such that $$
 u_{i}(g')\ge u_{i}(g)
 $$for all $i$ and the inequality holds strictly for some $i$
+*Efficient*
+A network $g$ is efficient iff $g$ maximized $\sum_{i=1}^{n}u_{i}(g)$
+
+So in the previous case:![[Pasted image 20251020210230.png]]
+
+And there are some additional structures:
+![[Pasted image 20251020210852.png]]
+
+
+*Externalities*
+- Negative externality:$$
+u_{k}(g+ij)\le u_{k}(g)
+$$for some $k\neq i,j$
+- Positive externality:$$
+u_{k}(g+ij)\ge u_{k}(g)
+$$for some $k\neq i,j$
+> An example of pos. ext. is connections model in JW 96
+
+## 5.4 Network Formation and Transfers
+
+**What are transfers**
+- Outside intervention, taxing or subsidizing relationships
+	- e.g., government support of RD relationship
+- Bargaining among the individuals involved in the relationships
+- Favors exchanged among friends….
+
+**Formally**
+Change utilities from $u_{i}(g)$ to $u_{i}+t_{i}(g)$
+> e.g. Tax on having more than one link
+
+*Egalitarian Transfers*
+- Let the tax be $$
+t_{i}(g) = \sum_{j=1}^{n} \frac{u_{j}(g)}{n}-u_{i}(g)
+$$then $$
+u_{i}(g) +t_{i}(g)=\sum_{j=1}^{n} \frac{u_{j}(g)}{n}
+$$So that **every agent has societal incentives**
