@@ -80,3 +80,6 @@
 80. grooves 沟槽
 81. combustion 燃烧 
 82. political affiliation 政治立场
+83. dormant 休眠
+84. germinate 发芽
+85. undermine 推翻
