@@ -75,3 +75,7 @@
 75. larval form 幼虫形态
 76. yolk 蛋黄
 77. proffer 提供
+78. gravel 碎石
+79. tarpaulin 防水布
+80. grooves 沟槽
+81. combustion 燃烧 

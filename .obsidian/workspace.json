@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "2025-10-21"
             }
+          },
+          {
+            "id": "fbe827a9b9b6a1b5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Notes on GRE.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Notes on GRE"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -264,10 +279,10 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "6d7b22b66fa09b82",
+  "active": "fbe827a9b9b6a1b5",
   "lastOpenFiles": [
-    "Term 7/SocialNetWork/Lecture 6.md",
     "2025-10-21.md",
+    "Term 7/SocialNetWork/Lecture 6.md",
     "Pasted image 20251021141812.png",
     "Pasted image 20251021140252.png",
     "Pasted image 20251021133113.png",
