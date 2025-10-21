@@ -129,3 +129,46 @@ $$that is, no agent strictly benefits any alternative announcement $S_{i}'$
 Pairwise Nash stable = both pairwise stable and Nash stable
 >Captures multiple link changes (deletion)
 
+---
+## Backup
+
+### An improving path JW02
+- change one link at a time
+- sequence of adjacent networks
+	- link is added **if it benefits both agents** and at least one strictly
+	- Link is deleted **if either agent benefits from its deletion**
+![[Pasted image 20251021104526.png]]
+
+> Pairwise-Nash stable networks are in the red area.
+
+### Stochastic Stability
+
+-  Add trembles/errors to improving paths
+- Start at some network and randomly choose a link to action upon:
+	- add a link if both prefer and at least one strictly
+	- delete a link also 
+	- **reverse  the decision with prob**. $\epsilon>0$
+	- **This is the so called trembles/errors**
+
+This ends up a **finite state, irreducible and aperiodic Markov Chain** 
+- So it has *stationary distribution*
+
+So in the above example, let the state be $s=$ # of links and $$
+\Pi(\varepsilon)=
+\begin{pmatrix}
+1-\varepsilon & \varepsilon & 0 & 0 \\
+\frac{1-\varepsilon}{3} & \varepsilon & \frac{2(1-\varepsilon)}{3} & 0 \\
+0 & \frac{2\varepsilon}{3} & \frac{2-\varepsilon}{3} & \frac{1-\varepsilon}{3} \\
+0 & 0 & \varepsilon & 1-\varepsilon
+\end{pmatrix}.
+$$
+to see this, let $\pi_{ij}=\Pr \{ s_{t}=j|s_{t-1}=i \}$ be the $(i,j)$ entry of $\Pi(\epsilon)$, then for the 
+1. 1st row: only form one link if the decision is reversed: $\pi_{12}=\epsilon$
+2. 2nd row: w/o error, go to $s=0$ w/ prob. $\frac{1}{3}$ and go to $s=2$ w/ prob. $\frac{2}{3}$, w/ error delete the decision so state at $s=1$ w/ prob. $\epsilon$
+3. 3rd row: chooses one link:
+	1. if it's the existing link, then it's optimal to do nothing and go to $s=1$ with prob. $\frac{2\epsilon}{3}$
+	2. if is's the link that doesn't exist the it's optimal to add it and go to $s=3$ with prob. $\frac{1-\epsilon}{3}$
+	3. then stay at $s=2$ with prob. $1-\frac{2\epsilon}{3}-\frac{1-\epsilon}{3}=\frac{2-\epsilon}{3}$
+4. 4th row: stay at $s=4$ w/0 error and prob. $1-\epsilon$
+
+
