@@ -79,3 +79,4 @@
 79. tarpaulin 防水布
 80. grooves 沟槽
 81. combustion 燃烧 
+82. political affiliation 政治立场
