@@ -153,7 +153,8 @@ Pairwise Nash stable = both pairwise stable and Nash stable
 This ends up a **finite state, irreducible and aperiodic Markov Chain** 
 - So it has *stationary distribution*
 
-So in the above example, let the state be $s=$ # of links and $$
+So in the above example, let the state be $s=$ # of links and 
+$$
 \Pi(\varepsilon)=
 \begin{pmatrix}
 1-\varepsilon & \varepsilon & 0 & 0 \\
@@ -173,9 +174,12 @@ to see this, let $\pi_{ij}=\Pr \{ s_{t}=j|s_{t-1}=i \}$ be the $(i,j)$ entry of 
 
 The stationary distribution is 
 $$\mu(\varepsilon) = \left( \frac{\varepsilon(1-\varepsilon)}{1+2\varepsilon}, \frac{3\varepsilon^2}{1+2\varepsilon}, \frac{3\varepsilon(1-\varepsilon)}{1+2\varepsilon}, \frac{(1-\varepsilon)^2}{1+2\varepsilon} \right)$$
-and we can see that $$
+and we can see that 
+$$
 \lim_{ \epsilon \to 0 } \mu(\epsilon)=(0,0,0,1)
-$$so **完全网络**被定义为这个模型中**唯一的“随机稳定” (Stochastically Stable) 状态**
+$$
+
+so **完全网络**被定义为这个模型中**唯一的“随机稳定” (Stochastically Stable) 状态**
 
 >[!Why not the same for the two PNS?]
 >- 既然两个都是稳定的，为什么在引入“微小错误”并取极限后，只有“完全网络”活了下来，而“空网络”的概率变成了0？
