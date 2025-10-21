@@ -116,3 +116,16 @@ Formally, $$
 u_{i}(g(S))\ge u_{i}(g(S_{i}',S_{-i})) \forall i,S_{i}'
 $$that is, no agent strictly benefits any alternative announcement $S_{i}'$
 *Proposition*: $g$ is Nash stable iff no agent wants to delete **some set of** their links.
+
+![[Pasted image 20251021003001.png]]
+
+>[!Why is the NW one not NS?]
+>当前状态：中间的行动者连接着另外两个人，他的收益是 -1。另外两个人的收益也是 -1。分析中间的行动者：他目前的收益是 -1。如果他切断与右边那个人的连接：网络会变成右下角的“一条连接和一个孤立点”的状态。在这种新状态下，他（作为连接的一端）的收益会变成 1。比较：因为 1 > -1，他有非常强烈的动机去单方面**切断**一条连接。
+>
+>**结论**：因为存在一个行动者可以通过单方面行动来提高自身收益，所以这个“V”字形网络不是纳什稳定的。
+
+
+*Pairwise Nash stable*
+Pairwise Nash stable = both pairwise stable and Nash stable
+>Captures multiple link changes (deletion)
+
