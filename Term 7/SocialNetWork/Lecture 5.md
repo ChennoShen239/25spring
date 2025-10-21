@@ -171,4 +171,36 @@ to see this, let $\pi_{ij}=\Pr \{ s_{t}=j|s_{t-1}=i \}$ be the $(i,j)$ entry of 
 	3. then stay at $s=2$ with prob. $1-\frac{2\epsilon}{3}-\frac{1-\epsilon}{3}=\frac{2-\epsilon}{3}$
 4. 4th row: stay at $s=4$ w/0 error and prob. $1-\epsilon$
 
+The stationary distribution is 
+$$\mu(\varepsilon) = \left( \frac{\varepsilon(1-\varepsilon)}{1+2\varepsilon}, \frac{3\varepsilon^2}{1+2\varepsilon}, \frac{3\varepsilon(1-\varepsilon)}{1+2\varepsilon}, \frac{(1-\varepsilon)^2}{1+2\varepsilon} \right)$$
+and we can see that $$
+\lim_{ \epsilon \to 0 } \mu(\epsilon)=(0,0,0,1)
+$$so **完全网络**被定义为这个模型中**唯一的“随机稳定” (Stochastically Stable) 状态**
 
+>[!Why not the same for the two PNS?]
+>- 既然两个都是稳定的，为什么在引入“微小错误”并取极限后，只有“完全网络”活了下来，而“空网络”的概率变成了0？
+>     
+> - **答案**：**“逃离”这两个稳定状态的“成本”（所需的错误数量）是不同的。**
+>     
+>     - **逃离“空网络” (状态0)**：
+>         
+>         1. 你只需要犯**一次错误**：以 $\epsilon$ 的概率非理性地“增加”一条连接，进入状态1。
+>             
+>         2. 一旦到了状态1，**理性**的“改善路径”（概率 $1-\epsilon$）就会接管，把你推向状态2，然后再推向状态3。
+>             
+>         3. 所以，逃离“空网络”这个吸引盆地，**只需要1次错误**。这个逃离事件的发生概率与 $\epsilon^1$ 成正比。
+>             
+>     - **逃离“完全网络” (状态3)**：
+>         
+>         1. 你需要犯**一次错误**：以 $\epsilon$ 的概率非理性地“删除”一条连接，进入状态2。
+>             
+>         2. **但是**，一旦到了状态2，**理性**的“改善路径”会立刻把你**推回**状态3！
+>             
+>         3. 为了真正逃离并一路回到状态0，你必须在状态2时**再犯一次错误**（以 $\epsilon$ 的概率删除连接进入状态1），然后在状态1时**理性地**（或再犯一次错）删除连接进入状态0。
+>             
+>         4. 所以，逃离“完全网络”这个吸引盆地，**至少需要连续两次错误**。这个逃离事件的发生概率与 $\epsilon^2$ 成正比。
+> 
+> 
+### Ideas
+1. "More errors needed to leave the 'basin of attraction' of complete network than to leave the basin of attraction of empty network
+2. More generally, need to keep track of basins of attraction of many states (via a theorem of Friedlin and Wentzel 1984)
