@@ -160,4 +160,12 @@
 160. **exploited** —— 利用
 161. frayed nerves 紧张的神经
 162. bumper to bumper traffic 交通拥堵
-163. 
+163. **cynical** —— 愤世嫉俗的
+164. **conceded / acknowledged** —— 承认，认可
+165. perennial lament 长久的哀叹
+166. rampant（盛行的）
+167. affinities with（与……有相似性）
+168. sluggish / dilatory（迟缓的 / 拖延的）
+169. expeditious 迅速的
+170. averted / forestalled（避免的 / 阻止的）
+171. 
