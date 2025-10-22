@@ -136,8 +136,11 @@
 136. dubious 可疑的
 137. furtive 秘密的
 138. confound 使迷惑
-
-
+139. adornments 装饰品
+140. argument 论证
+141. repudiation 否定
+142. mascot 吉祥物
+143. flits from 略过
 
 
 
