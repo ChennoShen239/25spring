@@ -95,3 +95,7 @@
 95. serve 促进
 96. acquainted 熟悉的
 97. correspondence 通讯，书信
+98. Tsar 沙皇
+99. oversee 监视
+100. ogre 食人魔
+101. 
