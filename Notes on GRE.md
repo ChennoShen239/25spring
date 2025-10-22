@@ -169,4 +169,7 @@
 169. expeditious 迅速的
 170. averted / forestalled（避免的 / 阻止的）
 171. advent 来临
-172. 
+172. pertain（适用）
+173. confined / circumscribed（局限的）
+174. chronologically and thematically  时间与主题上
+175. accession to / acquiescence to（同意、默许）
