@@ -156,3 +156,8 @@
 156. punctilious 一丝不苟的
 157. dictum 格言
 158. dispel 驳斥、消除（误解or假设）
+159. **corroborated** —— 证实
+160. **exploited** —— 利用
+161. frayed nerves 紧张的神经
+162. bumper to bumper traffic 交通拥堵
+163. 
