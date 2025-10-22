@@ -167,6 +167,7 @@
 167. affinities with（与……有相似性）
 168. sluggish / dilatory（迟缓的 / 拖延的）
 169. expeditious 迅速的
+	1. expediting 加快
 170. averted / forestalled（避免的 / 阻止的）
 171. advent 来临
 172. pertain（适用）
@@ -177,4 +178,5 @@
 177. tenuous 脆弱的，不牢靠的
 178. terrain 地形
 179. exceptional（罕见的）
-180. 
+180. **lamenting**（哀叹）
+181. tendentious 偏瘫的
