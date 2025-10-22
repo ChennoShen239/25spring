@@ -98,4 +98,32 @@
 98. Tsar 沙皇
 99. oversee 监视
 100. ogre 食人魔
-101. 
+101. auteur myth 作者神话
+102. purveyor  供应商
+103. wrest 夺取
+104. strewn with 散落着
+105. douse 浸泡
+106. intensify 增强
+107. secure 获取
+108. tantamount 等于 equal 
+109. vindication 辩护
+110. proscription 禁止
+111. ministration 帮助
+112. valediction 帮助
+113. exculpation 开拓罪责
+114. pertinent 相关的
+115. eluded 躲避
+116. noisome 令人讨厌的
+117. sour effluvia 酸臭味
+118. ambivalent 矛盾的
+119. bourgeois 资产阶级
+120. capitulate 投降
+121. seek sought 寻求
+122. social milieu 社会环境
+123. salutary 有益的
+124. left to $\equiv$ ceded to 让给了
+125. repertoire 曲目
+126. obscure 默默无闻的
+127. accountability 义务
+128. disarray 无秩序
+129. 
