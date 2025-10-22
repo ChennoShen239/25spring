@@ -141,7 +141,14 @@
 141. repudiation 否定
 142. mascot 吉祥物
 143. flits from 略过
-
-
-
+144. forgo 放弃
+145. without precedent 前所未有
+146. spate of 一连串的
+147. intrigue 阴谋
+148. slighted 轻视怠慢
+149. lauded 赞美
+150. defy = disregard
+151. slumber through 睡过去的
+152. somnolent = lethargic 无精打采
+153. laconic 简洁的
 
