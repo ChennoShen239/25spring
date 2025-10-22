@@ -83,3 +83,8 @@
 83. dormant 休眠
 84. germinate 发芽
 85. undermine 推翻
+86. refute the contention 反驳这一论点
+87. untenable 站不住脚
+88. forfeit 放弃
+89. attorney 律师
+90. 
