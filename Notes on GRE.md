@@ -173,3 +173,6 @@
 173. confined / circumscribed（局限的）
 174. chronologically and thematically  时间与主题上
 175. accession to / acquiescence to（同意、默许）
+176. granting of concession 让步的给予
+177. tenuous 脆弱的，不牢靠的
+178. 
