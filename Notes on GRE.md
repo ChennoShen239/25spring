@@ -151,4 +151,8 @@
 151. slumber through 睡过去的
 152. somnolent = lethargic 无精打采
 153. laconic 简洁的
-
+154. tonic 滋补的 = restorative
+155. sanguine 乐观的
+156. punctilious 一丝不苟的
+157. dictum 格言
+158. dispel 驳斥、消除（误解or假设）
