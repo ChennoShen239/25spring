@@ -87,4 +87,11 @@
 87. untenable 站不住脚
 88. forfeit 放弃
 89. attorney 律师
-90. 
+90. executives 高管
+91. spontaneity 自发性
+92. derision 嘲笑
+93. reclusive clergyman 隐居的牧师
+94. melancholy 忧郁
+95. serve 促进
+96. acquainted 熟悉的
+97. correspondence 通讯，书信
