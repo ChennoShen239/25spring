@@ -176,4 +176,5 @@
 176. granting of concession 让步的给予
 177. tenuous 脆弱的，不牢靠的
 178. terrain 地形
-179.exceptional（罕见的）
+179. exceptional（罕见的）
+180. 
