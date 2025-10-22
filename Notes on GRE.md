@@ -131,4 +131,14 @@
 131. vitiate 败坏
 132. disseminate 传播
 133. pretentious 自命不凡
-134. 
+134. disgorge 吐出
+135. facet 方面
+136. dubious 可疑的
+137. furtive 秘密的
+138. confound 使迷惑
+
+
+
+
+
+
