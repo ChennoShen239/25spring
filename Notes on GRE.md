@@ -129,4 +129,6 @@
 129. incisive 尖锐的
 130. a priori 先验的
 131. vitiate 败坏
-132. 
+132. disseminate 传播
+133. pretentious 自命不凡
+134. 
