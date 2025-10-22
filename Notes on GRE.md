@@ -126,4 +126,7 @@
 126. obscure 默默无闻的
 127. accountability 义务
 128. disarray 无秩序
-129. 
+129. incisive 尖锐的
+130. a priori 先验的
+131. vitiate 败坏
+132. 
