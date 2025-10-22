@@ -168,4 +168,5 @@
 168. sluggish / dilatory（迟缓的 / 拖延的）
 169. expeditious 迅速的
 170. averted / forestalled（避免的 / 阻止的）
-171. 
+171. advent 来临
+172. 
