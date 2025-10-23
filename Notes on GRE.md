@@ -179,4 +179,7 @@
 178. terrain 地形
 179. exceptional（罕见的）
 180. **lamenting**（哀叹）
-181. tendentious 偏瘫的
+181. tendentious 偏袒的
+182. detracting / deprecatory（贬低的 / 轻视的）
+183. premise 前提
+184. 
