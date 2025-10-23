@@ -203,4 +203,23 @@
 197. _profundity_ —— 深刻
 198. _exuberance_ —— 繁华、装饰性强
 199. In a shopocracy, consumer choices heavily influence policy.在一个商店政治中，消费者的选择严重影响政策。
-200. 
+200. deferring to low-level aides 听从低级助手
+201. _perspicacity_ —— 洞察力、敏锐
+202. _discernment_ —— 识别力、判断力
+203. _magnanimity_ —— 宽宏大量
+204. _sanctioning_ —— 认可、批准 (不是制裁)
+205. _endorsing_ —— 支持、背书
+206. _reprehending_ —— 斥责
+207. _censuring_ —— 谴责
+208. anything but 绝不是
+209. 'billiard-ball causality'指的是一种直观的、类似台球碰撞的因果关系模型，强调物体间直接的、机械的相互作用，没有中间变量或复杂过程。这种模型常用于解释经典物理学中的现象，如牛顿力学，其中物体的运动由其相互作用直接决定。
+210. 'vantage'指的是一个有利的位置或优势，使人们能够更好地观察或行动。
+211. _radicalism_ —— 激进性
+212. _presided over_ —— 主导、主持
+	1. _seethed over_ —— 怒火中烧
+213. _amenable to refutation_ —— 可被反驳的（符合科学精神）
+	1. _open to criticism_ —— 乐于接受批评的
+	2. 不一样在如果不 open to criticism 那就不会有批评出现
+214. 'rallying to' 表示聚集起来或支持某事。
+215. 'disgraced'指的是某人因丑闻或其他不当行为而失去名誉或地位。
+216. 
