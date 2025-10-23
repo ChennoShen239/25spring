@@ -124,7 +124,7 @@
 123. salutary 有益的
 124. left to $\equiv$ ceded to 让给了
 125. repertoire 曲目
-126. obscure 默默无闻的
+126. obscure 默默无闻的, 模糊的
 127. accountability 义务
 128. disarray 无秩序
 129. incisive 尖锐的
@@ -228,6 +228,14 @@
 218. The artist's delineation of the landscape was stunning.艺术家对风景的勾勒令人惊叹。
 219. _falls short_ —— 不尽如人意
 220. deliberate 平稳的
-221. 
-
----
+221. impasse 僵局
+222. subvert 颠覆
+223. specious 可疑的，似是而非的
+224. pernicious 有害的
+225. unequivocal 模棱两可的
+226. insalubrious 脏乱的
+227. ramshackle 破败不堪的
+228. dreary 令人纠结的
+229. mendacity 虚伪
+	1. dissembling 假装掩饰
+230. 
