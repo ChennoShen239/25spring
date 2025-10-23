@@ -106,6 +106,7 @@
 106. intensify 增强
 107. secure 获取
 108. tantamount 等于 equal 
+	1. 用于不好的事情的等价
 109. vindication 辩护
 110. proscription 禁止
 111. ministration 帮助
@@ -182,4 +183,24 @@
 181. tendentious 偏袒的
 182. detracting / deprecatory（贬低的 / 轻视的）
 183. premise 前提
-184. 
+184. germane to —— 与……密切相关
+185. survey for 概述
+186. to be faulted for 受到责备
+187. _signaled_ —— 指出、表明
+188. As it is 就目前而言
+189. invigorate 使得有活力
+190. A. perfidiousness —— 背信弃义  
+	✅ B. peregrination —— 旅行，游历  
+	C. jubilation —— 欢腾，喜悦  
+	D. sagaciousness —— 睿智，聪慧  
+	❌ E. conspicuousness —— 显眼，引人注目
+191. resign oneself to 逐渐接受了
+192. electorate 选民
+193. 'bear them out' 意味着提供证据或事实来支持或证明某个观点或陈述。
+194. _quintessential_ —— 典型的、本质的
+195. 'exuberant'用来形容某人的个性充满活力和热情。
+196. _impermanence_ —— 无常、变化不定
+197. _profundity_ —— 深刻
+198. _exuberance_ —— 繁华、装饰性强
+199. In a shopocracy, consumer choices heavily influence policy.在一个商店政治中，消费者的选择严重影响政策。
+200. 
