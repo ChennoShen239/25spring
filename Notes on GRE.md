@@ -222,4 +222,12 @@
 	2. 不一样在如果不 open to criticism 那就不会有批评出现
 214. 'rallying to' 表示聚集起来或支持某事。
 215. 'disgraced'指的是某人因丑闻或其他不当行为而失去名誉或地位。
-216. 
+216. _self–interest_ —— 私利、自我利益
+	1. _opportunism_ —— 机会主义、投机取巧
+217. **resonates / rings true**  （“引起共鸣”或“令人信服”——强调虽然夸张，但仍揭示了真实。）
+218. The artist's delineation of the landscape was stunning.艺术家对风景的勾勒令人惊叹。
+219. _falls short_ —— 不尽如人意
+220. deliberate 平稳的
+221. 
+
+---
