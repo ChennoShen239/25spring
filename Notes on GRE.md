@@ -6,8 +6,10 @@
 6. chivalrous 彬彬有礼的
 7. boorish 粗鲁的
 8. spontaneous 自发的
-9. forbear 忍住
+9. forbear 忍住,克制
+	1. 又是忘记过一遍啦啊啊啊
 10. expedient 权宜之计的
+	1. expedite 使加速
 11. defensible 站得住脚的
 12. broached 宣布谈论
 13. proscribe 禁止
@@ -243,6 +245,7 @@
 232. sagacious 聪慧的
 233. desertion 逃兵
 234. perfunctory 敷衍的
+	1. 忘记过一次啦！！
 235. borne out 证实
 236. cumbersome = unwieldy 笨重的
 237. predilection 偏爱 proclivity 倾向
@@ -250,4 +253,34 @@
 239. fractious = restive 易怒的
 240. assembly 集会
 241. upshot 结局；要点
-242. 
+242. sluggish 萧条的
+243. impassive 面无表情的
+244. solitary 孤独的
+245. daunting 令人害怕的
+246. transience 短暂
+247. codifying 编纂
+248. galvanize 刺激 
+	1. **animate**  鼓舞，推动
+249. prognosis 预后;预测
+250. auspicious 吉祥
+251. incursion of 对。。。的入侵
+252. corrupt 破坏
+253. ethereal 飘渺的 = invisible
+254. diminutive = minuscule 极小的
+255. startling 令人吃惊
+256. vapid = jejune 乏味
+257. purports 声称
+	1. 一般是虚假的
+258. insipid 无味的；乏味的
+	1. The medicine had an insipid taste.这药的味道很无味。
+259. pragmatic 务实的
+260. intelligible = readable 可识别的/可读的
+261. voluble 健谈的
+262. entailed by 由...带来
+	1. entail = mean 意味着
+	2. inferable from
+263. inveterate 积习难改的
+264. candid = frank / straightforward
+265. lambaste 批评/痛斥
+266. antecedent to 先行于
+267. admonish 告诫
