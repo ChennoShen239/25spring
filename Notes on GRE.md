@@ -288,3 +288,38 @@
 
 ---
 # Math 
+1. composite number 合数
+2. reciprocal 倒数
+3. mixed number 带分数
+4. radicals 根式
+5. A is twice as much as B $$
+A=2B
+$$
+6. twice as A as B $$
+A=2B
+$$
+7. quadrant 象限
+8. parabola 抛物线
+9. vertex 顶点
+10. heptagon 七边形
+11. vertice 多边形顶点
+12. isoceles triangle 等腰三角形
+13. congruent angle 等角三角形
+14. vertical/opposite angle 对顶角
+15. obtuse angle 钝角
+16. perimeter 周长
+17. hypotenuse 斜边
+18. leg 直角边
+19. pythagorean theorem 勾股定理
+20. rhombus 菱形
+21. parallelogram 平行四边形
+22. trapezoid 题型
+23. circumference 圆周长
+24. inscribed 内接
+25. concentric 同心的
+26. rectangular solid 长方体
+27. circular cylinder 圆柱体
+28. lateral surface 侧表面
+29. supplementary angle 余角
+	1. complementary angle 补角
+30. 
