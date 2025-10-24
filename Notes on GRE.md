@@ -245,4 +245,9 @@
 234. perfunctory 敷衍的
 235. borne out 证实
 236. cumbersome = unwieldy 笨重的
-237. 
+237. predilection 偏爱 proclivity 倾向
+238. vacillation = wavering 犹豫
+239. fractious = restive 易怒的
+240. assembly 集会
+241. upshot 结局；要点
+242. 
