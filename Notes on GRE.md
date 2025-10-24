@@ -284,3 +284,4 @@
 265. lambaste 批评/痛斥
 266. antecedent to 先行于
 267. admonish 告诫
+268. enliven 活跃
