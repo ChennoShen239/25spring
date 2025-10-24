@@ -238,4 +238,11 @@
 228. dreary 令人纠结的
 229. mendacity 虚伪
 	1. dissembling 假装掩饰
-230. 
+230. belie = mask 掩盖
+231. mundane 平凡的
+232. sagacious 聪慧的
+233. desertion 逃兵
+234. perfunctory 敷衍的
+235. borne out 证实
+236. cumbersome = unwieldy 笨重的
+237. 
