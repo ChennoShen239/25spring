@@ -781,7 +781,8 @@ $$
     *   teenage smoking
     **.**
 
-10. *   In city after city across the country
+10. 
+	*   In city after city across the country
     *   At offices and plants across the country
     **, a(n)**
     *   growing
@@ -862,3 +863,350 @@ $$
     *   popular
     **than...**
 
+
+# 表示比较与分析的句型:
+
+1.  **The advantages of B**
+    *   outweigh any benefit we gain from
+    *   carry more weight than those of
+    *   are much greater than
+    **A.**
+
+2.  **Good / Superior / Wonderful as A is, ..., it**
+    *   has its own disadvantages
+    *   brings its own problems, too
+    **For one thing, it ... . For another, it...**
+
+3.  **The effect of**
+    *   comparison
+    *   contrast
+    **is heightened by the particular advantage B enjoys.**
+
+4.  **Although A**
+    *   secures
+    *   enjoys
+    *   gains
+    *   has
+    **a(n)**
+    *   enormous
+    *   much
+    *   substantial
+    *   considerable
+    *   distinct
+    **advantage over ..., it cannot compete with B in...**
+
+5.  **A's advantage**
+    *   sounds ridiculous
+    *   means nothing
+    **when B's advantages are**
+    *   mentioned
+    *   considered
+    *   taken into consideration
+
+6.  **When the advantages and disadvantages of...are carefully compared, the most**
+    *   striking
+    *   finding
+    *   conclusion
+    **is**
+    *   self-evident
+    *   obvious
+
+7.  **Although everyone believes that ... I**
+    *   doubt
+    *   wonder
+    **whether the argument bears**
+    *   much analysis
+    *   close examination
+
+8.  
+	*   **As opposed to**
+    *   **Contrary to**
+    *   widely
+    *   commonly
+    *   generally
+    **held / accepted**
+    *   belief
+    *   ideas
+    *   views
+    **, I**
+    *   believe
+    *   argue
+    **that...**
+
+9.  **Although the**
+    *   popular
+    *   nationwide
+    *   commonly-accepted
+    *   belief
+    *   idea
+    *   assumption
+    **is that...,**
+    **a**
+    *   current
+    *   new
+    *   recent
+    *   study
+    *   survey
+    *   poll
+    *   investigation
+    *   indicates
+    *   shows
+    *   demonstrates
+    **that...**
+
+10. **Although the**
+    *   inclination
+    *   tendency
+    **to...is**
+    *   desirable
+    *   laudable
+    *   understandable
+    **, one may still wonder whether...is fair.**
+
+11. **They may be right about..., but they seem to**
+    *   neglect
+    *   fail
+    **to**
+    *   mention
+    *   take into account
+    **the fact that...**
+
+12. **Although it is**
+    *   commonly
+    *   widely
+    *   generally
+    *   held
+    *   felt
+    *   accepted
+    *   agreed
+    **that..., it is unlikely to be true that...**
+
+13. *   **It is true that...,**
+    *   **True,**
+    *   **To be sure,**
+    *   **Admittedly,**
+    **but**
+    *   this is not to say
+    *   it is unlikely
+    *   it doesn't follow
+    *   it doesn't mean
+    *   it won't be the case
+    **that...**
+
+14. **It would be**
+    *   possible
+    *   natural
+    *   reasonable
+    **to**
+    *   think
+    *   believe
+    *   take the view
+    **that..., but it would be**
+    *   foolish
+    *   absurd
+    *   an error
+    *   wrong
+    **to**
+    *   claim
+    *   argue
+    **that..., and it would be more**
+    *   foolish
+    *   absurd
+    *   wrong
+    **to believe that...**
+
+15. **There is**
+    *   absolutely
+    *   in fact
+    *   no
+    *   every
+    **reason for us to**
+    *   believe
+    *   accept
+    *   resist
+    *   reject
+    **that...**
+# 表示原因的句型:
+
+1.  **Among the most**
+    *   convincing
+    *   important
+    **reasons**
+    *   given
+    *   cited
+    *   offered
+    *   identified
+    **by people for..., one should be**
+    *   stressed
+    *   emphasized
+    *   mentioned
+
+2.  **One may**
+    *   regard
+    *   see
+    *   view
+    *   think of
+    **the**
+    *   trend
+    *   increase
+    *   phenomenon
+    **as a**
+    *   sign of...
+    *   result of...
+    *   response to...
+    *   reaction to...
+
+3.  **The**
+    *   increase
+    *   change
+    *   failure
+    *   success
+    **in...**
+    *   mainly
+    *   largely
+    *   partly
+    *   results from
+    *   arises from
+    *   is because of
+    **/ is**
+    *   due to
+    *   owing to
+    *   attributable to
+    **the fact that.../ several factors**
+
+4.  **We may**
+    *   blame
+    *   criticize
+    **...for..., but the**
+    *   causes
+    *   roots
+    **for the**
+    *   problem
+    *   phenomenon
+    **go far deeper.**
+
+5.  **One may**
+    *   attribute
+    *   ascribe
+    *   owe
+    **the**
+    *   increase
+    *   decrease
+    *   change
+    **to..., but...is not by itself an adequate explanation.**
+
+6.  **One may trace this**
+    *   trend
+    *   problem
+    **back to..., but it doesn't answer the question of.../why...**
+
+7.  **There are**
+    *   many
+    *   different
+    *   several
+    *   a number of
+    *   a variety of
+    **causes / reasons for this**
+    *   dramatic
+    *   marked
+    *   significant
+    *   extraordinary
+    *   growth
+    *   change
+    *   decline
+    *   increase
+    **in ... First..., Second..., Finally...**
+
+8.  **A**
+    *   number
+    *   multitude
+    **of factors could**
+    *   conspire towards
+    *   account for
+    *   contribute to
+    *   lead to
+    *   result in
+    *   influence
+    **the**
+    *   change
+    *   increase
+    *   decrease
+    *   success
+    *   failure
+    *   development
+    **in...**
+
+9.  **Another**
+    *   contributing
+    *   contributory
+    **factor / cause of...is...**
+
+10. **Also playing a part / contributing to this is...**
+
+11. **Why**
+    *   are
+    *   do
+    *   did
+    **...?**
+    *   For one thing, ...
+    *   One reason is...
+    *   For another, ...
+    *   Another is...
+    **Perhaps the**
+    *   primary
+    *   main
+    *   most important
+    **Reason is...**
+
+12. **...is**
+    *   also
+    *   partly
+    *   mainly
+    *   solely
+    *   chiefly
+    **responsible for the**
+    *   rise
+    *   increase
+    *   decrease
+    **in...**
+    *   varied
+    *   many
+    *   complicated
+    *   profound
+
+13. **The**
+    *   reasons
+    *   causes
+    **for...are**
+    *   varied
+    *   many
+    *   complicated
+    *   profound
+    **, and**
+    *   maybe
+    *   perhaps
+    *   probably
+    **they**
+    *   lie
+    *   are found
+    **in the fact...**
+
+14. **Some people suggest that the fault is with**
+    *   teenagers
+    *   students
+    **who.... But it doesn't explain... / they are only partly right.**
+
+15. **It may**
+    *   cause
+    *   produce
+    *   bring about
+    **a**
+    *   considerable
+    *   drastic
+    *   marked
+    *   sweeping
+    *   favourable
+    *   undesirable
+    *   change
+    *   rise
+    **in...**
