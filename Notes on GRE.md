@@ -304,7 +304,12 @@
 282. stipulate 规定
 283. cliquish social behavior 小圈子式的社会行为
 284. **a rant against** / **a diatribe on** **猛烈抨击** / **严厉批评**
-285. 
+285. **belied** **掩盖/歪曲**
+286. conflated 合并/混淆
+287. divulged 泄露/透露
+288. **portend** / **predict** **预示** / **预测**
+289. lugubrious/gloomy 沮丧的
+290. 
 
 ---
 # Math 
