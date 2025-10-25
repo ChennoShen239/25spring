@@ -288,6 +288,7 @@
 267. enliven 活跃
 268. respite 短暂休息
 	1. lull 休息
+	2. relief
 269. harbinger 预兆
 270.  entice 引诱
 271. panache 酷炫
@@ -309,7 +310,7 @@
 287. divulged 泄露/透露
 288. **portend** / **predict** **预示** / **预测**
 289. lugubrious/gloomy 沮丧的
-290. 
+290. exhilarating 令人愉快的
 
 ---
 # Math 
