@@ -12,10 +12,10 @@
 	1. expedite 使加速
 11. defensible 站得住脚的
 12. broached 宣布谈论
-13. proscribe 禁止
-14. contentious 有争议的
+13. **proscribe 禁止**
+14. **contentious 有争议的**
 15. prominent 杰出的，显著的
-16. loath 不情愿
+16. **loath 不情愿**
 17. intercepting 拦截
 18. prevarication 支支吾吾
 19. forthcoming 坦率的
@@ -24,36 +24,37 @@
 22. vindicated 证明合理性
 23. sequester within 隔离于
 24. rehabilitations 重新解读，重塑
-25. reclamations 回复名誉
+25. **reclamations 回复名誉**
 26. reformations 改革
 27. recapitulations 重述
 28. reiteration 重复反复
 29. sensation 感觉
-30. emblematic 象征性的
+30. **emblematic 象征性的**
 31. literalism 字面主义
 32. subjectivity 主观性
-33. felling 砍伐
+33. **felling** 砍伐
 34. unearth 挖掘
 35. attest to 证明
 36. solicit consumers 招揽消费者
-37. undermine 破坏
+37. **undermine** 破坏
 38. posit 断定
 39. salinity 盐度
 40. susceptible 易受影响的
 41. influxes 涌入
-42. veracity 真实诚实
-43. risible 可笑的
+42. **veracity** 真实诚实
+43. **risible** 可笑的
 44. largesse 捐款
-45. scathing 严厉的
+45. **scathing** 严厉的
 46. valediction 告别
+	1. valediction 帮助
 47. modicum 一点点
 48. pressing 迫切的
-49. stale 陈腐的
+49. **stale** 陈腐的
 50. deferential 尊敬的
 51. hubris 骄傲自大
 52. weathered 风化的
 53. scattered all over 广泛分布
-54. concealed 隐藏
+54. **concealed 隐藏**
 55. ceramics 陶器
 56. imposed over 覆盖在上面
 57. slip 化妆土
@@ -68,8 +69,8 @@
 66. restful 宁静的
 67. defoliation 落叶
 68. mediated by 由……介导
-69. ramify through 通过分支
-70. vitality 活力
+69. **ramify through 通过分支**
+70. **vitality 活力**
 71. long overdue 早就该
 72. feeding from 以。。。为食
 73. reproductive 繁殖
@@ -85,13 +86,13 @@
 83. dormant 休眠
 84. germinate 发芽
 85. undermine 推翻
-86. refute the contention 反驳这一论点
+86. refute the **contention** 反驳这一论点
 87. untenable 站不住脚
 88. forfeit 放弃
 89. attorney 律师
 90. executives 高管
 91. spontaneity 自发性
-92. derision 嘲笑
+92. **derision** 嘲笑
 93. reclusive clergyman 隐居的牧师
 94. melancholy 忧郁
 95. serve 促进
@@ -103,188 +104,188 @@
 101. auteur myth 作者神话
 102. purveyor  供应商
 103. wrest 夺取
-104. strewn with 散落着
+104. **strewn with 散落着**
 105. douse 浸泡
 106. intensify 增强
 107. secure 获取
 108. tantamount 等于 equal 
 	1. 用于不好的事情的等价
 109. vindication 辩护
-110. proscription 禁止
+110. **proscription 禁止**
 111. ministration 帮助
-112. valediction 帮助
-113. exculpation 开拓罪责
-114. pertinent 相关的
-115. eluded 躲避
-116. noisome 令人讨厌的
-117. sour effluvia 酸臭味
-118. ambivalent 矛盾的
-119. bourgeois 资产阶级
-120. capitulate 投降
-121. seek sought 寻求
-122. social milieu 社会环境
-123. salutary 有益的
-124. left to $\equiv$ ceded to 让给了
-125. repertoire 曲目
-126. obscure 默默无闻的, 模糊的
-127. accountability 义务
-128. disarray 无秩序
-129. incisive 尖锐的
-130. a priori 先验的
-131. vitiate 败坏
-132. disseminate 传播
-133. pretentious 自命不凡
-134. disgorge 吐出
-135. facet 方面
-136. dubious 可疑的
-137. furtive 秘密的
-138. confound 使迷惑
-139. adornments 装饰品
-140. argument 论证
-141. repudiation 否定
-142. mascot 吉祥物
-143. flits from 略过
-144. forgo 放弃
-145. without precedent 前所未有
-146. spate of 一连串的
-147. intrigue 阴谋
-148. slighted 轻视怠慢
-149. lauded 赞美
-150. defy = disregard
-151. slumber through 睡过去的
-152. somnolent = lethargic 无精打采
-153. laconic 简洁的
-154. tonic 滋补的 = restorative
-155. sanguine 乐观的
-156. punctilious 一丝不苟的
-157. dictum 格言
-158. dispel 驳斥、消除（误解or假设）
-159. **corroborated** —— 证实
-160. **exploited** —— 利用
-161. frayed nerves 紧张的神经
-162. bumper to bumper traffic 交通拥堵
-163. **cynical** —— 愤世嫉俗的
-164. **conceded / acknowledged** —— 承认，认可
-165. perennial lament 长久的哀叹
-166. rampant（盛行的）
-167. affinities with（与……有相似性）
-168. sluggish / dilatory（迟缓的 / 拖延的）
-169. expeditious 迅速的
-	1. expediting 加快
-170. averted / forestalled（避免的 / 阻止的）
-171. advent 来临
-172. pertain（适用）
-173. confined / circumscribed（局限的）
-174. chronologically and thematically  时间与主题上
-175. accession to / acquiescence to（同意、默许）
-176. granting of concession 让步的给予
-177. tenuous 脆弱的，不牢靠的
-178. terrain 地形
-179. exceptional（罕见的）
-180. **lamenting**（哀叹）
-181. tendentious 偏袒的
-182. detracting / deprecatory（贬低的 / 轻视的）
-183. premise 前提
-184. germane to —— 与……密切相关
-185. survey for 概述
-186. to be faulted for 受到责备
-187. _signaled_ —— 指出、表明
-188. As it is 就目前而言
-189. invigorate 使得有活力
-190. A. perfidiousness —— 背信弃义  
-	✅ B. peregrination —— 旅行，游历  
+112. exculpation 开拓罪责
+113. pertinent 相关的
+114. **eluded 躲避**
+115. noisome 令人讨厌的
+116. sour effluvia 酸臭味
+117. ambivalent 矛盾的
+118. bourgeois 资产阶级
+119. capitulate 投降
+120. seek sought 寻求
+121. social milieu 社会环境
+122. salutary 有益的
+123. left to $\equiv$ ceded to 让给了
+124. repertoire 曲目
+125. obscure 默默无闻的, 模糊的
+126. accountability 义务
+127. disarray 无秩序
+128. incisive 尖锐的
+129. a priori 先验的
+130. **vitiate 败坏**
+131. disseminate 传播
+132. pretentious 自命不凡
+133. disgorge 吐出
+134. facet 方面
+135. **dubious 可疑的**
+136. furtive 秘密的
+137. confound 使迷惑
+138. adornments 装饰品
+139. argument 论证
+140. **repudiation 否定**
+141. mascot 吉祥物
+142. flits from 略过
+143. forgo 放弃
+144. without precedent 前所未有
+145. spate of 一连串的
+146. intrigue 阴谋
+147. slighted 轻视怠慢
+148. **lauded 赞美**
+149. defy = disregard
+150. slumber through 睡过去的
+151. somnolent = lethargic 无精打采
+152. laconic 简洁的
+153. tonic 滋补的 = restorative
+154. **sanguine 乐观的**
+155. punctilious 一丝不苟的
+156. dictum 格言
+157. dispel 驳斥、消除（误解or假设）
+158. **corroborated —— 证实**
+159. **exploited** —— 利用
+160. frayed nerves 紧张的神经
+161. bumper to bumper traffic 交通拥堵
+162. **cynical** —— 愤世嫉俗的
+163. **conceded / acknowledged** —— 承认，认可
+164. perennial lament 长久的哀叹
+165. **rampant（盛行的）**
+166. affinities with（与……有相似性）
+167. sluggish / dilatory（迟缓的 / 拖延的）
+168. expeditious 迅速的
+	1. **expediting 加快**
+169. averted / forestalled（避免的 / 阻止的）
+170. advent 来临
+171. **pertain（适用）**
+172. confined / circumscribed（局限的）
+173. chronologically and thematically  时间与主题上
+174. accession to / acquiescence to（同意、默许）
+175. granting of concession 让步的给予
+176. tenuous 脆弱的，不牢靠的
+177. terrain 地形
+178. exceptional（罕见的）
+179. **lamenting**（哀叹）
+180. tendentious 偏袒的
+181. detracting / deprecatory（贬低的 / 轻视的）
+182. premise 前提
+183. germane to —— 与……密切相关
+184. survey for 概述
+185. to be faulted for 受到责备
+186. _signaled_ —— 指出、表明
+187. As it is 就目前而言
+188. invigorate 使得有活力
+189. A. perfidiousness —— 背信弃义  
+	✅ B. **peregrination —— 旅行，游历**  
 	C. jubilation —— 欢腾，喜悦  
-	D. sagaciousness —— 睿智，聪慧  
+	D. *sagaciousness —— 睿智，聪慧*  
 	❌ E. conspicuousness —— 显眼，引人注目
-191. resign oneself to 逐渐接受了
-192. electorate 选民
-193. 'bear them out' 意味着提供证据或事实来支持或证明某个观点或陈述。
-194. _quintessential_ —— 典型的、本质的
-195. 'exuberant'用来形容某人的个性充满活力和热情。
-196. _impermanence_ —— 无常、变化不定
-197. _profundity_ —— 深刻
-198. _exuberance_ —— 繁华、装饰性强
-199. In a shopocracy, consumer choices heavily influence policy.在一个商店政治中，消费者的选择严重影响政策。
-200. deferring to low-level aides 听从低级助手
-201. _perspicacity_ —— 洞察力、敏锐
-202. _discernment_ —— 识别力、判断力
-203. _magnanimity_ —— 宽宏大量
-204. _sanctioning_ —— 认可、批准 (不是制裁)
-205. _endorsing_ —— 支持、背书
-206. _reprehending_ —— 斥责
-207. _censuring_ —— 谴责
-208. anything but 绝不是
-209. 'billiard-ball causality'指的是一种直观的、类似台球碰撞的因果关系模型，强调物体间直接的、机械的相互作用，没有中间变量或复杂过程。这种模型常用于解释经典物理学中的现象，如牛顿力学，其中物体的运动由其相互作用直接决定。
-210. 'vantage'指的是一个有利的位置或优势，使人们能够更好地观察或行动。
-211. _radicalism_ —— 激进性
-212. _presided over_ —— 主导、主持
+190. resign oneself to 逐渐接受了
+191. electorate 选民
+192. 'bear them out' 意味着提供证据或事实来支持或证明某个观点或陈述。
+193. _quintessential_ —— 典型的、本质的
+194. 'exuberant'用来形容某人的个性充满活力和热情。
+195. _impermanence_ —— 无常、变化不定
+196. _profundity_ —— 深刻
+197. **_exuberance_ —— 繁华、装饰性强**
+198. In a shopocracy, consumer choices heavily influence policy.在一个商店政治中，消费者的选择严重影响政策。
+199. deferring to low-level aides 听从低级助手
+200. _perspicacity_ —— 洞察力、敏锐
+201. _discernment_ —— 识别力、判断力
+202. _magnanimity_ —— 宽宏大量
+203. **_sanctioning_ —— 认可、批准 (不是制裁)**
+204. **_endorsing_ —— 支持、背书**
+205. _**reprehending_ —— 斥责**
+206. **_censuring_ —— 谴责**
+207. anything but 绝不是
+208. 'billiard-ball causality'指的是一种直观的、类似台球碰撞的因果关系模型，强调物体间直接的、机械的相互作用，没有中间变量或复杂过程。这种模型常用于解释经典物理学中的现象，如牛顿力学，其中物体的运动由其相互作用直接决定。
+209. 'vantage'指的是一个有利的位置或优势，使人们能够更好地观察或行动。
+210. _radicalism_ —— 激进性
+211. _presided over_ —— 主导、主持
 	1. _seethed over_ —— 怒火中烧
-213. _amenable to refutation_ —— 可被反驳的（符合科学精神）
+212. _amenable to refutation_ —— 可被反驳的（符合科学精神）
 	1. _open to criticism_ —— 乐于接受批评的
 	2. 不一样在如果不 open to criticism 那就不会有批评出现
-214. 'rallying to' 表示聚集起来或支持某事。
-215. 'disgraced'指的是某人因丑闻或其他不当行为而失去名誉或地位。
-216. _self–interest_ —— 私利、自我利益
+213. 'rallying to' 表示聚集起来或支持某事。
+214. 'disgraced'指的是某人因丑闻或其他不当行为而失去名誉或地位。
+215. _self–interest_ —— 私利、自我利益
 	1. _opportunism_ —— 机会主义、投机取巧
-217. **resonates / rings true**  （“引起共鸣”或“令人信服”——强调虽然夸张，但仍揭示了真实。）
-218. The artist's delineation of the landscape was stunning.艺术家对风景的勾勒令人惊叹。
-219. _falls short_ —— 不尽如人意
-220. deliberate 平稳的
-221. impasse 僵局
-222. subvert 颠覆
-223. specious 可疑的，似是而非的
-224. pernicious 有害的
-225. unequivocal 模棱两可的
-226. insalubrious 脏乱的
-227. ramshackle 破败不堪的
-228. dreary 令人纠结的
-229. mendacity 虚伪
+216. **resonates / rings true**  （“引起共鸣”或“令人信服”——强调虽然夸张，但仍揭示了真实。）
+217. The artist's delineation of the landscape was stunning.艺术家对风景的勾勒令人惊叹。
+218. _falls short_ —— 不尽如人意
+219. **deliberate 平稳的**
+220. impasse 僵局
+221. **subvert 颠覆**
+222. specious 可疑的，似是而非的
+223. **pernicious 有害的**
+224. **unequivocal 模棱两可的**
+225. insalubrious 脏乱的
+226. ramshackle 破败不堪的
+227. dreary 令人纠结的
+228. **mendacity 虚伪**
 	1. dissembling 假装掩饰
-230. belie = mask 掩盖
-231. mundane 平凡的
-232. sagacious 聪慧的
-233. desertion 逃兵
-234. perfunctory 敷衍的
+229. belie = mask 掩盖
+230. **mundane 平凡的**
+	1. 注意和上面那个 mendacity 区别一下！
+231. **sagacious 聪慧的**
+232. desertion 逃兵
+233. **perfunctory 敷衍的**
 	1. 忘记过一次啦！！
-235. borne out 证实
-236. cumbersome = unwieldy 笨重的
-237. predilection 偏爱 proclivity 倾向
-238. vacillation = wavering 犹豫
-239. fractious = restive 易怒的
-240. assembly 集会
-241. upshot 结局；要点
-242. sluggish 萧条的
-243. impassive 面无表情的
-244. solitary 孤独的
-245. daunting 令人害怕的
-246. transience 短暂
-247. codifying 编纂
-248. galvanize 刺激 
+234. borne out 证实
+235. cumbersome = unwieldy 笨重的
+236. predilection 偏爱 proclivity 倾向
+237. vacillation = wavering 犹豫
+238. **fractious = restive 易怒的**
+239. assembly 集会
+240. upshot 结局；要点
+241. sluggish 萧条的
+242. impassive 面无表情的
+243. solitary 孤独的
+244. daunting 令人害怕的
+245. transience 短暂
+246. codifying 编纂
+247. galvanize 刺激 
 	1. **animate**  鼓舞，推动
-249. prognosis 预后;预测
-250. auspicious 吉祥
-251. incursion of 对。。。的入侵
-252. corrupt 破坏
-253. ethereal 飘渺的 = invisible
-254. diminutive = minuscule 极小的
-255. startling 令人吃惊
-256. vapid = jejune 乏味
-257. purports 声称
+248. prognosis 预后;预测
+249. auspicious 吉祥
+250. incursion of 对。。。的入侵
+251. corrupt 破坏
+252. ethereal 飘渺的 = invisible
+253. diminutive = minuscule 极小的
+254. startling 令人吃惊
+255. vapid = jejune 乏味
+256. purports 声称
 	1. 一般是虚假的
-258. insipid 无味的；乏味的
+257. insipid 无味的；乏味的
 	1. The medicine had an insipid taste.这药的味道很无味。
-259. pragmatic 务实的
-260. intelligible = readable 可识别的/可读的
-261. voluble 健谈的
-262. entailed by 由...带来
+258. pragmatic 务实的
+259. intelligible = readable 可识别的/可读的
+260. voluble 健谈的
+261. entailed by 由...带来
 	1. entail = mean 意味着
 	2. inferable from
-263. inveterate 积习难改的
-264. candid = frank / straightforward
-265. lambaste 批评/痛斥
-266. antecedent to 先行于
-267. admonish 告诫
-268. enliven 活跃
+262. inveterate 积习难改的
+263. candid = frank / straightforward
+264. lambaste 批评/痛斥
+265. antecedent to 先行于
+266. admonish 告诫
+267. enliven 活跃
 
 ---
 # Math 
