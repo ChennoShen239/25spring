@@ -34,6 +34,16 @@
               "icon": "lucide-file",
               "title": "Notes on GRE"
             }
+          },
+          {
+            "id": "28632b7ac6775c7d",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
           }
         ],
         "currentTab": 1
@@ -280,7 +290,7 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "4d0abe5cc400e4a2",
+  "active": "fbe827a9b9b6a1b5",
   "lastOpenFiles": [
     "Notes on GRE.md",
     "2025-10-21.md",

@@ -326,6 +326,59 @@ $$
 31. aliquant 除不尽的
 32. brace 一双
 33. arithmetic progression 等差数列
+34. evenly even integer 能再平分的数
+35. quart 夸脱 (1 quart = $\frac{1}{4}$ gallon = $2$ pint)
+36. scalene 斜的，不等边的
+	1. scalene triangular 不等边三角形
+37. transversal 截线
+	1. 就是穿过两条线的一条线
+
+>[! extremes of a proportion]
+**"The extremes of a proportion"** 在中文里的意思是**“比例的外项”**或**“比例的两端”**。
+> 
+> 在数学中，**比例 (Proportion)** 是指两个比率（ratio）相等的式子。
+> 
+> ### 比例的一般形式
+> 
+> 一个比例可以写作如下形式：
+> 
+> $$\frac{a}{b} = \frac{c}{d}$$
+> 
+> 或者用冒号表示：
+> 
+> $$a : b = c : d$$
+> 
+> ### 外项 (Extremes) 和 内项 (Means)
+> 
+> 在这个比例中，四个项 $a, b, c, d$ 被分为两组：
+> 
+> 1.  **外项 (The Extremes):** 位于比例两端的项，即 $a$ 和 $d$。
+> 2.  **内项 (The Means):** 位于比例中间的项，即 $b$ 和 $c$。
+> 
+> $$\text{Extremes} \longrightarrow \mathbf{a} : b = c : \mathbf{d} \longleftarrow \text{Extremes}$$
+> 
+> $$\text{Means} \longrightarrow a : \mathbf{b} = \mathbf{c} : d \longleftarrow \text{Means}$$
+> 
+> ### “外项”的性质（比例的基本性质）
+> 
+> 比例有一个非常重要的性质，称为**交叉相乘性质 (Cross-Multiplication Property)**，它指出：
+> 
+> **比例的内项之积等于外项之积。**
+> 
+> $$\text{外项之积} = \text{内项之积}$$
+> $$\mathbf{a} \times \mathbf{d} = \mathbf{b} \times \mathbf{c}$$
+> 
+> **例如：**
+> 在一个比例 $\frac{2}{3} = \frac{4}{6}$ 中：
+> *   **外项 (Extremes):** 2 和 6
+> *   **内项 (Means):** 3 和 4
+> 
+> 验证性质：
+> *   外项之积：$2 \times 6 = 12$
+> *   内项之积：$3 \times 4 = 12$
+> *   结果相等，所以这是一个正确的比例。
+> 
+> 所以，**“the extremes of a proportion”** 指的就是在一个相等比率的表达式中，位于最左边和最右边的两个数字（或变量）。
 
 >[!complex fraction]
 **Complex Fraction** 在数学中称为**繁分数**或**复合分数**。
