@@ -258,18 +258,18 @@
 242. impassive 面无表情的
 243. solitary 孤独的
 244. daunting 令人害怕的
-245. transience 短暂
+245. **transience 短暂**
 246. codifying 编纂
 247. galvanize 刺激 
-	1. **animate**  鼓舞，推动
+	1. **animate  鼓舞，推动**
 248. prognosis 预后;预测
-249. auspicious 吉祥
+249. **auspicious 吉祥**
 250. incursion of 对。。。的入侵
 251. corrupt 破坏
 252. ethereal 飘渺的 = invisible
 253. diminutive = minuscule 极小的
 254. startling 令人吃惊
-255. vapid = jejune 乏味
+255. **vapid = jejune 乏味**
 256. purports 声称
 	1. 一般是虚假的
 257. insipid 无味的；乏味的
@@ -314,7 +314,7 @@ $$
 19. pythagorean theorem 勾股定理
 20. rhombus 菱形
 21. parallelogram 平行四边形
-22. trapezoid 题型
+22. trapezoid 梯形
 23. circumference 圆周长
 24. inscribed 内接
 25. concentric 同心的
