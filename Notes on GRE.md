@@ -1,5 +1,5 @@
 1. sycophantic 阿谀奉承的 adj
-2. censorious 吹毛求疵的
+2. censorious 吹毛求疵的,挑剔的
 3. pedantic 卖弄学问的
 4. impetuous 鲁莽的，急躁冲动的
 5. impotent 无力的
@@ -286,6 +286,20 @@
 265. antecedent to 先行于
 266. admonish 告诫
 267. enliven 活跃
+268. respite 短暂休息
+	1. lull 休息
+269. harbinger 预兆
+270.  entice 引诱
+271. panache 酷炫
+272. for all = despite 让步！！！
+273. averring 断言
+274. avowing 承认
+275. embargo 禁运/禁止发表
+276. **futility** 无用
+277. dictator 独裁者
+278. **unostentatious** / **modest** **朴素的** / **谦逊的**
+279. paraphernalia 随身物品
+280. 
 
 ---
 # Math 
