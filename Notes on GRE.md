@@ -299,7 +299,12 @@
 277. dictator 独裁者
 278. **unostentatious** / **modest** **朴素的** / **谦逊的**
 279. paraphernalia 随身物品
-280. 
+280. slippery / elusive 难懂的
+281. **suggest 激发**， 激发一个什么问题
+282. stipulate 规定
+283. cliquish social behavior 小圈子式的社会行为
+284. **a rant against** / **a diatribe on** **猛烈抨击** / **严厉批评**
+285. 
 
 ---
 # Math 
