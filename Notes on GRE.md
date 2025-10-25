@@ -1210,3 +1210,152 @@ $$
     *   change
     *   rise
     **in...**
+
+# 数字的表达句型:
+
+1.  **In 1990, it**
+    *   increased
+    *   rose
+    *   jumped
+    *   shot up
+    *   from 5 to 10 percent of the total
+    *   to 15 percent
+    *   by 15 percent
+
+2.  **By comparison with 1990, it**
+    *   decreased
+    *   dropped
+    *   fell
+    *   from 10 to 5 percent
+    *   to 15 percent
+    *   by 15 percent
+
+3.  **The**
+    *   figure
+    *   percentage
+    *   number
+    *   population
+    **has**
+    *   nearly
+    *   almost
+    *   more than
+    *   doubled
+    *   tripled
+    **compared with / as compared with / as against that of last year.**
+
+4.  **It has**
+    *   dropped
+    *   increased
+    *   decreased
+    *   almost
+    *   more than
+    *   about
+    *   two and a half times
+    *   twice
+    *   six times
+    **, compared with...**
+
+5.  **The**
+    *   number
+    *   percentage
+    **is**
+    *   twice
+    *   4 times
+    *   half
+    **as much as that of 1990.**
+
+6.  **It has**
+    *   reached
+    *   approached
+    *   risen to
+    *   something of a plateau
+    *   50 percent
+    *   to an average of 50 percent
+    **in**
+    *   the recent 5 years
+    *   the past few years
+
+7.  **It accounts for 15 percent of the total...**
+
+8.  **There**
+    *   was
+    *   were
+    *   has been
+    *   26 traffic accidents
+    *   26 teenage suicides
+    *   a 26 percent increase / decline in birth rates
+    **in March,**
+    *   up from 20 percent for the same period last year
+    *   an increase of 3 percent in a three-month period
+    *   only 65.3 births per 1000 females of childbearing age
+
+9.  **That is the**
+    *   second-highest
+    *   second-lowest
+    **rate in history, continuing a**
+    *   upward
+    *   downward
+    **trend begun in the 1970s.**
+    *   only
+    *   less than
+    *   more than
+    *   almost
+    *   about
+    *   over
+    *   as many as
+    *   three-quarters
+    *   40 percent of
+    *   one out of five
+    *   one in four
+
+# 结尾句型:
+
+1.  
+*   From what has been discussed above
+    *   Because of all the above reasons
+    *   Taking into account all these factors
+    *   Judging from all evidence offered
+    *   Considering all the factors above
+    **, we**
+    *   may
+    *   could
+    **safely**
+    *   draw
+    *   reach
+    *   come to
+    *   arrive at
+    **the conclusion that...**
+
+    *例：From what has been discussed above, we could safely draw the conclusion that as a source of gaining knowledge, books are better than experience, although both of them have their own advantages.*
+
+2. 
+	*   Obviously
+    *   Undoubtedly
+    *   Clearly
+    **, all the**
+    *   evidence
+    *   analysis
+    *   supports
+    *   justifies
+    *   confirms
+    *   warrants
+    *   points to
+    *   leads to
+    **a(n)**
+    *   remarkable
+    *   sound
+    *   just
+    *   unmistakable
+    *   unshakable
+    *   undoubted
+    *   conclusion
+    *   view
+    *   viewpoints
+    *   idea
+    *   result
+    *   consequence
+    **that...**
+
+    *例：Obviously, all the evidence confirms an undoubted conclusion that not all the progress is always good.*
+    
+
