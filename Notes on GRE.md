@@ -582,4 +582,283 @@ $$
 > 
 > 这个公式展示了零售商是如何确定最终售价的：**售价 = 进货成本 + 加价额**。
 
+---
+# 最常用句型集
+
+## 表示举例的句型：
+
+1.  **We may**
+    *   cite
+    *   quote
+    *   mention
+    *   take
+    *   point out
+    **a**
+    *   single
+    *   common
+    *   another
+    **example of...**
+
+2.  **History / Our society**
+    *   is filled with
+    *   abounds with
+    **the examples of...**
+
+3.  **It / This**
+    *   provides
+    *   offers
+    *   proves
+    *   shows
+    **a**
+    *   good
+    *   typical
+    *   concrete
+    *   notable
+    *   striking
+    **instance of / example of / case in point**
+
+4.  **To the**
+    *   facts
+    *   examples
+    *   evidence
+    **now / already familiar,**
+    *   a number of
+    *   numerous
+    *   abundant
+    *   a great deal of
+    **further / new**
+    *   facts
+    *   examples
+    *   evidence
+    **may be added.**
+
+5.  **The**
+    *   story
+    *   case
+    *   instance
+    *   situation
+    **is not**
+    *   rare
+    *   isolated
+    *   unique
+    **, it is one of many examples / typical of dozens.**
+    *I have*
+    *   heard
+    *   read
+    *   encountered
+
+# 开头句型:
+
+下面是文章起头常用的一些句型，掌握这些句型，有助于你较快、较好地写好文章起头。
+
+1.  1
+	*   When asked about
+    *   When it comes to
+    *   Faced with
+    **... ,**
+    *   the (vast) majority of
+    *   most/many
+    *   quite a few
+    **people**
+    *   say
+    *   believe
+    *   claim
+    *   think
+    *   argue
+    **that... , but other people**
+    *   regard
+    *   view/see
+    *   think of
+    *   consider
+    *   conceive
+    **... as... differently.**
+
+2.  **With (the)**
+    *   development / improvement / rise / growth of...
+    *   general recognition / realization / acknowledgement of...
+    *   common interest in
+    *   women / children playing an increasingly big role in society / family life,
+    **vast changes await this country's society.**
+
+3.  **There is a**
+    *   general
+    *   much
+    *   public
+    **discussion / debate / controversy today / nowadays**
+    *   on
+    *   about
+    *   over
+    *   as to
+    **the... of.... Those who**
+    *   criticize
+    *   object to
+    **... argue that.... They believe that..., but people who**
+    *   advocate
+    *   favor
+    **..., on the other hand, argue that...**
+
+4.  **Currently / In recent years / In the past few years / For many years now, there**
+    *   is
+    *   has been
+    **a(n)**
+    *   general
+    *   widespread
+    *   growing
+    *   widely-held
+    *   feeling towards
+    *   concern over
+    *   attitude towards
+    *   trend towards
+    *   awareness of
+    *   realization of
+    *   illusion of
+    **... that...**
+
+5.  **Now people in**
+    *   growing
+    *   ever-increasing
+    *   significant
+    **numbers are**
+    *   beginning
+    *   coming
+    *   getting
+    **to**
+    *   believe
+    *   realize
+    *   recognize
+    *   understand
+    *   accept
+    *   see
+    *   be aware
+    **that...**
+
+    *commonly / widely / generally / increasingly*
+    *   believed
+    *   thought
+    *   held
+    *   accepted
+    *   felt
+    *   recognized
+    *   acknowledged
+
+6.  **Now, it is**
+    *   believed
+    *   thought
+    *   held
+    *   accepted
+    *   felt
+    *   recognized
+    *   acknowledged
+    **that ..., but I**
+    *   wonder
+    *   doubt
+    **whether...**
+
+7.  **Recently there is a(n)**
+    *   astonishing
+    *   increasing
+    *   sizable
+    *   significant
+    **proportion / percentage / population / number of**
+    *   teenagers
+    *   students
+    **who...**
+
+8.  **According to a(n)**
+    *   recent
+    *   new
+    *   official
+    **study / survey / report / poll, ...**
+
+9.  **In the past 5 years there has been a**
+    *   sudden
+    *   dramatic
+    *   sharp
+    *   marked
+    **rise / increase in the**
+    *   crime rate
+    *   divorce rate
+    *   teenage smoking
+    **.**
+
+10. *   In city after city across the country
+    *   At offices and plants across the country
+    **, a(n)**
+    *   growing
+    *   increasing
+    *   surprising
+    *   considerable
+    **number / amount of ...**
+    *   problem
+    *   issue
+    *   question
+
+11. **Recently the**
+    *   problem
+    *   issue
+    *   question
+    **of...has been**
+    *   brought to public attention
+    *   posed among people
+    *   in the limelight
+
+12. **The**
+    *   problem
+    *   issue
+    **of...has now**
+    *   loomed
+    *   arisen
+    *   cropped up
+    **as controversial / noteworthy.**
+
+13. **Most**
+    *   dangerous
+    *   disastrous
+    *   undesirable
+    **for...is the**
+    *   trend
+    *   tendency
+    *   phenomenon
+    **... which is now**
+    *   apparent
+    *   evident
+    *   obvious
+    *   epidemic
+    *   under way
+
+14. **No**
+    *   idea
+    *   opinion
+    *   view
+    *   belief
+    *   notion
+    *   issue
+    *   trend
+    *   attitude
+    **(which is now**
+    *   widely
+    *   commonly
+    *   generally
+    **held by...) is more**
+    *   untrue
+    *   foolish
+    *   dangerous
+    *   undesirable
+    *   basic
+    *   important
+    *   essential
+    *   emotion-arousing
+    **now than the one that...**
+
+15. 
+	*   Never in Chinese history
+    *   Nowhere in the world
+    **has the**
+    *   idea
+    *   issue
+    *   change
+    **of...been more**
+    *   evident
+    *   popular
+    **than...**
 
