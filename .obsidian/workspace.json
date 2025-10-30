@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes on GRE.md",
+                "file": "Notes on TOEFL.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Notes on GRE"
+              "title": "Notes on TOEFL"
             }
           },
           {
@@ -41,16 +41,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Notes on TOEFL.md",
+                "file": "Term 7/SocialNetWork/Lecture7.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Notes on TOEFL"
+              "title": "Lecture7"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -294,8 +294,11 @@
       "pdf-plus:PDF++: Toggle auto-paste": false
     }
   },
-  "active": "3d2f1d8013e62042",
+  "active": "fbe827a9b9b6a1b5",
   "lastOpenFiles": [
+    "Notes on GRE.md",
+    "Term 7/SocialNetWork/Lecture7.md",
+    "Notes on TOEFL.md",
     "Pasted image 20251029152548.png",
     "Pasted image 20251029150157.png",
     "Pasted image 20251029142324.png",
@@ -303,15 +306,12 @@
     "Pasted image 20251029001045.png",
     "Pasted image 20251028225737.png",
     "未命名.md",
-    "Notes on TOEFL.md",
-    "Notes on GRE.md",
     "2025-10-21.md",
     "Term 7/SocialNetWork/Lecture 6.md",
     "Pasted image 20251021141812.png",
     "Pasted image 20251021140252.png",
     "Pasted image 20251021133113.png",
     "Pasted image 20251021133048.png",
-    "Pasted image 20251021131454.png",
     "Term 7/SocialNetWork/Lecture 5.md",
     "2025-10-20.md",
     "2025-10-15.md",
