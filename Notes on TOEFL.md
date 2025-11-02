@@ -11,7 +11,7 @@ Templates:
 1. while some people probably think xx, I believe that yyy.
 	1. xxx _opposite of your main point_
 	2. yyy _your main point_
-2. The main reason is that ... w/o disrupt
+2. The main reason is that ...
 3. What I mean is...
 	1. basically elaborate on the previous *main reason* deep think resonate
 4. For instance... 
@@ -26,7 +26,7 @@ Templates:
 2. First of all...
 3. What I mean is...
 4. Secondly...
-5. Specifically...meet the people
+5. Specifically...
 ---
 - use more conjunctions
 - if you use the **2 reasons version**, then you don't need to come up with a reason since there's gonna be no time for this.
@@ -103,11 +103,13 @@ Listen to discussion
 	1. based on the *reading*
 3. gives the opinion of the *guy*, and his reasons
 
-- according to the announcement... *5s*
+- according to the **announcement/proposal**... *5s*
+> note that whether it's an announcement or a proposal
+
 - this is because... and ...*10s*
-- the man opposes/supports this. *2s*
-- To begin with, he points out that... *43s in total*
-	- moreover, he agrees that...
+- the **man/woman** opposes/supports this. *2s*
+- To begin with, **he/she** points out that... *43s in total*
+	- moreover, **he/she** agrees that...
 ---
 **Graded by what**
 1. correct and complete details
