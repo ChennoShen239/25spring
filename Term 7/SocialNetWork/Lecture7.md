@@ -184,7 +184,7 @@ s_{i}=\sum_{j=1}^{n} s_{j}T_{ji} & =\sum_{j=1,T_{ji}>0}^{n} \left( \frac{d_{j}}{
  & = \frac{d_{i}}{D}=s_{i}
 \end{align}
 $$
-## 7.9 Wise in DeGroot Learning>
+## 7.9 Wise in DeGroot Learning
 **Uncertainty Structure**
 - Suppose true state is $\mu$
 - Agent $i$ sees $b_{i}(0)=\mu+\epsilon_{i}$
